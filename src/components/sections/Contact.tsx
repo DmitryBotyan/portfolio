@@ -20,6 +20,30 @@ export function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [consent, setConsent] = useState(false)
 
+  const collectMeta = () => {
+    try {
+      const p = new URLSearchParams(window.location.search)
+      return {
+        url: window.location.href,
+        path: window.location.pathname + window.location.search,
+        referrer: document.referrer || '',
+        utm: {
+          utm_source: p.get('utm_source') || '',
+          utm_medium: p.get('utm_medium') || '',
+          utm_campaign: p.get('utm_campaign') || '',
+          utm_term: p.get('utm_term') || '',
+          utm_content: p.get('utm_content') || '',
+        },
+        lang: navigator.language || '',
+        screen: `${window.screen.width}×${window.screen.height}`,
+        viewport: `${window.innerWidth}×${window.innerHeight}`,
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+      }
+    } catch {
+      return {}
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!consent || status === 'sending') return
@@ -29,7 +53,7 @@ export function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, token }),
+        body: JSON.stringify({ ...form, token, meta: collectMeta() }),
       })
       if (!res.ok) throw new Error('Request failed')
       setStatus('sent')
