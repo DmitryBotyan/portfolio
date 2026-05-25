@@ -34,8 +34,21 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p 22 37.1.211.14 >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Deploy
+      - name: Deploy static + API
         run: |
           rsync -az --delete -e "ssh -i ~/.ssh/deploy_key -p 22" dist/ deploy@37.1.211.14:/var/www/botyan/dist/
           rsync -az -e "ssh -i ~/.ssh/deploy_key -p 22" server/contact-server.mjs deploy@37.1.211.14:/opt/botyan-api/
-          ssh -i ~/.ssh/deploy_key -p 22 deploy@37.1.211.14 'sudo systemctl restart botyan-api'
+
+      - name: Sync runtime secrets to server
+        env:
+          RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          printf 'PORT=3101\nRECAPTCHA_SECRET=%s\nTELEGRAM_BOT_TOKEN=%s\nTELEGRAM_CHAT_ID=%s\nRECAPTCHA_MIN_SCORE=0.5\n' \
+            "$RECAPTCHA_SECRET" "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" \
+            | ssh -i ~/.ssh/deploy_key -p 22 deploy@37.1.211.14 \
+              'sudo tee /etc/botyan/contact.env >/dev/null && sudo chown deploy:deploy /etc/botyan/contact.env && sudo chmod 600 /etc/botyan/contact.env'
+
+      - name: Restart API
+        run: ssh -i ~/.ssh/deploy_key -p 22 deploy@37.1.211.14 'sudo systemctl restart botyan-api'
