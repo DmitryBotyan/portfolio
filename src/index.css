@@ -191,3 +191,8 @@ button, a, [role="button"] {
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee { animation: none; }
 }
+
+/* Hide reCAPTCHA v3 badge (disclosure text shown next to the form instead) */
+.grecaptcha-badge {
+  visibility: hidden;
+}

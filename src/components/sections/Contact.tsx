@@ -5,6 +5,7 @@ import { Textarea } from '@/components/retroui/Textarea'
 import { Send, Mail, Check } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { useLegal } from '@/components/Legal'
+import { getRecaptchaToken } from '@/hooks/useRecaptcha'
 
 const iconMap = {
   telegram: Send,
@@ -15,19 +16,30 @@ export function Contact() {
   const { t } = useApp()
   const { contact } = t
   const { openLegal } = useLegal()
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [consent, setConsent] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!consent) return
+    if (!consent || status === 'sending') return
     setStatus('sending')
-    await new Promise((r) => setTimeout(r, 1200))
-    setStatus('sent')
-    setForm({ name: '', email: '', message: '' })
-    setConsent(false)
-    setTimeout(() => setStatus('idle'), 4000)
+    try {
+      const token = await getRecaptchaToken('contact')
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, token }),
+      })
+      if (!res.ok) throw new Error('Request failed')
+      setStatus('sent')
+      setForm({ name: '', email: '', message: '' })
+      setConsent(false)
+      setTimeout(() => setStatus('idle'), 5000)
+    } catch {
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 6000)
+    }
   }
 
   const submitLabel =
@@ -113,7 +125,7 @@ export function Contact() {
 
             <Button type="submit" disabled={!consent || status === 'sending' || status === 'sent'}
               className="w-full disabled:opacity-50 disabled:cursor-not-allowed" variant="default" size="lg">
-              {status === 'idle' && <Send size={16} />}
+              {(status === 'idle' || status === 'error') && <Send size={16} />}
               {submitLabel}
             </Button>
 
@@ -122,6 +134,26 @@ export function Contact() {
                 {contact.form.consentRequired}
               </p>
             )}
+
+            {status === 'error' && (
+              <p className="font-sans text-[11px] text-accent leading-relaxed">
+                {contact.form.submitError}
+              </p>
+            )}
+
+            <p className="font-sans text-[10px] text-muted-foreground/70 leading-relaxed">
+              {contact.form.recaptchaBefore}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-foreground transition-colors">
+                {contact.form.recaptchaPrivacy}
+              </a>
+              {contact.form.recaptchaMiddle}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-foreground transition-colors">
+                {contact.form.recaptchaTerms}
+              </a>
+              {contact.form.recaptchaAfter}
+            </p>
           </form>
 
           {/* Contacts sidebar */}
