@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-head: 'Unbounded', sans-serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --radius: 0rem;
+
+  --shadow-xs: 1px 1px 0 0 var(--border);
+  --shadow-sm: 2px 2px 0 0 var(--border);
+  --shadow: 3px 3px 0 0 var(--border);
+  --shadow-md: 4px 4px 0 0 var(--border);
+  --shadow-lg: 6px 6px 0 0 var(--border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+}
+
+:root {
+  --radius: 0rem;
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --primary: #0A0A0A;
+  --primary-hover: #1f1f1f;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F2F2F2;
+  --secondary-foreground: #0A0A0A;
+  --muted: #F7F7F7;
+  --muted-foreground: #555555;
+  --accent: #FF3D00;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF3D00;
+  --destructive-foreground: #FFFFFF;
+  --border: #0A0A0A;
+}
+
+.dark {
+  --radius: 0rem;
+  --background: #0A0A0A;
+  --foreground: #F5F5F5;
+  --card: #141414;
+  --card-foreground: #F5F5F5;
+  --primary: #F5F5F5;
+  --primary-hover: #FFFFFF;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #F5F5F5;
+  --muted: #242424;
+  --muted-foreground: #888888;
+  --accent: #FF3D00;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF3D00;
+  --destructive-foreground: #FFFFFF;
+  --border: #2E2E2E;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button, a, [role="button"] {
+  cursor: pointer;
+}
+
+/* ── Reveal animations ─────────────────────────────── */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes stagger-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes stagger-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+[data-reveal] { opacity: 0; }
+[data-reveal].revealed {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger — slide up */
+[data-stagger] > * { opacity: 0; transform: translateY(28px); }
+
+[data-stagger].revealed > *:nth-child(1) { animation: stagger-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards 0ms; }
+[data-stagger].revealed > *:nth-child(2) { animation: stagger-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards 130ms; }
+[data-stagger].revealed > *:nth-child(3) { animation: stagger-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards 260ms; }
+[data-stagger].revealed > *:nth-child(4) { animation: stagger-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards 390ms; }
+[data-stagger].revealed > *:nth-child(5) { animation: stagger-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards 520ms; }
+[data-stagger].revealed > *:nth-child(6) { animation: stagger-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards 650ms; }
+
+/* Stagger — slide from left (Experience rows) */
+[data-stagger-left] > * { opacity: 0; transform: translateX(-32px); }
+
+[data-stagger-left].revealed > *:nth-child(1) { animation: stagger-left 0.7s cubic-bezier(0.16,1,0.3,1) forwards 0ms; }
+[data-stagger-left].revealed > *:nth-child(2) { animation: stagger-left 0.7s cubic-bezier(0.16,1,0.3,1) forwards 130ms; }
+[data-stagger-left].revealed > *:nth-child(3) { animation: stagger-left 0.7s cubic-bezier(0.16,1,0.3,1) forwards 260ms; }
+[data-stagger-left].revealed > *:nth-child(4) { animation: stagger-left 0.7s cubic-bezier(0.16,1,0.3,1) forwards 390ms; }
+[data-stagger-left].revealed > *:nth-child(5) { animation: stagger-left 0.7s cubic-bezier(0.16,1,0.3,1) forwards 520ms; }
+
+.text-outline-accent {
+  color: #ffffff;
+  text-shadow:
+    -2px -2px 0 var(--foreground),
+     2px -2px 0 var(--foreground),
+    -2px  2px 0 var(--foreground),
+     2px  2px 0 var(--foreground);
+}
+
+.dark .text-outline-accent {
+  color: #0A0A0A;
+  text-shadow:
+    -2px -2px 0 var(--foreground),
+     2px -2px 0 var(--foreground),
+    -2px  2px 0 var(--foreground),
+     2px  2px 0 var(--foreground);
+}
+
+/* Hero background drifting squares */
+@keyframes hero-drift-a {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
+  50%      { transform: translate(14px, -18px) rotate(45deg); opacity: 0.4; }
+}
+@keyframes hero-drift-b {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.12; }
+  50%      { transform: translate(-20px, 12px) rotate(-30deg); opacity: 0.32; }
+}
+@keyframes hero-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.18; }
+  50%      { transform: translate(10px, 14px) scale(1.4); opacity: 0.42; }
+}
+.animate-hero-drift-a { animation: hero-drift-a 7s ease-in-out infinite; }
+.animate-hero-drift-b { animation: hero-drift-b 9s ease-in-out infinite; }
+.animate-hero-drift-c { animation: hero-drift-c 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-drift-a,
+  .animate-hero-drift-b,
+  .animate-hero-drift-c { animation: none; }
+}
+
+/* Testimonials infinite marquee */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-x var(--marquee-duration, 50s) linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
