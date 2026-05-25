@@ -12,7 +12,7 @@ export function Hero() {
       {/* Grid background + subtle drifting squares */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 text-foreground/[0.18] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
+        className="pointer-events-none absolute inset-0 z-0 text-foreground/[0.05] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
       >
         <svg className="absolute inset-0 h-full w-full">
           <defs>
