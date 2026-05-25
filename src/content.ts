@@ -337,7 +337,7 @@ export const content = {
     },
     services: {
       heading: 'Услуги и цены',
-      subheading: 'Прозрачные тарифы на разработку сайтов, ботов и интеграций. Цены — на 2026 год.',
+      subheading: 'Прозрачные тарифы на разработку сайтов, ботов и интеграций. Цены - на 2026 год.',
       popularBadge: 'Популярный',
       currency: '₽',
       thousand: 'тыс.',
@@ -350,7 +350,7 @@ export const content = {
           priceFrom: 35,
           priceTo: 80,
           tagline: 'Для быстрого выхода в онлайн',
-          description: 'Если нужно срочно запустить присутствие в сети — лендинг, сайт-визитка или простой бот.',
+          description: 'Если нужно срочно запустить присутствие в сети - лендинг, сайт-визитка или простой бот.',
           includes: [
             'Лендинг, сайт на Tilda или простой Telegram-бот',
             'До 5 экранов / разделов',
@@ -405,7 +405,7 @@ export const content = {
       subheading: 'Примерная вилка цен по вашему проекту. Точную сумму назову после короткого брифа.',
       typeLabel: 'Что нужно сделать',
       pagesLabel: 'Количество страниц / разделов',
-      pagesHint: 'Каждая дополнительная страница — +5 тыс. ₽',
+      pagesHint: 'Каждая дополнительная страница - +5 тыс. ₽',
       designLabel: 'Дизайн',
       extrasLabel: 'Дополнительные опции',
       resultLabel: 'Примерная стоимость',
@@ -751,7 +751,7 @@ export const content = {
           priceFrom: 35,
           priceTo: 80,
           tagline: 'Get online fast',
-          description: 'When you need to launch a presence quickly — landing page, business card site or simple bot.',
+          description: 'When you need to launch a presence quickly - landing page, business card site or simple bot.',
           includes: [
             'Landing page, Tilda site or simple Telegram bot',
             'Up to 5 screens / sections',
@@ -803,10 +803,10 @@ export const content = {
     },
     calculator: {
       heading: 'Estimate your project',
-      subheading: 'Ballpark range for your project. Exact figure — after a short brief.',
+      subheading: 'Ballpark range for your project. Exact figure - after a short brief.',
       typeLabel: 'What do you need',
       pagesLabel: 'Pages / sections count',
-      pagesHint: 'Each extra page — +5k ₽',
+      pagesHint: 'Each extra page - +5k ₽',
       designLabel: 'Design',
       extrasLabel: 'Extras',
       resultLabel: 'Estimated cost',

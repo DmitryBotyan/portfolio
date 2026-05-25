@@ -1,4 +1,4 @@
-// Yandex.Metrika — loaded lazily, only after user consent.
+// Yandex.Metrika - loaded lazily, only after user consent.
 // Counter ID and init options match the snippet from yandex.ru/metrika.
 
 export const METRIKA_ID = 109412489
@@ -20,7 +20,7 @@ export function loadMetrika() {
   if (typeof window === 'undefined' || loaded || window.ym) return
   loaded = true
 
-  // Stub queue — same shape as the official snippet
+  // Stub queue - same shape as the official snippet
   const stub = function (this: unknown) {
     ;(stub.a = stub.a || []).push(arguments)
   } as YmFn
@@ -34,7 +34,7 @@ export function loadMetrika() {
   const first = document.getElementsByTagName('script')[0]
   first?.parentNode?.insertBefore(script, first)
 
-  // Buffered init — calls before tag.js loads sit in the queue
+  // Buffered init - calls before tag.js loads sit in the queue
   window.ym(METRIKA_ID, 'init', {
     ssr: true,
     webvisor: true,
@@ -57,5 +57,5 @@ export function metrikaReachGoal(goal: string, params?: Record<string, unknown>)
   window.ym(METRIKA_ID, 'reachGoal', goal, params)
 }
 
-/** Short alias for reachGoal — used across the app for funnel events. */
+/** Short alias for reachGoal - used across the app for funnel events. */
 export const goal = metrikaReachGoal

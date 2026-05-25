@@ -132,13 +132,13 @@ const server = createServer(async (req, res) => {
     '<b>💬 Сообщение:</b>',
     escapeHtml(message),
     '',
-    '<b>— Аналитика —</b>',
+    '<b>- Аналитика -</b>',
     `🕐 <b>Время (МСК):</b> ${msk}`,
     `📄 <b>Страница:</b> ${escapeHtml(page || '/')}`,
     `🔗 <b>Источник:</b> ${referrer ? escapeHtml(referrer) : 'прямой заход'}`,
   ]
   if (utmPairs.length) lines.push(`🏷 <b>UTM:</b> ${utmPairs.join(' · ')}`)
-  const deviceStr = [device, os, browser].filter(Boolean).join(' · ') || '—'
+  const deviceStr = [device, os, browser].filter(Boolean).join(' · ') || '-'
   lines.push(`🖥 <b>Устройство:</b> ${escapeHtml(deviceStr)}`)
   if (screen) lines.push(`📐 <b>Экран:</b> ${escapeHtml(screen)}${viewport ? ` (видимая ${escapeHtml(viewport)})` : ''}`)
   if (lang) lines.push(`🌐 <b>Язык:</b> ${escapeHtml(lang)}`)

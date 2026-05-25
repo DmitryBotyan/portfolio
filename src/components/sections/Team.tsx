@@ -24,7 +24,7 @@ export function Team() {
 
         <div className="max-w-5xl grid md:grid-cols-2 gap-16">
 
-          {/* Left — description + services + CTA */}
+          {/* Left - description + services + CTA */}
           <div className="space-y-10">
             <p className="font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
               {team.description}
@@ -57,7 +57,7 @@ export function Team() {
             </a>
           </div>
 
-          {/* Right — member cards */}
+          {/* Right - member cards */}
           <div ref={cardsRef} data-stagger className="space-y-6">
             {team.members.map((member) => (
               <div

@@ -33,7 +33,7 @@ export function MetrikaTracker() {
     return () => window.removeEventListener(CONSENT_EVENT, onConsent)
   }, [])
 
-  // Track SPA route changes (skip the very first render — handled by init).
+  // Track SPA route changes (skip the very first render - handled by init).
   useEffect(() => {
     if (!consented()) return
     metrikaHit(location.pathname + location.search, { title: document.title })

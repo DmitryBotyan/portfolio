@@ -87,7 +87,7 @@ export function About() {
             <div className="border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] overflow-hidden w-full max-w-sm bg-muted">
               <img
                 src="/photo.jpg"
-                alt={`${t.hero.name.first} ${t.hero.name.last} — ${t.footer.role}`}
+                alt={`${t.hero.name.first} ${t.hero.name.last} - ${t.footer.role}`}
                 width={768}
                 height={1152}
                 loading="lazy"

@@ -6,7 +6,7 @@ export function NotFound() {
   const navigate = useNavigate()
 
   useSeo({
-    title: 'Страница не найдена — Дмитрий Ботян',
+    title: 'Страница не найдена - Дмитрий Ботян',
     description: 'Запрашиваемая страница не найдена.',
     robots: 'noindex, follow',
   })

@@ -106,7 +106,7 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-1 shrink-0">
-          {/* Social icons — desktop only */}
+          {/* Social icons - desktop only */}
           <div className="hidden lg:flex items-center gap-1 mr-2 pr-2 border-r-2 border-border">
             {t.hero.socialLinks.map(({ label, href, icon }) => {
               const Icon = iconMap[icon]
@@ -166,7 +166,7 @@ export function Nav() {
         </div>
       )}
 
-      {/* Reading progress bar — DOM-driven, no React re-renders */}
+      {/* Reading progress bar - DOM-driven, no React re-renders */}
       <div ref={progressRef} className="absolute bottom-0 left-0 h-[2px] bg-accent" style={{ width: '0%' }} />
     </header>
   )

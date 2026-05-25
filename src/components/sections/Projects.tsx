@@ -17,7 +17,7 @@ function ImageCarousel({ images, offset = 0, alt = '' }: { images: string[], off
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* full strip — all images side by side, slides as one piece */}
+      {/* full strip - all images side by side, slides as one piece */}
       <div
         className="flex h-full"
         style={{
@@ -31,7 +31,7 @@ function ImageCarousel({ images, offset = 0, alt = '' }: { images: string[], off
           <img
             key={i}
             src={src}
-            alt={`${alt} — скриншот ${i + 1}`}
+            alt={`${alt} - скриншот ${i + 1}`}
             loading="lazy"
             decoding="async"
             draggable={false}
@@ -98,7 +98,7 @@ export function Projects() {
                   ) : (project as any).image ? (
                     <img
                       src={(project as any).image}
-                      alt={`${project.title} — скриншот проекта`}
+                      alt={`${project.title} - скриншот проекта`}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover object-top"
@@ -114,7 +114,7 @@ export function Projects() {
                           backgroundSize: '28px 28px',
                         }}
                       />
-                      {/* Project number — huge watermark */}
+                      {/* Project number - huge watermark */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <span className="font-head font-black leading-none select-none text-foreground opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-300"
                           style={{ fontSize: 'clamp(5rem, 14vw, 9rem)' }}>

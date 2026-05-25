@@ -20,7 +20,7 @@ export function Faq() {
         <div ref={listRef} data-stagger className="max-w-2xl space-y-2">
           {faq.items.map((item, i) => (
             <div key={i} className="space-y-2">
-              {/* Question — outgoing, right (client writes) */}
+              {/* Question - outgoing, right (client writes) */}
               <div className="flex items-end gap-3 justify-end">
                 <div className="max-w-[85%]">
                   <p className="font-head text-[9px] font-bold uppercase tracking-widest text-muted-foreground mb-1 mr-1 text-right">
@@ -35,7 +35,7 @@ export function Faq() {
                 </div>
               </div>
 
-              {/* Answer — incoming, left (I respond) */}
+              {/* Answer - incoming, left (I respond) */}
               <div className="flex items-end gap-3">
                 <div className="w-7 h-7 border-2 border-border bg-background shrink-0 flex items-center justify-center">
                   <Terminal size={13} />
