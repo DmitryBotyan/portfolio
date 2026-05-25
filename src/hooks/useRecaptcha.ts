@@ -1,6 +1,6 @@
 const SITE_KEY =
   (import.meta.env.VITE_RECAPTCHA_SITE_KEY as string | undefined) ||
-  '6Le_c_wsAAAAAAf0h7d4O7W1kaUJfq2-s97U2mxa'
+  '6LeolvwsAAAAAAI9uTKq_ylE47BGnbW5VQQtI_Qn'
 
 declare global {
   interface Window {
