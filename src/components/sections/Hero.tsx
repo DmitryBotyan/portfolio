@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-16 lg:px-24 pt-24 pb-16 border-b-2 border-border overflow-hidden">
 
-      {/* Grid background + subtle drifting squares */}
+      {/* Grid background */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 z-0 text-foreground/[0.05] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
@@ -26,10 +26,6 @@ export function Hero() {
           <rect width="100%" height="100%" fill="url(#hero-grid-sub)" />
           <rect width="100%" height="100%" fill="url(#hero-grid)" />
         </svg>
-
-        <span className="absolute top-[22%] left-[14%] h-3 w-3 border-2 border-accent animate-hero-drift-a" />
-        <span className="absolute bottom-[22%] right-[12%] h-4 w-4 border-2 border-foreground/40 animate-hero-drift-b" />
-        <span className="absolute top-[55%] left-[10%] h-2 w-2 bg-accent animate-hero-drift-c" />
       </div>
 
       <div className="relative max-w-4xl w-full flex flex-col items-center z-10">

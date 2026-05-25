@@ -459,6 +459,13 @@ export const content = {
       indexSubheading: 'Статьи о ценах, технологиях и продвижении сайтов. Опыт из реальных проектов.',
       minRead: 'мин чтения',
     },
+    cookies: {
+      heading: 'Сайт использует cookie',
+      text: 'Мы собираем обезличенные данные о посещениях, чтобы понимать, как улучшать сайт. Продолжая использование, вы соглашаетесь с обработкой данных.',
+      privacyLink: 'Политика конфиденциальности',
+      accept: 'Принять',
+      decline: 'Отказаться',
+    },
     popup: {
       heading: 'Нужен сайт или доработка?',
       subheading: 'Отвечу в течение часа',
@@ -852,6 +859,13 @@ export const content = {
       indexTitle: 'Blog on website and bot development',
       indexSubheading: 'Articles on pricing, tech and website promotion. Lessons from real projects.',
       minRead: 'min read',
+    },
+    cookies: {
+      heading: 'This site uses cookies',
+      text: 'We collect anonymous usage data to understand how to improve the site. By continuing, you agree to the processing of this data.',
+      privacyLink: 'Privacy Policy',
+      accept: 'Accept',
+      decline: 'Decline',
     },
     popup: {
       heading: 'Need a site or improvements?',

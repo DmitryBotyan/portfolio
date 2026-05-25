@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppProvider } from '@/contexts/AppContext'
 import { LegalProvider } from '@/components/Legal'
+import { CookieBanner } from '@/components/CookieBanner'
 import App from './App.tsx'
 import { BlogIndex } from './pages/BlogIndex.tsx'
 import { BlogPost } from './pages/BlogPost.tsx'
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CookieBanner />
         </LegalProvider>
       </AppProvider>
     </BrowserRouter>
