@@ -25,6 +25,7 @@ export function CookieBanner() {
 
   const close = (value: 'accepted' | 'declined') => {
     try { localStorage.setItem(STORAGE_KEY, value) } catch { /* ignore */ }
+    window.dispatchEvent(new CustomEvent('cookie-consent-changed', { detail: value }))
     setLeaving(true)
     setTimeout(() => setOpen(false), 220)
   }
