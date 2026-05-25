@@ -9,26 +9,27 @@ export function Hero() {
   return (
     <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-16 lg:px-24 pt-24 pb-16 border-b-2 border-border overflow-hidden">
 
-      {/* Animated dot grid + drifting squares */}
+      {/* Grid background + subtle drifting squares */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 text-foreground/15 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+        className="pointer-events-none absolute inset-0 z-0 text-foreground/[0.09] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"
       >
         <svg className="absolute inset-0 h-full w-full">
           <defs>
-            <pattern id="hero-dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
-              <circle cx="1.5" cy="1.5" r="1.2" fill="currentColor" />
+            <pattern id="hero-grid" x="0" y="0" width="56" height="56" patternUnits="userSpaceOnUse">
+              <path d="M 56 0 L 0 0 0 56" fill="none" stroke="currentColor" strokeWidth="1" />
+            </pattern>
+            <pattern id="hero-grid-sub" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+              <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#hero-dots)" />
+          <rect width="100%" height="100%" fill="url(#hero-grid-sub)" />
+          <rect width="100%" height="100%" fill="url(#hero-grid)" />
         </svg>
 
-        <span className="absolute top-[18%] left-[12%] h-3 w-3 border-2 border-accent animate-hero-drift-a" />
-        <span className="absolute top-[28%] right-[16%] h-4 w-4 border-2 border-foreground animate-hero-drift-b" />
-        <span className="absolute bottom-[24%] left-[20%] h-2.5 w-2.5 bg-accent animate-hero-drift-c" />
-        <span className="absolute top-[60%] right-[24%] h-2 w-2 bg-foreground animate-hero-drift-a" />
-        <span className="absolute bottom-[18%] right-[10%] h-5 w-5 border-2 border-accent animate-hero-drift-b" />
-        <span className="absolute top-[40%] left-[8%] h-2 w-2 bg-accent animate-hero-drift-c" />
+        <span className="absolute top-[22%] left-[14%] h-3 w-3 border-2 border-accent animate-hero-drift-a" />
+        <span className="absolute bottom-[22%] right-[12%] h-4 w-4 border-2 border-foreground/40 animate-hero-drift-b" />
+        <span className="absolute top-[55%] left-[10%] h-2 w-2 bg-accent animate-hero-drift-c" />
       </div>
 
       <div className="relative max-w-4xl w-full flex flex-col items-center z-10">
