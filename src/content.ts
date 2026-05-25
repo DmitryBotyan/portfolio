@@ -176,7 +176,7 @@ export const content = {
       ],
     },
     team: {
-      heading: 'unemployment.team',
+      heading: 'Наша команда',
       name: 'unemployment.team',
       description: 'unemployment.team - это я и Артём. Назвали так потому что оба бросили обычную работу ради своих проектов. Закрываем всё: дизайн, разработку, деплой, поддержку.',
       siteLabel: 'Перейти на сайт команды',
@@ -570,7 +570,7 @@ export const content = {
       ],
     },
     team: {
-      heading: 'unemployment.team',
+      heading: 'Our team',
       name: 'unemployment.team',
       description: "unemployment.team is me and Artem. We named it that because we both quit regular jobs to do our own thing. We cover everything: design, development, deployment, support.",
       siteLabel: 'Visit team website',
