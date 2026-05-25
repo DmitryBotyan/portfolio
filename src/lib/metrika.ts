@@ -56,3 +56,6 @@ export function metrikaReachGoal(goal: string, params?: Record<string, unknown>)
   if (typeof window === 'undefined' || !window.ym) return
   window.ym(METRIKA_ID, 'reachGoal', goal, params)
 }
+
+/** Short alias for reachGoal — used across the app for funnel events. */
+export const goal = metrikaReachGoal

@@ -5,6 +5,7 @@ import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/sections/Footer'
 import { Button } from '@/components/retroui/Button'
 import { cn } from '@/lib/utils'
+import { goal } from '@/lib/metrika'
 import { useApp } from '@/contexts/AppContext'
 import { useSeo } from '@/hooks/useSeo'
 import { getPost, getPosts, SITE_URL, type BlogPost as BlogPostType } from '@/blog'
@@ -217,7 +218,10 @@ function PostView({ post }: { post: BlogPostType }) {
                   <Button
                     size="md"
                     className="whitespace-nowrap bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF]"
-                    onClick={() => { window.location.href = '/#calculator' }}
+                    onClick={() => {
+                      goal('cta_click', { source: 'blog-cta-calc', slug: post.slug })
+                      window.location.href = '/#calculator'
+                    }}
                   >
                     <Calculator size={15} />
                     {blog.ctaCalc}
@@ -226,6 +230,7 @@ function PostView({ post }: { post: BlogPostType }) {
                     href="https://t.me/unemployment_78"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => goal('telegram_click', { source: 'blog-cta', slug: post.slug })}
                     className="inline-flex items-center justify-center gap-2 font-head font-medium whitespace-nowrap bg-background text-foreground border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
                   >
                     <Send size={15} />

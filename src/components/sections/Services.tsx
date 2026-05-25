@@ -3,6 +3,7 @@ import { useApp } from '@/contexts/AppContext'
 import { useReveal } from '@/hooks/useReveal'
 import { Button } from '@/components/retroui/Button'
 import { cn } from '@/lib/utils'
+import { goal } from '@/lib/metrika'
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -108,7 +109,10 @@ export function Services() {
                     'w-full',
                     tier.popular && 'bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)]'
                   )}
-                  onClick={() => scrollTo('contact')}
+                  onClick={() => {
+                    goal('cta_click', { source: 'services-tier', tier: tier.id })
+                    scrollTo('contact')
+                  }}
                 >
                   {services.ctaPackage}
                   <ArrowRight size={14} />

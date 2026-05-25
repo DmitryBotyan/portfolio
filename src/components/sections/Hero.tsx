@@ -1,6 +1,7 @@
 import { Button } from '@/components/retroui/Button'
 import { ArrowDown } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
+import { goal } from '@/lib/metrika'
 
 export function Hero() {
   const { t } = useApp()
@@ -46,7 +47,10 @@ export function Hero() {
             size="lg"
             variant="default"
             className="bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_#0A0A0A] hover:shadow-[1px_1px_0px_0px_#0A0A0A]"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              goal('cta_click', { source: 'hero' })
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+            }}
           >
             {hero.buttons.contact}
           </Button>

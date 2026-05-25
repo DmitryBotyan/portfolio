@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Calculator } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { cn } from '@/lib/utils'
+import { goal } from '@/lib/metrika'
 
 export function FloatingCTA() {
   const { t } = useApp()
@@ -24,6 +25,7 @@ export function FloatingCTA() {
   }, [])
 
   const onClick = () => {
+    goal('cta_click', { source: 'floating' })
     document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })
   }
 

@@ -5,6 +5,7 @@ import { useReveal } from '@/hooks/useReveal'
 import { Button } from '@/components/retroui/Button'
 import { calculatorBasePrices } from '@/content'
 import { cn } from '@/lib/utils'
+import { goal } from '@/lib/metrika'
 
 function formatRub(n: number, lang: 'ru' | 'en') {
   return new Intl.NumberFormat(lang === 'ru' ? 'ru-RU' : 'en-US', {
@@ -49,6 +50,14 @@ export function Calculator() {
   }
 
   const goContact = () => {
+    goal('calculator_cta', {
+      type: typeId,
+      design: designId,
+      pages,
+      extras,
+      price_min: result[0],
+      price_max: result[1],
+    })
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 

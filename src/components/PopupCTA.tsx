@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { X, Calculator, Send, Sparkles } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { Button } from '@/components/retroui/Button'
+import { goal } from '@/lib/metrika'
 
 const STORAGE_KEY = 'popup-cta-dismissed'
 const SHOW_DELAY_MS = 15000
@@ -43,6 +44,7 @@ export function PopupCTA() {
 
   useEffect(() => {
     if (!open) return
+    goal('popup_open')
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') dismiss() }
     document.addEventListener('keydown', onKey)
     const prevOverflow = document.body.style.overflow
@@ -59,10 +61,16 @@ export function PopupCTA() {
   }
 
   const goCalculator = () => {
+    goal('cta_click', { source: 'popup-calc' })
     dismiss()
     setTimeout(() => {
       document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })
     }, 60)
+  }
+
+  const onTelegramClick = () => {
+    goal('telegram_click', { source: 'popup' })
+    dismiss()
   }
 
   if (!open) return null
@@ -118,7 +126,7 @@ export function PopupCTA() {
               href={hero.socials.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={dismiss}
+              onClick={onTelegramClick}
               className="w-full inline-flex items-center justify-center gap-2 font-head font-medium text-sm sm:text-base whitespace-nowrap bg-background text-foreground border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
             >
               <Send size={15} strokeWidth={2.4} />

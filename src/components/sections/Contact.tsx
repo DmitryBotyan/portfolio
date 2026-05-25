@@ -6,6 +6,7 @@ import { Send, Mail, Check } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { useLegal } from '@/components/Legal'
 import { getRecaptchaToken } from '@/hooks/useRecaptcha'
+import { goal } from '@/lib/metrika'
 
 const iconMap = {
   telegram: Send,
@@ -48,6 +49,7 @@ export function Contact() {
     e.preventDefault()
     if (!consent || status === 'sending') return
     setStatus('sending')
+    goal('form_submit_attempt')
     try {
       const token = await getRecaptchaToken('contact')
       const res = await fetch('/api/contact', {
@@ -57,11 +59,13 @@ export function Contact() {
       })
       if (!res.ok) throw new Error('Request failed')
       setStatus('sent')
+      goal('form_submit_success')
       setForm({ name: '', email: '', message: '' })
       setConsent(false)
       setTimeout(() => setStatus('idle'), 5000)
     } catch {
       setStatus('error')
+      goal('form_submit_error')
       setTimeout(() => setStatus('idle'), 6000)
     }
   }
@@ -188,6 +192,7 @@ export function Contact() {
                 <div className="flex-1 h-px bg-border" />
               </div>
               <a href={`mailto:${contact.email}`}
+                onClick={() => goal('email_click', { source: 'contact' })}
                 className="font-head text-lg md:text-xl font-black hover:text-muted-foreground transition-colors group flex items-center gap-2">
                 {contact.email}
               </a>
@@ -201,9 +206,14 @@ export function Contact() {
               <div className="space-y-3">
                 {contact.socials.map(({ label, href, icon }) => {
                   const Icon = iconMap[icon as keyof typeof iconMap]
+                  const onSocialClick = () => {
+                    if (icon === 'telegram') goal('telegram_click', { source: 'contact' })
+                    else if (icon === 'mail') goal('email_click', { source: 'contact' })
+                  }
                   return (
                     <a key={label} href={href}
                       target={href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer"
+                      onClick={onSocialClick}
                       className="flex items-center gap-3 group">
                       <span className="p-2 border-2 border-border shadow-[3px_3px_0px_0px_var(--border)] group-hover:shadow-none group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all">
                         <Icon size={16} />
