@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dbotyan.dev/sitemap.xml
+Sitemap: https://botyan.dev/sitemap.xml

@@ -23,7 +23,7 @@ export interface BlogPost {
   faq: BlogFaq[]
 }
 
-export const SITE_URL = 'https://dbotyan.dev'
+export const SITE_URL = 'https://botyan.dev'
 
 const ru: BlogPost[] = [
   {
