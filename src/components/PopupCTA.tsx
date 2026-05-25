@@ -106,11 +106,11 @@ export function PopupCTA() {
 
           <div className="space-y-3">
             <Button
-              size="lg"
-              className="w-full bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_#0A0A0A] hover:shadow-[1px_1px_0px_0px_#0A0A0A]"
+              size="md"
+              className="w-full text-sm sm:text-base whitespace-nowrap bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_#0A0A0A] hover:shadow-[1px_1px_0px_0px_#0A0A0A]"
               onClick={goCalculator}
             >
-              <Calculator size={16} strokeWidth={2.4} />
+              <Calculator size={15} strokeWidth={2.4} />
               {popup.ctaCalculate}
             </Button>
 
@@ -119,9 +119,9 @@ export function PopupCTA() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={dismiss}
-              className="w-full inline-flex items-center justify-center gap-2 font-head font-medium text-lg bg-background text-foreground border-2 border-border px-6 py-3 shadow-[3px_3px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+              className="w-full inline-flex items-center justify-center gap-2 font-head font-medium text-sm sm:text-base whitespace-nowrap bg-background text-foreground border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
             >
-              <Send size={16} strokeWidth={2.4} />
+              <Send size={15} strokeWidth={2.4} />
               {popup.ctaTelegram}
             </a>
           </div>

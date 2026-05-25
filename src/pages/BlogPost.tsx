@@ -216,7 +216,7 @@ function PostView({ post }: { post: BlogPostType }) {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     size="md"
-                    className="bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF]"
+                    className="whitespace-nowrap bg-accent text-accent-foreground border-accent shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF]"
                     onClick={() => { window.location.href = '/#calculator' }}
                   >
                     <Calculator size={15} />
@@ -226,7 +226,7 @@ function PostView({ post }: { post: BlogPostType }) {
                     href="https://t.me/unemployment_78"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 font-head font-medium bg-background text-foreground border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                    className="inline-flex items-center justify-center gap-2 font-head font-medium whitespace-nowrap bg-background text-foreground border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
                   >
                     <Send size={15} />
                     {blog.ctaContact}
