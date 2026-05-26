@@ -121,7 +121,7 @@ let count = 0
   const posts = blogPosts.ru
   const title = 'Блог о разработке сайтов и ботов | Дмитрий Ботян'
   const description =
-    'Статьи о ценах, технологиях и продвижении сайтов. Опыт из реальных проектов: лендинги, магазины, боты, интеграции.'
+    'Статьи о ценах, технологиях и продвижении сайтов в 2026 году. Опыт из реальных проектов: лендинги, магазины, Telegram-боты, интеграции, SEO и Core Web Vitals.'
   const canonical = `${SITE_URL}/blog`
   const jsonLd = {
     '@context': 'https://schema.org',

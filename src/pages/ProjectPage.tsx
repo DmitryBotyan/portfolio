@@ -189,34 +189,37 @@ function ProjectView({
 
             {/* Image gallery */}
             <section aria-label={labels.screen} className="mb-12">
-              <div className="border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] overflow-hidden bg-muted">
-                <div className="relative aspect-[16/10]">
+              <div className="relative border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] overflow-hidden bg-muted">
+                <div className="flex items-center justify-center min-h-[280px] sm:min-h-[360px] max-h-[78vh] py-4 px-4 sm:px-12">
                   <img
                     src={project.images[imgIndex]}
                     alt={`${detail.h1} - ${labels.screen} ${imgIndex + 1}`}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    className="block max-w-full max-h-[70vh] w-auto h-auto object-contain"
                   />
-                  {project.images.length > 1 && (
-                    <>
-                      <button
-                        onClick={() => showImage(imgIndex - 1)}
-                        aria-label={labels.prev}
-                        className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
-                      >
-                        <ChevronLeft size={18} />
-                      </button>
-                      <button
-                        onClick={() => showImage(imgIndex + 1)}
-                        aria-label={labels.next}
-                        className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
-                      >
-                        <ChevronRight size={18} />
-                      </button>
-                    </>
-                  )}
                 </div>
+                {project.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => showImage(imgIndex - 1)}
+                      aria-label={labels.prev}
+                      className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    <button
+                      onClick={() => showImage(imgIndex + 1)}
+                      aria-label={labels.next}
+                      className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 font-head text-[10px] font-bold uppercase tracking-widest bg-foreground text-background px-2 py-1 border-2 border-border">
+                      {imgIndex + 1} / {project.images.length}
+                    </div>
+                  </>
+                )}
               </div>
 
               {project.images.length > 1 && (
@@ -226,11 +229,11 @@ function ProjectView({
                       key={i}
                       onClick={() => showImage(i)}
                       aria-label={`${labels.screen} ${i + 1}`}
-                      className={`w-20 h-14 border-2 border-border overflow-hidden transition-all ${
+                      className={`w-20 h-14 border-2 border-border overflow-hidden bg-muted flex items-center justify-center transition-all ${
                         i === imgIndex ? 'shadow-[3px_3px_0px_0px_var(--accent)]' : 'opacity-60 hover:opacity-100'
                       }`}
                     >
-                      <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-top" />
+                      <img src={src} alt="" loading="lazy" className="max-w-full max-h-full object-contain" />
                     </button>
                   ))}
                 </div>
@@ -404,8 +407,8 @@ function ProjectView({
                     to={`/projects/${p.slug}`}
                     className="group flex flex-col border-2 border-border bg-card shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150"
                   >
-                    <div className="aspect-[16/10] border-b-2 border-border overflow-hidden bg-muted">
-                      <img src={p.images[0]} alt={p.title} loading="lazy" className="w-full h-full object-cover object-top" />
+                    <div className="aspect-[16/10] border-b-2 border-border overflow-hidden bg-muted flex items-center justify-center">
+                      <img src={p.images[0]} alt={p.title} loading="lazy" className="max-w-full max-h-full object-contain" />
                     </div>
                     <div className="p-4">
                       <h3 className="font-head text-base font-black leading-tight mb-1 group-hover:text-accent transition-colors">
