@@ -118,12 +118,21 @@ button, a, [role="button"] {
 /* Stagger - slide up */
 [data-stagger] > * { opacity: 0; transform: translateY(16px); }
 
-[data-stagger].revealed > *:nth-child(1) { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 0ms; }
-[data-stagger].revealed > *:nth-child(2) { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 50ms; }
-[data-stagger].revealed > *:nth-child(3) { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 100ms; }
-[data-stagger].revealed > *:nth-child(4) { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 150ms; }
-[data-stagger].revealed > *:nth-child(5) { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 200ms; }
-[data-stagger].revealed > *:nth-child(6) { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 250ms; }
+/* Fallback: any extra element animates with the last delay so nothing stays invisible */
+[data-stagger].revealed > * { animation: stagger-up 0.35s cubic-bezier(0.22,1,0.36,1) forwards 250ms; }
+
+[data-stagger].revealed > *:nth-child(1) { animation-delay: 0ms; }
+[data-stagger].revealed > *:nth-child(2) { animation-delay: 40ms; }
+[data-stagger].revealed > *:nth-child(3) { animation-delay: 80ms; }
+[data-stagger].revealed > *:nth-child(4) { animation-delay: 120ms; }
+[data-stagger].revealed > *:nth-child(5) { animation-delay: 160ms; }
+[data-stagger].revealed > *:nth-child(6) { animation-delay: 200ms; }
+[data-stagger].revealed > *:nth-child(7) { animation-delay: 240ms; }
+[data-stagger].revealed > *:nth-child(8) { animation-delay: 280ms; }
+[data-stagger].revealed > *:nth-child(9) { animation-delay: 320ms; }
+[data-stagger].revealed > *:nth-child(10) { animation-delay: 360ms; }
+[data-stagger].revealed > *:nth-child(11) { animation-delay: 400ms; }
+[data-stagger].revealed > *:nth-child(12) { animation-delay: 440ms; }
 
 /* Stagger - slide from left (Experience rows) */
 [data-stagger-left] > * { opacity: 0; transform: translateX(-20px); }
