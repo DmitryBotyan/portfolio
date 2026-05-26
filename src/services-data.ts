@@ -151,7 +151,7 @@ export const services: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['dreamyvoice', 'unemployment-team'],
+    relatedProjects: ['botyan-tg-bot', 'opengrok-bot', 'dreamyvoice'],
     faq: [
       {
         q: 'Сколько времени делается Telegram-бот?',

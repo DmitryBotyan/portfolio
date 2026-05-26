@@ -16,6 +16,12 @@ import ramki3 from './assets/projects/ramki-3.jpg'
 import dreamy1 from './assets/projects/dreamy-1.jpg'
 import dreamy2 from './assets/projects/dreamy-2.jpg'
 import dreamy3 from './assets/projects/dreamy-3.jpg'
+import botyanBot1 from './assets/projects/botyan-bot-1.png'
+import botyanBot2 from './assets/projects/botyan-bot-2.png'
+import botyanBot3 from './assets/projects/botyan-bot-3.png'
+import opengrok1 from './assets/projects/opengrok-1.png'
+import opengrok2 from './assets/projects/opengrok-2.png'
+import opengrok3 from './assets/projects/opengrok-3.png'
 
 const shared = {
   logo: 'DB',
@@ -42,6 +48,22 @@ const shared = {
   projects: [
     {
       number: '001',
+      slug: 'botyan-tg-bot',
+      title: 'botyan.dev bot',
+      stack: ['Python', 'aiogram', 'SQLite', 'systemd'],
+      live: 'https://t.me/botyan_dev_bot',
+      images: [botyanBot1, botyanBot2, botyanBot3],
+    },
+    {
+      number: '002',
+      slug: 'opengrok-bot',
+      title: 'OpenGrok',
+      stack: ['Python', 'aiogram', 'Grok API', 'Whisper'],
+      live: '#',
+      images: [opengrok1, opengrok2, opengrok3],
+    },
+    {
+      number: '003',
       slug: 'zotova-portfolio',
       title: 'Anastasiia Zotova - Portfolio',
       stack: ['React', 'TypeScript', 'Vite', 'CSS'],
@@ -49,7 +71,7 @@ const shared = {
       images: [zotova1, zotova2, zotova3],
     },
     {
-      number: '002',
+      number: '004',
       slug: 'dreamyvoice',
       title: 'DreamyVoice',
       stack: ['Next.js', 'TypeScript', 'Prisma', 'pnpm'],
@@ -57,7 +79,7 @@ const shared = {
       images: [dreamy1, dreamy2, dreamy3],
     },
     {
-      number: '003',
+      number: '005',
       slug: 'unemployment-team',
       title: 'unemployment.team',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
@@ -65,7 +87,7 @@ const shared = {
       images: [uteam1, uteam2, uteam3],
     },
     {
-      number: '004',
+      number: '006',
       slug: 'medequip',
       title: 'МедЭквип',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
@@ -74,7 +96,7 @@ const shared = {
       template: true,
     },
     {
-      number: '005',
+      number: '007',
       slug: 'ramki-magazine',
       title: 'Журнал РАМКИ',
       stack: ['WordPress', 'Elementor', 'PHP', 'Bun'],
@@ -82,7 +104,7 @@ const shared = {
       images: [ramki1, ramki2, ramki3],
     },
     {
-      number: '006',
+      number: '008',
       slug: 'ccc-holistic-medicine',
       title: 'Центр Целостности Человека',
       stack: ['WordPress', 'ACF', 'WooCommerce', 'PHP'],
@@ -175,12 +197,14 @@ export const content = {
       templateBadge: 'Шаблон',
       templateNote: 'Готовый шаблон, могу адаптировать под вашу компанию: контент, бренд, доменные страницы. Сроки и стоимость ниже, чем у проекта с нуля.',
       items: [
-        { ...shared.projects[0], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
-        { ...shared.projects[1], description: 'Платформа для команды аниме-озвучки. Каталог тайтлов, страницы релизов с плеером, избранное, рандом, админка для редакторов. Next.js, Prisma, PostgreSQL.' },
-        { ...shared.projects[2], description: 'Сайт нашей команды. Услуги, портфолио, блог, многошаговая форма заявки.' },
-        { ...shared.projects[3], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
-        { ...shared.projects[4], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
-        { ...shared.projects[5], description: 'Сайт центра холистической медицины. Кастомные типы записей и поля на ACF, WooCommerce-магазин товаров, многошаговая форма записи на приём, блог.' },
+        { ...shared.projects[0], description: 'Мой собственный Telegram-бот для услуг. Помогает посетителям выбрать услугу, рассчитать стоимость в формате диалога и оставить заявку. Python + aiogram, SQLite, развёрнут на VPS как systemd-сервис.' },
+        { ...shared.projects[1], description: 'AI-ассистент в Telegram с интеграцией Grok API от xAI. Автоматический поиск в интернете, анализ фото, распознавание голосовых сообщений, автогенерация названий тем разговоров.' },
+        { ...shared.projects[2], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
+        { ...shared.projects[3], description: 'Платформа для команды аниме-озвучки. Каталог тайтлов, страницы релизов с плеером, избранное, рандом, админка для редакторов. Next.js, Prisma, PostgreSQL.' },
+        { ...shared.projects[4], description: 'Сайт нашей команды. Услуги, портфолио, блог, многошаговая форма заявки.' },
+        { ...shared.projects[5], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
+        { ...shared.projects[6], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
+        { ...shared.projects[7], description: 'Сайт центра холистической медицины. Кастомные типы записей и поля на ACF, WooCommerce-магазин товаров, многошаговая форма записи на приём, блог.' },
       ],
     },
     team: {
@@ -589,12 +613,14 @@ export const content = {
       templateBadge: 'Template',
       templateNote: 'Ready-made template. I can adapt it to your company: content, branding, domain-specific pages. Cheaper and faster than building from scratch.',
       items: [
-        { ...shared.projects[0], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
-        { ...shared.projects[1], description: 'Platform for an anime dubbing team. Title catalog, release pages with player, favorites, random pick, editor admin panel. Next.js, Prisma, PostgreSQL.' },
-        { ...shared.projects[2], description: "Our team's website. Services, portfolio, blog, multi-step project request form." },
-        { ...shared.projects[3], description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
-        { ...shared.projects[4], description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
-        { ...shared.projects[5], description: 'Holistic medicine center website. Custom post types and fields via ACF, WooCommerce shop, multi-step booking form, blog.' },
+        { ...shared.projects[0], description: 'My own Telegram bot that sells my services. Helps visitors pick a service, estimate cost through a chat dialog and leave a request. Python + aiogram, SQLite, deployed on a VPS as a systemd service.' },
+        { ...shared.projects[1], description: 'AI assistant in Telegram with xAI Grok API integration. Automatic web search, image analysis, voice message recognition, auto-naming of conversation threads.' },
+        { ...shared.projects[2], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
+        { ...shared.projects[3], description: 'Platform for an anime dubbing team. Title catalog, release pages with player, favorites, random pick, editor admin panel. Next.js, Prisma, PostgreSQL.' },
+        { ...shared.projects[4], description: "Our team's website. Services, portfolio, blog, multi-step project request form." },
+        { ...shared.projects[5], description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
+        { ...shared.projects[6], description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
+        { ...shared.projects[7], description: 'Holistic medicine center website. Custom post types and fields via ACF, WooCommerce shop, multi-step booking form, blog.' },
       ],
     },
     team: {

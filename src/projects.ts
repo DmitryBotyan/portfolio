@@ -31,6 +31,94 @@ export interface ProjectDetail {
 }
 
 const en: Record<string, ProjectDetail> = {
+  'botyan-tg-bot': {
+    slug: 'botyan-tg-bot',
+    metaTitle: 'botyan.dev bot: Telegram lead-gen bot on Python + aiogram',
+    metaDescription:
+      "Developer's own Telegram bot that sells services 24/7: services menu, dialog-style cost calculator, cases, FAQ, lead capture. Python, aiogram, SQLite, systemd.",
+    keywords: 'telegram bot python, aiogram bot, lead generation bot, fsm bot calculator, sqlite telegram bot, systemd python bot, telegram bot for services',
+    h1: 'botyan.dev bot: my own lead-generation Telegram bot',
+    tagline: 'A bot that sells my services instead of me. Menu, calculator, cases, FAQ, lead capture',
+    category: 'Telegram bot · Lead generation',
+    year: '2026',
+    client: 'Own project (Dmitry Botyan)',
+    industry: 'Web development',
+    role: ['Architecture', 'Backend', 'Bot logic', 'Server deployment'],
+    intro: [
+      'A bot for botyan.dev that works as a 24/7 lead-generation channel: greets visitors, walks them through services and prices, runs a step-by-step cost calculator and collects requests.',
+    ],
+    sections: [
+      {
+        heading: 'What it does',
+        paragraphs: [
+          'Five sections via a reply keyboard: services with tier breakdowns, FSM-based cost calculator, portfolio cases, 10-item FAQ and a contact form. Submitted requests are saved to SQLite and instantly forwarded to my Telegram with full context.',
+        ],
+        list: [
+          'Inline service catalog with deep links to the website landings',
+          '3-step calculator with attached estimate that travels with the lead',
+          'Portfolio cases with live links',
+          'Paginated FAQ with 10 typical questions',
+          'Lead capture with instant Telegram notification',
+          'Linter-clean code, deploys with one rsync command',
+        ],
+      },
+      {
+        heading: 'Stack',
+        paragraphs: [
+          'Python 3.12 + aiogram 3 for the bot framework, aiosqlite for async DB access, python-dotenv for config. Hosted on a TimeWeb VPS in Russia as a systemd service with auto-restart.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Why a bot if there is already a website?', a: 'A bot covers users who prefer Telegram over web forms, which in Russia is a large share. It also runs 24/7 and replies instantly, while web forms feel more committal.' },
+      { q: 'What does a similar bot cost?', a: 'A bot like this with a database, FSM, menus and lead capture costs from 45 to 90 thousand rubles to build under contract. See the Telegram bots service page for tiers.' },
+      { q: 'Where does the bot live?', a: 'On the same VPS as the website, isolated as its own systemd service. Restarts automatically on failure, logs everything via journalctl.' },
+    ],
+  },
+  'opengrok-bot': {
+    slug: 'opengrok-bot',
+    metaTitle: 'OpenGrok: AI assistant in Telegram with Grok API integration',
+    metaDescription:
+      'Telegram bot with xAI Grok integration: live web search in answers, image analysis, voice message recognition, auto-named conversation threads. Python + aiogram.',
+    keywords: 'grok api telegram bot, xai grok bot, ai assistant telegram, telegram bot with web search, voice telegram bot, image analysis bot, ai integration',
+    h1: 'OpenGrok: AI assistant in Telegram on Grok API',
+    tagline: 'Bot with xAI Grok integration: web search, voice messages, image analysis, auto-named threads',
+    category: 'AI assistant · API integration',
+    year: '2025',
+    client: 'Own product',
+    industry: 'AI / Productivity',
+    role: ['Architecture', 'Backend', 'AI integration', 'Voice pipeline'],
+    intro: [
+      'A Telegram bot that wraps the xAI Grok API into a convenient daily assistant. Answers questions with automatic web search, accepts text, voice messages and images, and organises conversations into auto-named threads.',
+    ],
+    sections: [
+      {
+        heading: 'What it does',
+        paragraphs: [
+          'OpenGrok turns Telegram into a working AI workspace: ask a question and get an answer backed by live web search with source links; send a voice message and it transcribes and answers; send a photo for analysis; each new conversation becomes a separate thread that the bot renames based on the topic.',
+        ],
+        list: [
+          'Answers with automatic web search and citations',
+          'Deep research on complex topics',
+          'Image generation and editing',
+          'Voice message recognition (speech-to-text)',
+          'Image analysis from uploaded photos',
+          'Threads with auto-generated titles',
+        ],
+      },
+      {
+        heading: 'Stack',
+        paragraphs: [
+          'Python + aiogram for the Telegram side, xAI Grok API for the AI brain with built-in web search, speech-to-text for voice. Multi-thread architecture so each conversation has its own context and name.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Why Grok and not ChatGPT?', a: 'Grok has built-in real-time web search out of the box, fewer integrations needed. For users who want fresh answers (news, weather, prices), this matters.' },
+      { q: 'How do auto-named threads work?', a: 'After the first message in a new thread, the bot asks Grok to generate a short topic name based on the user query, then renames the thread via the Telegram API. Makes navigation in chat list much cleaner.' },
+      { q: 'Can a similar AI integration be built into my website or bot?', a: 'Yes, this is a common service. AI assistant on a site or in a bot costs from 30 to 120 thousand rubles depending on scenario. See the AI integrations article in the blog.' },
+    ],
+  },
   'zotova-portfolio': {
     slug: 'zotova-portfolio',
     metaTitle: 'Anastasiia Zotova portfolio: React + Vite case study',
@@ -288,6 +376,140 @@ const en: Record<string, ProjectDetail> = {
 }
 
 const ru: Record<string, ProjectDetail> = {
+  'botyan-tg-bot': {
+    slug: 'botyan-tg-bot',
+    metaTitle: 'botyan.dev bot: Telegram-бот для лидогенерации на Python + aiogram',
+    metaDescription:
+      'Собственный Telegram-бот разработчика, который продаёт услуги 24/7: меню услуг, калькулятор в формате диалога, кейсы, FAQ, приём заявок. Python, aiogram, SQLite, systemd.',
+    keywords:
+      'telegram бот python, aiogram бот, бот для лидогенерации, fsm калькулятор бот, sqlite телеграм бот, systemd python бот, телеграм бот для услуг, бот для заявок',
+    h1: 'botyan.dev bot: мой собственный бот для лидогенерации',
+    tagline:
+      'Бот, который продаёт мои услуги вместо меня. Меню, калькулятор стоимости, кейсы, FAQ, приём заявок прямо в Telegram',
+    category: 'Telegram-бот · Лидогенерация',
+    year: '2026',
+    client: 'Свой проект (Дмитрий Ботян)',
+    industry: 'Веб-разработка',
+    role: ['Архитектура', 'Backend', 'Логика бота', 'Развёртывание на сервере'],
+    intro: [
+      'Бот, который работает каналом приёма заявок 24/7 для botyan.dev. Встречает посетителей, проводит по услугам и ценам, помогает рассчитать стоимость в формате пошагового диалога и принимает заявки с уведомлением мне в личку.',
+      'Когда задумывал бот, основная цель была закрыть слабое место: «продаёт ботов, а сделанных ботов в портфолио нет». Заодно это полезный инструмент: люди, которым неудобно заполнять веб-формы, пишут в Telegram и сразу получают живую механику с калькулятором.',
+    ],
+    sections: [
+      {
+        heading: 'Что закрывает',
+        paragraphs: [
+          'Пять разделов через reply-клавиатуру: каталог услуг с разбивкой по тарифам, калькулятор стоимости на FSM, кейсы из портфолио, 10 ответов на частые вопросы и форма заявки. Полученные заявки сохраняются в SQLite и мгновенно прилетают мне в личный Telegram с полным контекстом: имя, username, ID пользователя, сообщение, а если до этого был расчёт в калькуляторе - то и параметры с вилкой цены.',
+        ],
+        list: [
+          'Каталог услуг с дип-линками на лендинги услуг на сайте',
+          'Калькулятор из 3 шагов с прицеплением расчёта к заявке',
+          'Кейсы портфолио с прямыми ссылками на демо',
+          'FAQ из 10 типовых вопросов с пагинацией',
+          'Приём заявок с мгновенным уведомлением в Telegram',
+          'Чистый код, деплой одной командой rsync',
+        ],
+      },
+      {
+        heading: 'Стек и архитектура',
+        paragraphs: [
+          'Python 3.12 + aiogram 3 как фреймворк для бота, aiosqlite для асинхронной работы с базой, python-dotenv для конфига. Хранение заявок и расчётов в SQLite - достаточно лёгко для одиночного бота, мигрировать на Postgres можно позже за полчаса.',
+          'Развёрнут на российском VPS как systemd-сервис с автоматическим перезапуском при падении. Логи через journalctl. Обновление кода - одной командой rsync с локального ноутбука, после которой systemd сам перезапускает сервис.',
+        ],
+      },
+      {
+        heading: 'Чему полезно научиться на этом проекте',
+        paragraphs: [
+          'Если хотите похожий бот для своего бизнеса, я разрабатываю их под ключ. Простой бот с приёмом заявок - от 15 тысяч рублей, бот с базой и админкой - от 45 тысяч. Подробности на странице услуги «Разработка Telegram-ботов».',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Зачем бот, если уже есть сайт?',
+        a: 'Бот закрывает аудиторию, которой удобнее общаться в Telegram, а не заполнять веб-форму. В России это значительная доля посетителей. Плюс бот доступен 24/7 и отвечает мгновенно, а веб-форма ощущается более обязывающей.',
+      },
+      {
+        q: 'Сколько стоит подобный бот?',
+        a: 'Бот такого уровня с базой данных, FSM-калькулятором, каталогом и приёмом заявок обходится в 45-90 тысяч рублей под ключ с договором. Подробнее на странице услуги.',
+      },
+      {
+        q: 'Где живёт бот?',
+        a: 'На том же VPS, что и сайт, изолированным systemd-сервисом. Автоматически перезапускается при падении, все логи через journalctl. Дешёво в обслуживании, надёжно.',
+      },
+      {
+        q: 'Можно ли посмотреть код?',
+        a: 'Бот написан под мои задачи, поэтому полностью открыть код пока не планирую. Но логику и архитектуру обсуждаю на бесплатном созвоне, если думаете заказать похожий.',
+      },
+    ],
+  },
+  'opengrok-bot': {
+    slug: 'opengrok-bot',
+    metaTitle: 'OpenGrok: AI-ассистент в Telegram с интеграцией Grok API',
+    metaDescription:
+      'Telegram-бот с интеграцией xAI Grok: ответы с автоматическим поиском в интернете, анализ изображений, распознавание голосовых, автогенерация названий тем. Python + aiogram.',
+    keywords:
+      'grok api telegram бот, xai grok бот, ai ассистент telegram, телеграм бот с поиском в интернете, голосовой бот telegram, бот с распознаванием голоса, ии бот для бизнеса, интеграция grok',
+    h1: 'OpenGrok: AI-ассистент в Telegram на Grok API',
+    tagline:
+      'Бот с интеграцией xAI Grok: автопоиск в интернете, голосовые сообщения, анализ фото, автоматические названия тем разговоров',
+    category: 'AI-ассистент · Интеграция API',
+    year: '2025',
+    client: 'Свой продукт',
+    industry: 'AI / Продуктивность',
+    role: ['Архитектура', 'Backend', 'AI-интеграция', 'Голосовой пайплайн'],
+    intro: [
+      'Telegram-бот, который оборачивает xAI Grok API в удобного ежедневного ассистента. Отвечает на вопросы с автоматическим поиском в интернете, принимает текст, голосовые сообщения и фотографии, организует разговоры в темы с автоматическими названиями.',
+      'Идея в том, чтобы превратить Telegram в полноценное рабочее пространство для AI: вместо открытия отдельного приложения вы пишете боту, как привычному собеседнику, и получаете развёрнутые ответы с источниками или результатами обработки фото и голоса.',
+    ],
+    sections: [
+      {
+        heading: 'Что умеет',
+        paragraphs: [
+          'OpenGrok закрывает несколько сценариев работы с AI в одном боте. Спросили текстом - получили ответ с автоматическим поиском в интернете и ссылками на источники. Отправили голосовое - бот распознал речь и ответил по делу. Скинули фото - он его проанализировал. Каждый новый разговор оформляется в отдельную тему, название которой бот придумывает сам на основе первого вопроса.',
+        ],
+        list: [
+          'Ответы на вопросы с автоматическим поиском в интернете',
+          'Глубокие исследования по сложным темам',
+          'Генерация и редактирование изображений',
+          'Анализ загруженных фотографий',
+          'Распознавание голосовых сообщений (speech-to-text)',
+          'Темы разговоров с автоматическими названиями',
+        ],
+      },
+      {
+        heading: 'Стек и архитектура',
+        paragraphs: [
+          'Python + aiogram для Telegram-стороны, xAI Grok API как AI-мозг со встроенным веб-поиском, speech-to-text для голосовых. Многопоточная архитектура с темами Telegram, чтобы каждый разговор имел свой контекст и название.',
+          'Автоматическое именование тем работает так: после первого сообщения в новой теме бот просит Grok сгенерировать короткий заголовок по запросу пользователя, потом переименовывает тему через Telegram Bot API. Из-за этого список чатов остаётся читаемым и навигация удобной.',
+        ],
+      },
+      {
+        heading: 'Где применимо',
+        paragraphs: [
+          'Похожую логику с AI-ассистентом я делаю на заказ: для сайтов, ботов поддержки, корпоративных порталов. Подключение Grok, ChatGPT или Claude к вашему продукту - от 30 до 120 тысяч рублей в зависимости от сценария. Подробнее в статье про AI-интеграции в блоге.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Почему Grok, а не ChatGPT или Claude?',
+        a: 'У Grok из коробки встроен поиск в интернете в реальном времени. Для пользователей, которым важны свежие ответы (новости, погода, цены, актуальные события), это критично. ChatGPT и Claude тоже умеют поиск, но через дополнительные интеграции.',
+      },
+      {
+        q: 'Как работают автоматические названия тем?',
+        a: 'После первого сообщения в новой теме бот просит Grok сгенерировать короткое название по запросу пользователя, затем переименовывает тему через Telegram Bot API. В итоге список чатов в Telegram выглядит структурно, навигация удобная.',
+      },
+      {
+        q: 'Можно ли подключить похожую AI-логику к моему сайту или боту?',
+        a: 'Да, это одна из услуг. AI-ассистент на сайте или в боте стоит от 30 до 120 тысяч рублей в зависимости от сценария: чат-консультант, умный поиск, генерация контента, обработка заявок. Подробнее в статье про AI-интеграции в блоге.',
+      },
+      {
+        q: 'Безопасно ли отправлять боту фото и голос?',
+        a: 'Данные обрабатываются через защищённые API, не хранятся дольше необходимого. Чувствительную информацию (документы, паспорта, медкарты) отправлять не стоит - это общее правило для любых AI-сервисов.',
+      },
+    ],
+  },
   'zotova-portfolio': {
     slug: 'zotova-portfolio',
     metaTitle: 'Портфолио бренд-менеджера: кейс на React + Vite',
