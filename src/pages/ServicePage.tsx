@@ -10,7 +10,6 @@ import { goal } from '@/lib/metrika'
 import { cn } from '@/lib/utils'
 import { SITE_URL } from '@/blog'
 import { getService, getAllServices, type ServiceDetail } from '@/services-data'
-import { getProjectDetail } from '@/projects'
 import { NotFound } from './NotFound'
 
 export function ServicePage() {
@@ -28,9 +27,6 @@ function ServiceView({ service }: { service: ServiceDetail }) {
   const canonical = `${SITE_URL}/services/${service.slug}`
   const authorName = lang === 'ru' ? 'Дмитрий Ботян' : 'Dmitry Botyan'
   const allServices = getAllServices().filter((s) => s.slug !== service.slug)
-  const relatedProjects = service.relatedProjects
-    .map((slug) => ({ slug, detail: getProjectDetail(lang, slug), project: t.projects.items.find((p: any) => p.slug === slug) }))
-    .filter((x) => x.detail && x.project) as Array<{ slug: string; detail: NonNullable<ReturnType<typeof getProjectDetail>>; project: any }>
 
   useSeo({
     title: `${service.metaTitle} | ${authorName}`,
@@ -290,36 +286,6 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                 ))}
               </ol>
             </section>
-
-            {/* Related projects */}
-            {relatedProjects.length > 0 && (
-              <section className="mb-14">
-                <h2 className="font-head text-xl md:text-2xl font-black tracking-tight mb-6">
-                  Реальные кейсы
-                </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                  {relatedProjects.map(({ slug, detail, project }) => (
-                    <Link
-                      key={slug}
-                      to={`/projects/${slug}`}
-                      className="group flex flex-col border-2 border-border bg-card shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150"
-                    >
-                      <div className="aspect-[16/10] border-b-2 border-border overflow-hidden bg-muted flex items-center justify-center">
-                        <img src={project.images[0]} alt={project.title} loading="lazy" className="max-w-full max-h-full object-contain" />
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-head text-sm font-black leading-tight mb-1 group-hover:text-accent transition-colors">
-                          {detail.h1}
-                        </h3>
-                        <p className="font-sans text-xs text-muted-foreground">
-                          {project.stack.slice(0, 3).join(' · ')}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            )}
 
             {/* FAQ */}
             <section className="mb-14 pt-10 border-t-2 border-border" aria-labelledby="service-faq">
