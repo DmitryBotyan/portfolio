@@ -202,14 +202,14 @@ function ProjectView({
                     <button
                       onClick={() => showImage(imgIndex - 1)}
                       aria-label={labels.prev}
-                      className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                      className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-px hover:translate-y-px transition-all"
                     >
                       <ChevronLeft size={18} />
                     </button>
                     <button
                       onClick={() => showImage(imgIndex + 1)}
                       aria-label={labels.next}
-                      className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                      className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-px hover:translate-y-px transition-all"
                     >
                       <ChevronRight size={18} />
                     </button>
@@ -274,7 +274,7 @@ function ProjectView({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={onLiveClick}
-                  className="inline-flex items-center justify-center gap-2 font-head font-bold whitespace-nowrap bg-accent text-accent-foreground border-2 border-border px-5 py-3 shadow-[4px_4px_0px_0px_var(--border)] hover:shadow-[2px_2px_0px_0px_var(--border)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                  className="inline-flex items-center justify-center gap-2 font-head font-bold whitespace-nowrap bg-accent text-accent-foreground border-2 border-border px-5 py-3 shadow-[4px_4px_0px_0px_var(--border)] hover:shadow-[3px_3px_0px_0px_var(--border)] hover:translate-x-px hover:translate-y-px transition-all"
                 >
                   {labels.live}
                   <ArrowUpRight size={16} />
