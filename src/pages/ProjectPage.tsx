@@ -202,14 +202,14 @@ function ProjectView({
                     <button
                       onClick={() => showImage(imgIndex - 1)}
                       aria-label={labels.prev}
-                      className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-px hover:translate-y-px transition-all"
+                      className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
                     >
                       <ChevronLeft size={18} />
                     </button>
                     <button
                       onClick={() => showImage(imgIndex + 1)}
                       aria-label={labels.next}
-                      className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-px hover:translate-y-px transition-all"
+                      className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 border-2 border-border bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_var(--border)] hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
                     >
                       <ChevronRight size={18} />
                     </button>
