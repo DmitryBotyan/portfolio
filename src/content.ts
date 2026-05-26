@@ -40,6 +40,7 @@ const shared = {
   projects: [
     {
       number: '001',
+      slug: 'zotova-portfolio',
       title: 'Anastasiia Zotova - Portfolio',
       stack: ['React', 'TypeScript', 'Vite', 'CSS'],
       live: 'https://byanaz.vercel.app',
@@ -47,6 +48,7 @@ const shared = {
     },
     {
       number: '002',
+      slug: 'dreamyvoice',
       title: 'DreamyVoice',
       stack: ['Next.js', 'TypeScript', 'Prisma', 'pnpm'],
       live: 'https://dreamyvoice.net',
@@ -54,6 +56,7 @@ const shared = {
     },
     {
       number: '003',
+      slug: 'unemployment-team',
       title: 'unemployment.team',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
       live: 'https://unemployment.team',
@@ -61,6 +64,7 @@ const shared = {
     },
     {
       number: '004',
+      slug: 'medequip',
       title: 'МедЭквип',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
       live: 'https://med-equipment-homepage.vercel.app',
@@ -69,6 +73,7 @@ const shared = {
     },
     {
       number: '005',
+      slug: 'ramki-magazine',
       title: 'Журнал РАМКИ',
       stack: ['WordPress', 'Elementor', 'PHP', 'Bun'],
       live: 'https://ramki-magazine.ru',
@@ -76,6 +81,7 @@ const shared = {
     },
     {
       number: '006',
+      slug: 'ccc-holistic-medicine',
       title: 'Центр Целостности Человека',
       stack: ['WordPress', 'ACF', 'WooCommerce', 'PHP'],
       live: '#',

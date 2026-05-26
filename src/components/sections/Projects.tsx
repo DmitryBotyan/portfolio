@@ -1,7 +1,9 @@
 import { ArrowUpRight, Sparkles } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useApp } from '@/contexts/AppContext'
 import { useReveal } from '@/hooks/useReveal'
+import { goal } from '@/lib/metrika'
 
 function ImageCarousel({ images, offset = 0, alt = '' }: { images: string[], offset?: number, alt?: string }) {
   const [current, setCurrent] = useState(0)
@@ -72,9 +74,11 @@ export function Projects() {
 
         <div ref={gridRef} data-stagger className="max-w-5xl grid md:grid-cols-2 gap-6">
           {projects.items.map((project, idx) => (
-            <div
+            <Link
               key={project.number}
-              className="group border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150"
+              to={`/projects/${(project as any).slug}`}
+              onClick={() => goal('project_card_click', { slug: (project as any).slug })}
+              className="group block border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150"
             >
               {/* Browser chrome + screen */}
               <div className="relative border-b-2 border-border overflow-hidden" style={{ aspectRatio: '16/9' }}>
@@ -152,6 +156,10 @@ export function Projects() {
                         title="Live"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          goal('project_live_click', { slug: (project as any).slug, source: 'card' })
+                        }}
                         className="p-1.5 border-2 border-border shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-muted-foreground hover:text-foreground"
                       >
                         <ArrowUpRight size={13} />
@@ -188,7 +196,7 @@ export function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

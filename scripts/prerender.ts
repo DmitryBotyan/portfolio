@@ -7,6 +7,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { blogPosts, SITE_URL } from '../src/blog'
+import { projectsDetails } from '../src/projects'
+import { content } from '../src/content'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -196,6 +198,65 @@ for (const post of blogPosts.ru) {
       canonical,
       ogType: 'article',
       keywords: post.keywords,
+      jsonLd,
+    })
+  )
+  count++
+}
+
+// ── /projects/<slug> ─────────────────────────────
+const projectItems = content.ru.projects.items as Array<{
+  slug: string
+  title: string
+}>
+
+for (const item of projectItems) {
+  const detail = projectsDetails.ru[item.slug]
+  if (!detail) continue
+  const canonical = `${SITE_URL}/projects/${detail.slug}`
+  const title = `${detail.metaTitle} | Дмитрий Ботян`
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: detail.h1,
+      headline: detail.h1,
+      description: detail.metaDescription,
+      url: canonical,
+      inLanguage: 'ru-RU',
+      author: { '@type': 'Person', name: 'Дмитрий Ботян', url: SITE_URL },
+      creator: { '@type': 'Person', name: 'Дмитрий Ботян', url: SITE_URL },
+      keywords: detail.keywords,
+      about: detail.industry,
+      dateCreated: detail.year,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Главная', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Проекты', item: `${SITE_URL}/#projects` },
+        { '@type': 'ListItem', position: 3, name: detail.h1, item: canonical },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: detail.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ]
+  writeRoute(
+    `projects/${detail.slug}`,
+    buildHtml({
+      title,
+      description: detail.metaDescription,
+      canonical,
+      ogType: 'article',
+      keywords: detail.keywords,
       jsonLd,
     })
   )
