@@ -15,9 +15,14 @@ export function Team() {
 
         {/* Heading */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-4">
-            <UnemploymentLogo size={52} className="text-foreground shrink-0" />
-            <span className="font-head text-2xl md:text-4xl font-black text-accent">{team.name}</span>
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 min-w-0">
+            <UnemploymentLogo
+              size={52}
+              className="text-foreground shrink-0 w-9 h-9 sm:w-11 sm:h-11 md:w-[52px] md:h-[52px]"
+            />
+            <span className="font-head text-lg sm:text-2xl md:text-4xl font-black text-accent break-all min-w-0">
+              {team.name}
+            </span>
           </div>
           <h2 className="font-head text-4xl md:text-6xl font-black tracking-tight">{team.heading}</h2>
         </div>
