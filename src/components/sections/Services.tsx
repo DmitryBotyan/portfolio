@@ -1,9 +1,11 @@
-import { Check, Star, ArrowRight } from 'lucide-react'
+import { Check, Star, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useApp } from '@/contexts/AppContext'
 import { useReveal } from '@/hooks/useReveal'
 import { Button } from '@/components/retroui/Button'
 import { cn } from '@/lib/utils'
 import { goal } from '@/lib/metrika'
+import { getAllServices } from '@/services-data'
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -120,6 +122,44 @@ export function Services() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Detail service pages (SEO landings) */}
+        <div className="mt-14 pt-12 border-t-2 border-border">
+          <div className="mb-6 flex items-end justify-between gap-4 flex-wrap">
+            <div>
+              <h3 className="font-head text-xl md:text-2xl font-black tracking-tight mb-1">
+                Подробнее по направлениям
+              </h3>
+              <p className="font-sans text-sm text-muted-foreground">
+                Отдельная страница для каждой основной услуги: цены, этапы, кейсы.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {getAllServices().map((svc) => (
+              <Link
+                key={svc.slug}
+                to={`/services/${svc.slug}`}
+                onClick={() => goal('service_card_click', { slug: svc.slug })}
+                className="group flex flex-col border-2 border-border bg-card shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150 p-5"
+              >
+                <span className="font-head text-[10px] font-bold uppercase tracking-widest text-accent mb-2">
+                  от {svc.priceFrom} 000 ₽
+                </span>
+                <h4 className="font-head text-base md:text-lg font-black leading-tight mb-2 group-hover:text-accent transition-colors">
+                  {svc.h1}
+                </h4>
+                <p className="font-sans text-[13px] text-muted-foreground leading-relaxed flex-1">
+                  {svc.tagline}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 font-head text-[10px] font-black uppercase tracking-widest group-hover:text-accent transition-colors">
+                  Подробнее
+                  <ArrowUpRight size={13} />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
 
       </div>

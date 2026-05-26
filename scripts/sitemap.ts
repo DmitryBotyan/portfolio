@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { blogPosts, SITE_URL } from '../src/blog'
 import { projectsDetails } from '../src/projects'
 import { content } from '../src/content'
+import { getAllServices } from '../src/services-data'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -34,6 +35,16 @@ for (const post of posts) {
     lastmod: post.date,
     changefreq: 'monthly',
     priority: 0.7,
+  })
+}
+
+// Service pages (high commercial intent, top priority)
+for (const svc of getAllServices()) {
+  entries.push({
+    loc: `${SITE_URL}/services/${svc.slug}`,
+    lastmod: today,
+    changefreq: 'monthly',
+    priority: 0.9,
   })
 }
 

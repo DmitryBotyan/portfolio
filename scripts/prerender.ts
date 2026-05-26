@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url'
 import { blogPosts, SITE_URL } from '../src/blog'
 import { projectsDetails } from '../src/projects'
 import { content } from '../src/content'
+import { getAllServices } from '../src/services-data'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -257,6 +258,75 @@ for (const item of projectItems) {
       canonical,
       ogType: 'article',
       keywords: detail.keywords,
+      jsonLd,
+    })
+  )
+  count++
+}
+
+// ── /services/<slug> ─────────────────────────────
+for (const svc of getAllServices()) {
+  const canonical = `${SITE_URL}/services/${svc.slug}`
+  const title = `${svc.metaTitle} | Дмитрий Ботян`
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      '@id': canonical,
+      name: svc.h1,
+      description: svc.metaDescription,
+      url: canonical,
+      provider: { '@type': 'Person', name: 'Дмитрий Ботян', url: SITE_URL },
+      areaServed: { '@type': 'Country', name: 'Россия' },
+      serviceType: svc.h1,
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'RUB',
+        lowPrice: svc.tiers[0].priceFrom * 1000,
+        highPrice: svc.tiers[svc.tiers.length - 1].priceTo * 1000,
+        offerCount: svc.tiers.length,
+        offers: svc.tiers.map((tier) => ({
+          '@type': 'Offer',
+          name: tier.name,
+          description: tier.description,
+          priceCurrency: 'RUB',
+          price: tier.priceFrom * 1000,
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            minPrice: tier.priceFrom * 1000,
+            maxPrice: tier.priceTo * 1000,
+            priceCurrency: 'RUB',
+          },
+        })),
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Главная', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Услуги', item: SITE_URL + '/#services' },
+        { '@type': 'ListItem', position: 3, name: svc.h1, item: canonical },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: svc.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ]
+  writeRoute(
+    `services/${svc.slug}`,
+    buildHtml({
+      title,
+      description: svc.metaDescription,
+      canonical,
+      ogType: 'website',
+      keywords: svc.keywords,
       jsonLd,
     })
   )
