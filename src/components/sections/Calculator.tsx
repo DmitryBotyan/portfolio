@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Calculator as CalcIcon, RotateCcw, ArrowRight, Check, Sparkles } from 'lucide-react'
+import { Calculator as CalcIcon, RotateCcw, ArrowRight, Check, Sparkles, Bot } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { useReveal } from '@/hooks/useReveal'
 import { Button } from '@/components/retroui/Button'
@@ -255,6 +255,21 @@ export function Calculator() {
               {calculator.ctaLabel}
               <ArrowRight size={15} />
             </Button>
+
+            <a
+              href={t.hero.socials.bot}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => goal('bot_click', { source: 'calculator' })}
+              className="block border-2 border-border bg-background hover:bg-accent hover:text-accent-foreground hover:border-accent shadow-[3px_3px_0px_0px_var(--border)] transition-colors p-3"
+            >
+              <div className="flex items-center gap-2.5">
+                <Bot size={14} strokeWidth={2.4} className="shrink-0" />
+                <span className="font-head text-[11px] font-black uppercase tracking-wider leading-tight">
+                  {t.bot.hint}
+                </span>
+              </div>
+            </a>
 
             <button
               type="button"

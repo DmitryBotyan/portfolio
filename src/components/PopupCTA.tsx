@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { X, Calculator, Send, Sparkles } from 'lucide-react'
+import { X, Calculator, Send, Sparkles, Bot } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { Button } from '@/components/retroui/Button'
 import { goal } from '@/lib/metrika'
@@ -131,6 +131,17 @@ export function PopupCTA() {
             >
               <Send size={15} strokeWidth={2.4} />
               {popup.ctaTelegram}
+            </a>
+
+            <a
+              href={hero.socials.bot}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => { goal('bot_click', { source: 'popup' }); dismiss() }}
+              className="w-full inline-flex items-center justify-center gap-2 font-head font-medium text-sm sm:text-base whitespace-nowrap bg-foreground text-background border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_var(--accent)] hover:shadow-[1px_1px_0px_0px_var(--accent)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+            >
+              <Bot size={15} strokeWidth={2.4} />
+              {popup.ctaBot}
             </a>
           </div>
         </div>

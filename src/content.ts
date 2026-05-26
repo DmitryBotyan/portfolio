@@ -36,6 +36,8 @@ const shared = {
   socials: {
     telegram: 'https://t.me/unemployment_78',
     email: 'dbotyangroup@gmail.com',
+    bot: 'https://t.me/botyan_dev_bot',
+    botUsername: 'botyan_dev_bot',
   },
   projects: [
     {
@@ -478,7 +480,17 @@ export const content = {
       description: 'Расскажу о сроках, ценах и помогу выбрать стек. Без обязательств.',
       ctaCalculate: 'Рассчитать стоимость',
       ctaTelegram: 'Написать в Telegram',
+      ctaBot: 'Попробовать бота',
       closeLabel: 'Закрыть',
+    },
+    bot: {
+      label: 'Telegram-бот',
+      heading: 'Попробуй мой бота',
+      description: 'Тот же калькулятор, услуги и кейсы прямо в Telegram. Удобно, если не любите формы.',
+      cta: 'Открыть бота',
+      contactLabel: 'Бот в Telegram',
+      contactValue: '@botyan_dev_bot',
+      hint: 'Также можете рассчитать в моём боте',
     },
     floatingCta: {
       label: 'Получить расчёт',
@@ -882,7 +894,17 @@ export const content = {
       description: "I'll walk you through timelines, pricing and help pick the stack. No commitment.",
       ctaCalculate: 'Estimate cost',
       ctaTelegram: 'Message on Telegram',
+      ctaBot: 'Try my bot',
       closeLabel: 'Close',
+    },
+    bot: {
+      label: 'Telegram bot',
+      heading: 'Try my bot',
+      description: 'The same calculator, services and cases right inside Telegram. Convenient if you do not like forms.',
+      cta: 'Open the bot',
+      contactLabel: 'Telegram bot',
+      contactValue: '@botyan_dev_bot',
+      hint: 'You can also estimate in my bot',
     },
     floatingCta: {
       label: 'Get a quote',

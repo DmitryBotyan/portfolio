@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/retroui/Button'
 import { Input } from '@/components/retroui/Input'
 import { Textarea } from '@/components/retroui/Textarea'
-import { Send, Mail, Check } from 'lucide-react'
+import { Send, Mail, Check, Bot, ArrowUpRight } from 'lucide-react'
 import { useApp } from '@/contexts/AppContext'
 import { useLegal } from '@/components/Legal'
 import { getRecaptchaToken } from '@/hooks/useRecaptcha'
@@ -224,6 +224,36 @@ export function Contact() {
                 })}
               </div>
             </div>
+
+            {/* Bot card */}
+            <a
+              href={t.hero.socials.bot}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => goal('bot_click', { source: 'contact' })}
+              className="group block border-2 border-border bg-foreground text-background shadow-[4px_4px_0px_0px_var(--accent)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--accent)] transition-all p-5"
+            >
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-9 h-9 border-2 border-background bg-accent text-accent-foreground flex items-center justify-center">
+                  <Bot size={16} strokeWidth={2.4} />
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-head text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
+                    {t.bot.label}
+                  </p>
+                  <p className="font-head text-base font-black leading-tight mb-2">
+                    {t.bot.contactValue}
+                  </p>
+                  <p className="font-sans text-xs leading-relaxed opacity-70 mb-3">
+                    {t.bot.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1 font-head text-[10px] font-black uppercase tracking-widest text-accent">
+                    {t.bot.cta}
+                    <ArrowUpRight size={12} />
+                  </span>
+                </div>
+              </div>
+            </a>
 
           </div>
         </div>
