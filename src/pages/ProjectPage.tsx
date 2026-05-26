@@ -66,6 +66,7 @@ function ProjectView({
           client: 'Клиент',
           industry: 'Отрасль',
           role: 'Моя роль',
+          coAuthors: 'Со-авторы',
           stack: 'Стек',
           live: 'Открыть сайт',
           intro: 'О проекте',
@@ -87,6 +88,7 @@ function ProjectView({
           client: 'Client',
           industry: 'Industry',
           role: 'My role',
+          coAuthors: 'Co-authors',
           stack: 'Stack',
           live: 'Open website',
           intro: 'About the project',
@@ -117,7 +119,14 @@ function ProjectView({
         url: canonical,
         image: project.images[0],
         inLanguage: lang === 'ru' ? 'ru-RU' : 'en-US',
-        author: { '@type': 'Person', name: authorName, url: SITE_URL },
+        author: [
+          { '@type': 'Person', name: authorName, url: SITE_URL },
+          ...(detail.coAuthors?.map((co) => ({
+            '@type': 'Person' as const,
+            name: co.name,
+            ...(co.url ? { url: co.url } : {}),
+          })) ?? []),
+        ],
         creator: { '@type': 'Person', name: authorName, url: SITE_URL },
         keywords: detail.keywords,
         about: detail.industry,
@@ -253,6 +262,32 @@ function ProjectView({
                   <dt className="font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">{labels.role}</dt>
                   <dd className="font-sans text-sm">{detail.role.join(', ')}</dd>
                 </div>
+                {detail.coAuthors && detail.coAuthors.length > 0 && (
+                  <div className="sm:col-span-2">
+                    <dt className="font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1.5">{labels.coAuthors}</dt>
+                    <dd className="font-sans text-sm flex flex-wrap gap-x-3 gap-y-1">
+                      {detail.coAuthors.map((co, i) => (
+                        <span key={i} className="inline-flex items-baseline gap-1">
+                          {co.url ? (
+                            <a
+                              href={co.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline underline-offset-2 decoration-from-font hover:text-accent transition-colors"
+                            >
+                              {co.name}
+                            </a>
+                          ) : (
+                            <span>{co.name}</span>
+                          )}
+                          {co.role && (
+                            <span className="text-muted-foreground text-xs">— {co.role}</span>
+                          )}
+                        </span>
+                      ))}
+                    </dd>
+                  </div>
+                )}
                 <div className="sm:col-span-2">
                   <dt className="font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2">{labels.stack}</dt>
                   <dd className="flex flex-wrap gap-1.5">

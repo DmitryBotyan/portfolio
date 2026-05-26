@@ -225,7 +225,14 @@ for (const item of projectItems) {
       description: detail.metaDescription,
       url: canonical,
       inLanguage: 'ru-RU',
-      author: { '@type': 'Person', name: 'Дмитрий Ботян', url: SITE_URL },
+      author: [
+        { '@type': 'Person', name: 'Дмитрий Ботян', url: SITE_URL },
+        ...(detail.coAuthors?.map((co) => ({
+          '@type': 'Person' as const,
+          name: co.name,
+          ...(co.url ? { url: co.url } : {}),
+        })) ?? []),
+      ],
       creator: { '@type': 'Person', name: 'Дмитрий Ботян', url: SITE_URL },
       keywords: detail.keywords,
       about: detail.industry,

@@ -9,6 +9,12 @@ export interface ProjectFaq {
   a: string
 }
 
+export interface ProjectCoAuthor {
+  name: string
+  url?: string
+  role?: string
+}
+
 export interface ProjectDetail {
   slug: string
   // SEO
@@ -23,6 +29,7 @@ export interface ProjectDetail {
   client: string
   industry: string
   role: string[]
+  coAuthors?: ProjectCoAuthor[]
   // Body
   intro: string[]
   sections: ProjectSection[]
@@ -88,6 +95,9 @@ const en: Record<string, ProjectDetail> = {
     client: 'Own product',
     industry: 'AI / Productivity',
     role: ['Architecture', 'Backend', 'AI integration', 'Voice pipeline'],
+    coAuthors: [
+      { name: 'Artem Todor', url: 'https://art0tod.com', role: 'Co-author' },
+    ],
     intro: [
       'A Telegram bot that wraps the xAI Grok API into a convenient daily assistant. Answers questions with automatic web search, accepts text, voice messages and images, and organises conversations into auto-named threads.',
     ],
@@ -458,6 +468,9 @@ const ru: Record<string, ProjectDetail> = {
     client: 'Свой продукт',
     industry: 'AI / Продуктивность',
     role: ['Архитектура', 'Backend', 'AI-интеграция', 'Голосовой пайплайн'],
+    coAuthors: [
+      { name: 'Артём Тодор', url: 'https://art0tod.com', role: 'Со-автор' },
+    ],
     intro: [
       'Telegram-бот, который оборачивает xAI Grok API в удобного ежедневного ассистента. Отвечает на вопросы с автоматическим поиском в интернете, принимает текст, голосовые сообщения и фотографии, организует разговоры в темы с автоматическими названиями.',
       'Идея в том, чтобы превратить Telegram в полноценное рабочее пространство для AI: вместо открытия отдельного приложения вы пишете боту, как привычному собеседнику, и получаете развёрнутые ответы с источниками или результатами обработки фото и голоса.',
