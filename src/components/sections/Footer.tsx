@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { MapPin } from 'lucide-react'
 import { UnemploymentLogo } from '@/components/icons/UnemploymentLogo'
 import { useApp } from '@/contexts/AppContext'
 import { useLegal } from '@/components/Legal'
@@ -26,6 +28,19 @@ export function Footer() {
           <p className="font-sans text-sm text-muted-foreground leading-relaxed">
             {t.hero.description}
           </p>
+
+          {/* City + contacts link (regional SEO signal) */}
+          <address className="not-italic flex items-center gap-2 font-sans text-sm text-muted-foreground">
+            <MapPin size={14} className="text-accent shrink-0" />
+            <span>
+              <span className="text-foreground font-medium">{footer.city}</span>
+              <span className="opacity-70">, {footer.cityNote}</span>
+              <span className="mx-2 opacity-40">·</span>
+              <Link to="/contacts" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                {footer.contactsLink}
+              </Link>
+            </span>
+          </address>
         </div>
 
         <a

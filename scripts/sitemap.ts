@@ -23,6 +23,7 @@ const today = new Date().toISOString().slice(0, 10)
 const entries: Entry[] = [
   { loc: `${SITE_URL}/`, lastmod: today, changefreq: 'weekly', priority: 1.0 },
   { loc: `${SITE_URL}/blog`, lastmod: today, changefreq: 'weekly', priority: 0.8 },
+  { loc: `${SITE_URL}/contacts`, lastmod: today, changefreq: 'monthly', priority: 0.8 },
 ]
 
 // Blog posts (sorted by date desc)

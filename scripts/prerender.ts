@@ -263,6 +263,73 @@ for (const item of projectItems) {
   count++
 }
 
+// ── /contacts ────────────────────────────────────
+{
+  const canonical = `${SITE_URL}/contacts`
+  const title = 'Контакты: разработчик сайтов и Telegram-ботов в Санкт-Петербурге | Дмитрий Ботян'
+  const description =
+    'Дмитрий Ботян, веб-разработчик из Санкт-Петербурга. Разработка сайтов, интернет-магазинов и Telegram-ботов по всей России. Email, Telegram, договор, гарантия.'
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      '@id': canonical,
+      url: canonical,
+      name: 'Контакты разработчика',
+      inLanguage: 'ru-RU',
+      about: {
+        '@type': 'Person',
+        name: 'Дмитрий Ботян',
+        jobTitle: 'Веб-разработчик',
+        url: SITE_URL,
+        email: 'dbotyangroup@gmail.com',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Санкт-Петербург',
+          addressRegion: 'Санкт-Петербург',
+          addressCountry: 'RU',
+        },
+        areaServed: [
+          { '@type': 'Country', name: 'Россия' },
+          { '@type': 'City', name: 'Санкт-Петербург' },
+          { '@type': 'City', name: 'Москва' },
+        ],
+        sameAs: ['https://t.me/unemployment_78'],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'клиентская поддержка',
+            email: 'dbotyangroup@gmail.com',
+            areaServed: 'RU',
+            availableLanguage: ['Russian', 'English'],
+          },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Главная', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Контакты', item: canonical },
+      ],
+    },
+  ]
+  writeRoute(
+    'contacts',
+    buildHtml({
+      title,
+      description,
+      canonical,
+      ogType: 'website',
+      keywords:
+        'разработчик сайтов санкт-петербург, веб-разработчик спб, разработка сайтов спб, заказать сайт санкт-петербург, программист санкт-петербург, telegram бот разработка спб, контакты разработчика',
+      jsonLd,
+    })
+  )
+  count++
+}
+
 // ── 404 page (real status returned by nginx via try_files chain) ──
 if (!existsSync(join(DIST, '404.html'))) {
   writeFileSync(

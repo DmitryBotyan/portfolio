@@ -490,6 +490,9 @@ export const content = {
       role: 'web разработчик',
       builtWith: 'React + Vite + RetroUI',
       links: socialLinks,
+      city: 'Санкт-Петербург',
+      cityNote: 'удалённо по всей России',
+      contactsLink: 'Контакты',
       legalLinks: {
         privacy: 'Политика конфиденциальности',
         terms: 'Пользовательское соглашение',
@@ -891,6 +894,9 @@ export const content = {
       role: 'web developer',
       builtWith: 'React + Vite + RetroUI',
       links: socialLinks,
+      city: 'Saint Petersburg',
+      cityNote: 'remote across Russia',
+      contactsLink: 'Contacts',
       legalHeading: 'Legal',
       legalLinks: {
         privacy: 'Privacy Policy',

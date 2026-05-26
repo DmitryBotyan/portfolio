@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://botyan.dev/contacts</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://botyan.dev/blog/ai-integracii-v-sajt-2026</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>

@@ -10,6 +10,7 @@ import App from './App.tsx'
 import { BlogIndex } from './pages/BlogIndex.tsx'
 import { BlogPost } from './pages/BlogPost.tsx'
 import { ProjectPage } from './pages/ProjectPage.tsx'
+import { ContactsPage } from './pages/Contacts.tsx'
 import { NotFound } from './pages/NotFound.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/projects/:slug" element={<ProjectPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />
