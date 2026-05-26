@@ -6,6 +6,7 @@ import { AppProvider } from '@/contexts/AppContext'
 import { LegalProvider } from '@/components/Legal'
 import { CookieBanner } from '@/components/CookieBanner'
 import { MetrikaTracker } from '@/components/MetrikaTracker'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import App from './App.tsx'
 import { BlogIndex } from './pages/BlogIndex.tsx'
 import { BlogPost } from './pages/BlogPost.tsx'
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <AppProvider>
         <LegalProvider>
+          <ScrollToTop />
           <MetrikaTracker />
           <Routes>
             <Route path="/" element={<App />} />
