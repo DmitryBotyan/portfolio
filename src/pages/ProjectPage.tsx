@@ -189,16 +189,14 @@ function ProjectView({
 
             {/* Image gallery */}
             <section aria-label={labels.screen} className="mb-12">
-              <div className="relative border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] overflow-hidden bg-muted">
-                <div className="flex items-center justify-center min-h-[280px] sm:min-h-[360px] max-h-[78vh] py-4 px-4 sm:px-12">
-                  <img
-                    src={project.images[imgIndex]}
-                    alt={`${detail.h1} - ${labels.screen} ${imgIndex + 1}`}
-                    loading="lazy"
-                    decoding="async"
-                    className="block max-w-full max-h-[70vh] w-auto h-auto object-contain"
-                  />
-                </div>
+              <div className="relative inline-block border-2 border-border shadow-[4px_4px_0px_0px_var(--border)] overflow-hidden bg-muted max-w-full">
+                <img
+                  src={project.images[imgIndex]}
+                  alt={`${detail.h1} - ${labels.screen} ${imgIndex + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="block max-w-full max-h-[78vh] w-auto h-auto"
+                />
                 {project.images.length > 1 && (
                   <>
                     <button
