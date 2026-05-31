@@ -117,6 +117,66 @@ function writeRoute(routePath: string, html: string) {
 
 let count = 0
 
+// ── Home (/) ──────────────────────────────────
+// Главный FAQ остаётся только на главной, чтобы избежать дублей FAQPage
+// в prerendered HTML других страниц (Google ругается на 18 страниц с дубликатом поля).
+{
+  const homeFaq = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${SITE_URL}/#faq`,
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Сколько времени занимает разработка сайта?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Зависит от задачи. Лендинг делаю за 1-2 недели. Полноценное приложение от месяца и больше. В начале всегда говорю реальные сроки, не занижаю.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Работаете с дизайном или только с кодом?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Могу взять готовый дизайн из Figma или придумать сам. Понимаю как должно выглядеть, так что просто вёрстки не будет.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Как вы берёте оплату?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Обычно 50% в начале, 50% по итогу. Для длинных проектов помесячно. Работаю официально, договор оформляю.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Как вы общаетесь в процессе работы?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Через Telegram или почту. Раз в несколько дней пишу что сделано, показываю промежуточный результат. Не пропадаю.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Что происходит после сдачи проекта?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'После сдачи есть период поддержки. Если что-то всплывёт, пофикшу. Могу помочь с хостингом и документацией.',
+        },
+      },
+    ],
+  }
+  // Не пересоздаём весь head, просто добавляем JSON-LD в существующий dist/index.html.
+  const homeHtmlPath = join(DIST, 'index.html')
+  let homeHtml = readFileSync(homeHtmlPath, 'utf8')
+  const scriptTag = `<script type="application/ld+json">${JSON.stringify(homeFaq)}</script>\n  </head>`
+  homeHtml = homeHtml.replace('</head>', scriptTag)
+  writeFileSync(homeHtmlPath, homeHtml, 'utf8')
+  count++
+}
+
 // ── /blog index ──────────────────────────────
 {
   const posts = blogPosts.ru
