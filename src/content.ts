@@ -77,7 +77,7 @@ const shared = {
       number: '004',
       slug: 'aurum-legal',
       title: 'Аурум · шаблон для юридической компании',
-      stack: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'Tailwind v4'],
+      stack: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'Tailwind v4', 'Vercel'],
       live: 'https://lawyer-site-gamma.vercel.app',
       images: [aurum1, aurum2, aurum3],
       template: true,
