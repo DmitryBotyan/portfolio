@@ -129,6 +129,48 @@ const en: Record<string, ProjectDetail> = {
       { q: 'Can a similar AI integration be built into my website or bot?', a: 'Yes, this is a common service. AI assistant on a site or in a bot costs from 30 to 120 thousand rubles depending on scenario. See the AI integrations article in the blog.' },
     ],
   },
+  'travelmap': {
+    slug: 'travelmap',
+    metaTitle: 'TravelMap: interactive travel map with React + Supabase',
+    metaDescription:
+      'Interactive travel map with social mechanics: pins, reviews, collections, routes, feed. React + Vite + Tailwind v4, Supabase, MapLibre GL, real-time updates.',
+    keywords: 'react map app, supabase real-time, maplibre gl, social map app, travel app react, vite supabase project',
+    h1: 'TravelMap: an interactive travel map with social mechanics',
+    tagline: 'Halfway between a map and a social network for people who like to travel',
+    category: 'Web app · Map · Real-time',
+    year: '2026',
+    client: 'Own product',
+    industry: 'Travel / Social',
+    role: ['Architecture', 'Frontend', 'Map integration', 'Realtime'],
+    intro: [
+      'TravelMap is an interactive travel map where users drop pins on places, share impressions and follow trips of others. Halfway between a map and a social network for people who like to travel.',
+    ],
+    sections: [
+      {
+        heading: 'What it does',
+        paragraphs: [
+          'Users add pins to the map, write reviews, build place collections and turn trips into routes. There is a feed, profiles, likes, comments and a wishlist.',
+        ],
+      },
+      {
+        heading: 'Stack',
+        paragraphs: [
+          'React + Vite + Tailwind CSS v4 on the frontend, Supabase for database and auth, MapLibre GL for map rendering. Auth via email, Google and GitHub. Real-time updates over Supabase Realtime.',
+        ],
+      },
+      {
+        heading: 'Tricky part',
+        paragraphs: [
+          'The key challenge was the map architecture: real-time subscriptions cannot be duplicated in child components, otherwise you get channel conflicts and a white screen. Solved with a single hook in the root map component, passing callbacks down.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Why Supabase and not a custom backend?', a: 'Supabase ships a ready stack: Postgres, auth, real-time and storage in one service. For a side-project of this scale it removes weeks of backend boilerplate.' },
+      { q: 'Why MapLibre instead of Google Maps?', a: 'MapLibre is open-source, no API fees and full control over styles. Vector tiles come from a provider, no Google branding constraints.' },
+      { q: 'Can a similar app be built for my project?', a: 'Yes, this stack fits any geo-based product (delivery tracking, store locators, real estate, travel platforms). From 200 thousand rubles depending on scope.' },
+    ],
+  },
   'aurum-legal': {
     slug: 'aurum-legal',
     metaTitle: 'Aurum: ready Next.js 16 template for a law firm website',
@@ -568,6 +610,81 @@ const ru: Record<string, ProjectDetail> = {
       {
         q: 'Безопасно ли отправлять боту фото и голос?',
         a: 'Данные обрабатываются через защищённые API, не хранятся дольше необходимого. Чувствительную информацию (документы, паспорта, медкарты) отправлять не стоит - это общее правило для любых AI-сервисов.',
+      },
+    ],
+  },
+  'travelmap': {
+    slug: 'travelmap',
+    metaTitle: 'TravelMap: интерактивная карта путешествий на React + Supabase',
+    metaDescription:
+      'Интерактивная карта путешествий с социальной механикой: булавки, отзывы, коллекции, маршруты, лента. React + Vite + Tailwind v4, Supabase, MapLibre GL, real-time обновления.',
+    keywords:
+      'карта путешествий react, supabase real-time приложение, maplibre gl кейс, социальная карта react, travel app, react карта проект, vite supabase, real-time подписки supabase',
+    h1: 'TravelMap: интерактивная карта путешествий с социальной механикой',
+    tagline:
+      'Что-то среднее между картой и социальной сетью для тех, кто любит путешествовать',
+    category: 'Веб-приложение · Карта · Real-time',
+    year: '2026',
+    client: 'Свой продукт',
+    industry: 'Путешествия / Социальные сети',
+    role: ['Архитектура', 'Frontend', 'Интеграция карты', 'Realtime'],
+    intro: [
+      'TravelMap это интерактивная карта путешествий, где можно отмечать места, делиться впечатлениями и следить за поездками других пользователей. Что-то среднее между картой и социальной сетью для тех, кто любит путешествовать.',
+      'Пользователи добавляют булавки на карту, пишут отзывы, собирают коллекции мест и создают маршруты из своих поездок. Есть лента, профили, лайки, комментарии и список желаний.',
+    ],
+    sections: [
+      {
+        heading: 'Что внутри',
+        paragraphs: [
+          'Карта мира с булавками от других путешественников и фильтрами по странам, категориям и пользователям. У каждого места своя страница с отзывами, фото и метаданными. Профиль пользователя со статистикой поездок и списком стран. Лента с активностью тех, на кого подписан. Вишлист, куда складываешь места для будущих поездок.',
+        ],
+        list: [
+          'Карта с булавками и кластеризацией для быстрого рендера',
+          'Добавление места: координаты, название, страна, фото, категория, дата',
+          'Лента с активностью подписок и лайками',
+          'Поиск по местам и пользователям с фильтрами',
+          'Вишлист и личные коллекции мест',
+          'Авторизация через email, Google и GitHub',
+        ],
+      },
+      {
+        heading: 'Стек',
+        paragraphs: [
+          'React + Vite + Tailwind CSS v4 на фронте, Supabase для базы данных и аутентификации, MapLibre GL для рендеринга карты. Авторизация через email, Google и GitHub. Real-time обновления через Supabase Realtime: новые места и активность подписок появляются в ленте без перезагрузки.',
+        ],
+        list: [
+          'React 19 + TypeScript + Vite 7',
+          'Tailwind CSS v4 для стилей',
+          'Supabase: Postgres, Auth, Storage, Realtime',
+          'MapLibre GL для интерактивной карты',
+          'react-router-dom для роутинга',
+          'OAuth через Google и GitHub из коробки Supabase Auth',
+        ],
+      },
+      {
+        heading: 'Самая интересная задача',
+        paragraphs: [
+          'Ключевая сложность была в архитектуре работы с картой: real-time подписки нельзя дублировать в дочерних компонентах, иначе получаешь конфликт каналов и белый экран. Решил через единственный хук в корневом компоненте карты с передачей коллбэков вниз.',
+          'Это типичная история для real-time систем: легко не заметить, что подписка на канал создаётся в каждом ререндере дочернего компонента, и в итоге Supabase Realtime получает десятки конфликтующих подключений. После выноса хука наверх и проброса колбэков карта работает стабильно даже при 200+ булавках на экране.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Почему Supabase, а не свой бэкенд?',
+        a: 'Supabase даёт готовый стек: PostgreSQL, авторизация, real-time и хранилище файлов в одном сервисе. Для пет-проекта или MVP это снимает недели работы над бекендом, можно сразу фокусироваться на фронте и продуктовых фичах.',
+      },
+      {
+        q: 'Почему MapLibre, а не Google Maps?',
+        a: 'MapLibre это open-source форк Mapbox GL без платы за API и с полным контролем над стилями. Тайлы беру у векторного провайдера, нет ограничений Google по брендингу. Для активной карты с тысячами просмотров это в разы дешевле.',
+      },
+      {
+        q: 'Можно ли построить похожее приложение для моего проекта?',
+        a: 'Да, такой стек подойдёт для любого гео-продукта: трекинг доставки, локаторы магазинов, недвижимость, тревел-платформы. Разработка от 200 тысяч рублей в зависимости от объёма функционала.',
+      },
+      {
+        q: 'Как масштабируется Supabase Realtime?',
+        a: 'Базовый план держит десятки тысяч одновременных подключений. Для большего трафика есть платные тарифы и self-hosted развёртывание. Для приложения уровня TravelMap бесплатного плана хватает с запасом.',
       },
     ],
   },

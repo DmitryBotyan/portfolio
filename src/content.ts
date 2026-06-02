@@ -25,6 +25,9 @@ import opengrok3 from './assets/projects/opengrok-3.png'
 import aurum1 from './assets/projects/aurum-1.jpg'
 import aurum2 from './assets/projects/aurum-2.jpg'
 import aurum3 from './assets/projects/aurum-3.jpg'
+import travelmap1 from './assets/projects/travelmap-1.jpg'
+import travelmap2 from './assets/projects/travelmap-2.jpg'
+import travelmap3 from './assets/projects/travelmap-3.jpg'
 
 const shared = {
   logo: 'DB',
@@ -109,6 +112,14 @@ const shared = {
     },
     {
       number: '008',
+      slug: 'travelmap',
+      title: 'TravelMap',
+      stack: ['React', 'TypeScript', 'Vite', 'Supabase', 'MapLibre GL'],
+      live: 'https://travel-map-ochre-one.vercel.app',
+      images: [travelmap1, travelmap2, travelmap3],
+    },
+    {
+      number: '009',
       slug: 'ramki-magazine',
       title: 'Журнал РАМКИ',
       stack: ['WordPress', 'Elementor', 'PHP', 'Bun'],
@@ -116,7 +127,7 @@ const shared = {
       images: [ramki1, ramki2, ramki3],
     },
     {
-      number: '009',
+      number: '010',
       slug: 'ccc-holistic-medicine',
       title: 'Центр Целостности Человека',
       stack: ['WordPress', 'ACF', 'WooCommerce', 'PHP'],
@@ -216,8 +227,9 @@ export const content = {
         { ...shared.projects[4], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
         { ...shared.projects[5], description: 'Сайт нашей команды. Услуги, портфолио, блог, многошаговая форма заявки.' },
         { ...shared.projects[6], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
-        { ...shared.projects[7], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
-        { ...shared.projects[8], description: 'Сайт центра холистической медицины. Кастомные типы записей и поля на ACF, WooCommerce-магазин товаров, многошаговая форма записи на приём, блог.' },
+        { ...shared.projects[7], description: 'Интерактивная карта путешествий с социальной механикой. Пользователи отмечают места, пишут отзывы, собирают коллекции и следят за поездками других. React, Supabase, MapLibre GL, real-time обновления.' },
+        { ...shared.projects[8], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
+        { ...shared.projects[9], description: 'Сайт центра холистической медицины. Кастомные типы записей и поля на ACF, WooCommerce-магазин товаров, многошаговая форма записи на приём, блог.' },
       ],
     },
     team: {
@@ -633,8 +645,9 @@ export const content = {
         { ...shared.projects[4], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
         { ...shared.projects[5], description: "Our team's website. Services, portfolio, blog, multi-step project request form." },
         { ...shared.projects[6], description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
-        { ...shared.projects[7], description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
-        { ...shared.projects[8], description: 'Holistic medicine center website. Custom post types and fields via ACF, WooCommerce shop, multi-step booking form, blog.' },
+        { ...shared.projects[7], description: 'Interactive travel map with social mechanics. Users drop pins, leave reviews, build collections and follow others. React, Supabase, MapLibre GL, real-time updates.' },
+        { ...shared.projects[8], description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
+        { ...shared.projects[9], description: 'Holistic medicine center website. Custom post types and fields via ACF, WooCommerce shop, multi-step booking form, blog.' },
       ],
     },
     team: {
