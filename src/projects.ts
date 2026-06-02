@@ -129,6 +129,54 @@ const en: Record<string, ProjectDetail> = {
       { q: 'Can a similar AI integration be built into my website or bot?', a: 'Yes, this is a common service. AI assistant on a site or in a bot costs from 30 to 120 thousand rubles depending on scenario. See the AI integrations article in the blog.' },
     ],
   },
+  'aurum-legal': {
+    slug: 'aurum-legal',
+    metaTitle: 'Aurum: ready Next.js 16 template for a law firm website',
+    metaDescription:
+      'Ready website template for a law firm on Next.js 16, shadcn/ui and Tailwind v4. Dark black-and-gold theme, 8 pages, animated counters. Adapt to your brand in 2-3 weeks.',
+    keywords: 'law firm website template, next.js law firm template, lawyer website template, shadcn law template, dark theme legal website, attorney website template',
+    h1: 'Aurum: ready website template for a law firm',
+    tagline: 'Next.js 16 + shadcn/ui template with a dark black-and-gold theme. I adapt it to the client brand in 2-3 weeks',
+    category: 'Ready template · Law firm',
+    year: '2026',
+    client: 'Own product (template for adaptation)',
+    industry: 'Legal services',
+    role: ['Design', 'Frontend', 'Architecture', 'Deploy'],
+    intro: [
+      'Aurum is a ready website template for a law firm, attorney office or solo lawyer. Built on Next.js 16 with App Router, Tailwind CSS v4 and shadcn/ui. Runs with Bun in a single command.',
+    ],
+    sections: [
+      {
+        heading: 'Design',
+        paragraphs: [
+          'A dark theme with a black-and-gold palette. The Playfair Display + Manrope font pair sets the right mood: solid, no flash. Cormorant Garamond is used for stat counters with old-style numerals.',
+        ],
+      },
+      {
+        heading: 'What is in the template',
+        paragraphs: [
+          '8 fully built pages: home, services catalog, single practice page, about, team, blog (list + article), contacts, custom 404. The home page has a full-height hero, animated stat counters (trigger on scroll), practice grid, advantages, process, team, testimonials, client quote and a contact form.',
+        ],
+        list: [
+          'Static site generation for top speed and SEO',
+          'Contact form ready to wire into any API or CRM',
+          'Mobile tested from 320px, team lawyers swipe horizontally',
+          'Gold grain on hero made via inline SVG filter, no external assets',
+        ],
+      },
+      {
+        heading: 'For whom',
+        paragraphs: [
+          'Suits law firms, attorney offices, tax consultants and solo lawyers. All texts and data are edited in two files: lib/site.ts and lib/content.ts.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'How fast can the template be adapted to my brand?', a: 'Adaptation takes 2-3 weeks: I replace texts, colors, typography accents, logo, contacts, integrate forms with your CRM. From 70 000 ₽ depending on customization scope.' },
+      { q: 'Can I see the template live?', a: 'Yes, demo at https://lawyer-site-gamma.vercel.app - full live site with all 8 pages.' },
+      { q: 'Is the template sold separately?', a: 'No, I adapt it myself for a specific client and hand over a working site. This guarantees correct setup and deploy.' },
+    ],
+  },
   'zotova-portfolio': {
     slug: 'zotova-portfolio',
     metaTitle: 'Anastasiia Zotova portfolio: React + Vite case study',
@@ -520,6 +568,93 @@ const ru: Record<string, ProjectDetail> = {
       {
         q: 'Безопасно ли отправлять боту фото и голос?',
         a: 'Данные обрабатываются через защищённые API, не хранятся дольше необходимого. Чувствительную информацию (документы, паспорта, медкарты) отправлять не стоит - это общее правило для любых AI-сервисов.',
+      },
+    ],
+  },
+  'aurum-legal': {
+    slug: 'aurum-legal',
+    metaTitle: 'Аурум: готовый шаблон сайта для юридической компании на Next.js 16',
+    metaDescription:
+      'Готовый шаблон сайта для юридической фирмы на Next.js 16, shadcn/ui и Tailwind v4. Тёмная чёрно-золотая тема, 8 страниц, анимированные счётчики. Адаптация под клиента от 70 000 ₽.',
+    keywords:
+      'шаблон сайта юридической компании, шаблон сайта юриста, шаблон сайта адвокатского бюро, готовый сайт для юристов, next.js шаблон юрист, сайт адвоката шаблон, шаблон сайта legal',
+    h1: 'Аурум: готовый шаблон сайта для юридической компании',
+    tagline:
+      'Шаблон на Next.js 16 и shadcn/ui с тёмной чёрно-золотой темой. Адаптирую под бренд клиента за 2-3 недели',
+    category: 'Готовый шаблон · Юридическая компания',
+    year: '2026',
+    client: 'Свой продукт (шаблон для адаптации)',
+    industry: 'Юридические услуги',
+    role: ['Дизайн', 'Frontend', 'Архитектура', 'Деплой'],
+    intro: [
+      'Аурум это профессиональный шаблон сайта для юридической компании, адвокатского бюро или частного юриста. Собран на Next.js 16 с App Router, Tailwind CSS v4 и shadcn/ui. Запускается через Bun за одну команду.',
+      'Если у вас юридический бизнес и нужен сайт быстро, имеет смысл адаптировать готовый шаблон вместо разработки с нуля. Меняю бренд, контент, контакты, подключаю формы к вашей CRM. Архитектура и логика уже отлажены.',
+    ],
+    sections: [
+      {
+        heading: 'Дизайн',
+        paragraphs: [
+          'Дизайн построен на тёмной теме с чёрно-золотой палитрой. Шрифтовая пара Playfair Display и Manrope задаёт нужный тон: солидно, без лишнего. Для числовых показателей подключён Cormorant Garamond с старинным начертанием цифр.',
+          'Тёмная тема с золотыми акцентами хорошо считывается аудиторией юридических услуг: солидность, премиальность, без визуального шума. Подойдёт для корпоративного сегмента и частной практики высокого уровня.',
+        ],
+      },
+      {
+        heading: 'Что входит в шаблон',
+        paragraphs: [
+          '8 полностью свёрстанных страниц закрывают весь основной функционал сайта юридической фирмы. Менять контент можно в двух конфигурационных файлах без правок самого кода.',
+        ],
+        list: [
+          'Главная: hero на всю высоту экрана с анимированными счётчиками (запускаются при скролле)',
+          'Каталог услуг и отдельная страница для каждой практики',
+          'О компании с блоком ключевых вех и команды',
+          'Команда: профили партнёров и юристов',
+          'Блог со списком статей и страницей отдельной статьи',
+          'Контакты с формой заявки',
+          'Кастомная страница 404',
+        ],
+      },
+      {
+        heading: 'Технические детали',
+        paragraphs: [
+          'Все страницы генерируются статически (SSG), что даёт высокую скорость загрузки и хорошие позиции в поисковой выдаче. Форма обратной связи готова к подключению к любому API или CRM. Мобильная версия протестирована от 320px, команда юристов на мобильных устройствах листается горизонтально. Золотое зерно на hero-секциях сделано через SVG-фильтр без внешних зависимостей.',
+        ],
+        list: [
+          'Next.js 16 с App Router, статическая генерация',
+          'TypeScript для надёжности и масштабирования',
+          'Tailwind CSS v4 с кастомной тёмной палитрой',
+          'shadcn/ui для базовых компонентов интерфейса',
+          'Bun как пакетный менеджер и раннер',
+          'Адаптив от 320px, оптимизация под мобильные',
+        ],
+      },
+      {
+        heading: 'Для кого подойдёт',
+        paragraphs: [
+          'Юридические компании и адвокатские бюро, налоговые консультанты, частные юристы высокого уровня. Все тексты и данные меняются в двух конфигурационных файлах: lib/site.ts и lib/content.ts.',
+          'Адаптация шаблона выходит в 1,5-2 раза дешевле и быстрее, чем разработка с нуля: 2-3 недели вместо 6-8 и от 70 тысяч рублей вместо 150-250. Получаете уровень решения как у крупных юридических компаний, но за бюджет малой и средней практики.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Как быстро можно адаптировать шаблон под мой бренд?',
+        a: 'Адаптация занимает 2-3 недели. За это время меняю тексты, цветовую палитру, типографические акценты, логотип и контакты, подключаю формы к вашей CRM или почте, размещаю на вашем домене с SSL. Стоимость от 70 тысяч рублей в зависимости от объёма правок.',
+      },
+      {
+        q: 'Можно ли посмотреть шаблон вживую?',
+        a: 'Да, демо доступно по адресу https://lawyer-site-gamma.vercel.app. Это полноценный рабочий сайт со всеми 8 страницами и анимациями. Можно потыкать и понять, подходит ли стиль вашей практике.',
+      },
+      {
+        q: 'Шаблон продаётся отдельно?',
+        a: 'Нет, шаблон не продаётся как файл. Я адаптирую его под конкретного клиента и потом передаю готовый сайт с доступами. Так гарантирую, что всё корректно настроено, развёрнуто на сервере и работает.',
+      },
+      {
+        q: 'Подойдёт ли шаблон не юридической компании?',
+        a: 'Структура и компоненты универсальные, но дизайн заточен под юридическую эстетику: солидность, тёмная тема, золотые акценты. Для финансовых консультантов, корпоративных аудиторов или нотариусов тоже подходит. Для светлых ниш вроде образования или красоты лучше делать другой шаблон.',
+      },
+      {
+        q: 'Что с SEO?',
+        a: 'Шаблон использует статическую генерацию страниц (SSG), что даёт хорошие позиции в поисковой выдаче. Базовая SEO-оптимизация (метатеги, структура заголовков, sitemap) уже внутри. Продвижение и работа с контентом обсуждаются отдельно.',
       },
     ],
   },
