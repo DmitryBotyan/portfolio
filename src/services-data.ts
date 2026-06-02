@@ -290,7 +290,7 @@ export const services: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['zotova-portfolio', 'unemployment-team', 'medequip'],
+    relatedProjects: ['aurum-legal', 'unemployment-team', 'medequip', 'zotova-portfolio'],
     faq: [
       {
         q: 'Сколько времени занимает разработка сайта под ключ?',
@@ -431,7 +431,7 @@ export const services: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['medequip', 'ramki-magazine', 'ccc-holistic-medicine'],
+    relatedProjects: ['aurum-legal', 'medequip', 'ramki-magazine', 'ccc-holistic-medicine'],
     faq: [
       {
         q: 'Чем корпоративный сайт отличается от лендинга?',
