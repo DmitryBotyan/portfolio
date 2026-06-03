@@ -60,7 +60,7 @@ export function Projects() {
   const { t } = useApp()
   const { projects } = t
   const { ref: sectionRef } = useReveal()
-  const { ref: gridRef }    = useReveal(0.15)
+  const { ref: gridRef }    = useReveal()
 
   return (
     <section id="projects" className="relative border-b-2 border-border overflow-hidden">

@@ -5,7 +5,7 @@ export function Experience() {
   const { t } = useApp()
   const { experience } = t
   const { ref: sectionRef } = useReveal()
-  const { ref: listRef }    = useReveal(0.15)
+  const { ref: listRef }    = useReveal()
 
   return (
     <section id="experience" className="relative border-b-2 border-border overflow-hidden bg-muted dark:bg-background">

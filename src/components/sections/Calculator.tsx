@@ -17,7 +17,7 @@ export function Calculator() {
   const { t, lang } = useApp()
   const { calculator } = t
   const { ref: sectionRef } = useReveal()
-  const { ref: gridRef }    = useReveal(0.1)
+  const { ref: gridRef }    = useReveal()
 
   const [typeId, setTypeId]     = useState(calculator.types[0].id)
   const [pages, setPages]       = useState(5)

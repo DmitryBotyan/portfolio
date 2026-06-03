@@ -6,7 +6,7 @@ export function Faq() {
   const { t } = useApp()
   const { faq } = t
   const { ref: sectionRef } = useReveal()
-  const { ref: listRef }    = useReveal(0.15)
+  const { ref: listRef }    = useReveal()
 
   return (
     <section id="faq" className="relative border-b-2 border-border overflow-hidden bg-muted dark:bg-background">

@@ -9,7 +9,7 @@ export function Blog() {
   const { blog } = t
   const posts = getPosts(lang).slice(0, 4)
   const { ref: sectionRef } = useReveal()
-  const { ref: gridRef }    = useReveal(0.1)
+  const { ref: gridRef }    = useReveal()
 
   return (
     <section

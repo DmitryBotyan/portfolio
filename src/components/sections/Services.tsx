@@ -15,7 +15,7 @@ export function Services() {
   const { t } = useApp()
   const { services } = t
   const { ref: sectionRef } = useReveal()
-  const { ref: tiersRef }   = useReveal(0.1)
+  const { ref: tiersRef }   = useReveal()
 
   return (
     <section

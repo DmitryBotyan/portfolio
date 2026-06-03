@@ -7,7 +7,7 @@ export function Team() {
   const { t } = useApp()
   const { team } = t
   const { ref: sectionRef } = useReveal()
-  const { ref: cardsRef }   = useReveal(0.15)
+  const { ref: cardsRef }   = useReveal()
 
   return (
     <section id="team" className="relative border-b-2 border-border overflow-hidden">
