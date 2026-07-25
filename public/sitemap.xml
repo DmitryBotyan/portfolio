@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://botyan.dev/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://botyan.dev/blog</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/contacts</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,85 +92,103 @@
   </url>
   <url>
     <loc>https://botyan.dev/services/telegram-bots</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/sajt-pod-klyuch</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/korporativnyj-sajt</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/internet-magazin</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/landing</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/sajt-na-tilde</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/botyan-tg-bot</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://botyan.dev/projects/opengrok-bot</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://botyan.dev/projects/zotova-portfolio</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://botyan.dev/projects/19ib</loc>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/dreamyvoice</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/projects/opengrok-bot</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/projects/aurum-legal</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/projects/zotova-portfolio</loc>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/unemployment-team</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/medequip</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/projects/travelmap</loc>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/ramki-magazine</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/ccc-holistic-medicine</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
