@@ -42,10 +42,10 @@ const en: Record<string, ProjectDetail> = {
     slug: '19ib',
     metaTitle: '19 Independent Battle: full-stack rap battle tournament platform',
     metaDescription:
-      'Full-stack platform for 19 Independent Battle — the largest annual rap battle on Hip-Hop.ru. Track submission, anonymous judging, bracket generation, ratings, anti-cheat likes, custom audio player with CDN streaming. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.',
+      'Full-stack platform for 19 Independent Battle, the largest annual rap battle on Hip-Hop.ru. Track submission, anonymous judging, bracket generation, ratings, anti-cheat likes, custom audio player with CDN streaming. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.',
     keywords: 'rap battle platform, hip-hop competition website, music battle app, react fastify platform, anonymous judging system, open prize pool, russian rap battle, docker github actions deploy',
     h1: '19 Independent Battle: full-stack platform for the largest Russian-language rap battle',
-    tagline: 'Track submission, anonymous judging, bracket generation, CDN audio streaming — full tournament lifecycle on one platform',
+    tagline: 'Track submission, anonymous judging, bracket generation, CDN audio streaming. Full tournament lifecycle on one platform.',
     category: 'Web platform · Music · Competition',
     year: '2026',
     client: '19 Independent Battle / Hip-Hop.ru',
@@ -58,12 +58,12 @@ const en: Record<string, ProjectDetail> = {
       {
         heading: 'Key features',
         paragraphs: [
-          'Five user roles (artist, judge, moderator, admin, viewer) each see a different interface. Judges score blindly — no names, no avatars — to eliminate bias. The bracket is generated automatically once qualifying scores are in.',
+          'Five user roles (artist, judge, moderator, admin, viewer) each see a different interface. Judges score blindly: no names, no avatars. The bracket is generated automatically once qualifying scores are in.',
         ],
         list: [
           'Multi-role system: artist / judge / moderator / admin / viewer',
           'Round types: solo qualifying rounds and head-to-head battles',
-          'Anonymous judging — judges score without seeing participant identity',
+          'Anonymous judging: judges score without seeing participant identity',
           'Automatic bracket generation from qualifying results',
           'Custom audio player: track queue, prev/next, progressive HTTP range streaming',
           'Anti-cheat like system: verified email + rate-limit + reCAPTCHA v3',
@@ -86,15 +86,15 @@ const en: Record<string, ProjectDetail> = {
       {
         heading: 'Infrastructure',
         paragraphs: [
-          'Docker + Docker Compose (backend, frontend, PostgreSQL, Caddy). Caddy as reverse-proxy with automatic HTTPS via Let\'s Encrypt. GitHub Actions CI/CD: builds Docker images on runners, pushes to GHCR, deploys to VPS via SSH pull — no builds on the server. S3 + CDN (Timeweb) for audio delivery with edge caching. Ubuntu VPS with log rotation, container memory limits and healthchecks.',
+          'Docker + Docker Compose (backend, frontend, PostgreSQL, Caddy). Caddy as reverse-proxy with automatic HTTPS via Let\'s Encrypt. GitHub Actions CI/CD: builds Docker images on runners, pushes to GHCR, deploys to VPS via SSH pull (no builds on the server). S3 + CDN (Timeweb) for audio delivery with edge caching. Ubuntu VPS with log rotation, container memory limits and healthchecks.',
         ],
       },
     ],
     faq: [
-      { q: 'What is 19 Independent Battle?', a: 'An annual rap battle hosted on Hip-Hop.ru — one of the oldest Russian-language hip-hop communities. Participants submit original tracks, judges score them anonymously, and the winner takes the open prize pool.' },
+      { q: 'What is 19 Independent Battle?', a: 'An annual rap battle hosted on Hip-Hop.ru, one of the oldest Russian-language hip-hop communities. Participants submit original tracks, judges score them anonymously, and the winner takes the open prize pool.' },
       { q: 'Why anonymous judging?', a: 'Without names or avatars, judges evaluate the track itself rather than the reputation of the artist. This reduces bias and makes the competition fairer, especially for lesser-known participants.' },
       { q: 'How does audio streaming work?', a: 'Tracks are stored in S3-compatible storage and served via CDN with HTTP range requests. The custom player fetches only the portion currently needed, which cuts load time significantly on slow connections.' },
-      { q: 'Can a similar competition platform be built?', a: 'Yes — the architecture fits sports, music, creative and academic competitions. Anonymous judging, bracket generation and role-based access are reusable patterns. Estimate from 200 000 ₽ depending on scope.' },
+      { q: 'Can a similar competition platform be built?', a: 'Yes, the architecture fits sports, music, creative and academic competitions. Anonymous judging, bracket generation and role-based access are reusable patterns. Estimate from 200 000 ₽ depending on scope.' },
     ],
   },
   'botyan-tg-bot': {
@@ -539,30 +539,30 @@ const ru: Record<string, ProjectDetail> = {
     slug: '19ib',
     metaTitle: '19 Независимый Баттл: полнофункциональная платформа для рэп-турнира | Кейс',
     metaDescription:
-      'Платформа для 19 Независимого Баттла — крупнейшего рэп-баттла на Hip-Hop.ru. Подача треков, анонимное судейство, баттл-сетка, рейтинги, античит-лайки, кастомный аудиоплеер с CDN-стримингом. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.',
+      'Платформа для 19 Независимого Баттла, крупнейшего рэп-баттла на Hip-Hop.ru. Подача треков, анонимное судейство, баттл-сетка, рейтинги, античит-лайки, кастомный аудиоплеер с CDN-стримингом. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.',
     keywords:
       'платформа рэп-баттл, сайт музыкального конкурса, хип-хоп баттл, react fastify платформа, анонимное судейство, открытый призовой фонд, 19 независимый баттл, hip-hop.ru, docker github actions деплой',
     h1: '19 Независимый Баттл: платформа для крупнейшего рэп-турнира в русском хип-хопе',
     tagline:
-      'Подача треков, анонимное судейство, баттл-сетка и CDN-стриминг аудио — полный жизненный цикл турнира на одной платформе',
+      'Подача треков, анонимное судейство, баттл-сетка и CDN-стриминг аудио. Полный жизненный цикл турнира на одной платформе.',
     category: 'Веб-платформа · Музыка · Соревнование',
     year: '2026',
     client: '19 Независимый Баттл / Hip-Hop.ru',
     industry: 'Музыка / Развлечения',
     role: ['Архитектура', 'Frontend', 'Backend', 'DevOps', 'CI/CD'],
     intro: [
-      '19 Независимый Баттл — самое известное ежегодное событие в русскоязычном хип-хопе на Hip-Hop.ru. Платформа закрывает полный жизненный цикл турнирного сезона: создание раундов, приём треков, анонимное судейство, автоматическая баттл-сетка, лидерборды, лайки и открытый призовой фонд.',
+      '19 Независимый Баттл, самое известное ежегодное событие в русскоязычном хип-хопе на Hip-Hop.ru. Платформа закрывает полный жизненный цикл турнирного сезона: создание раундов, приём треков, анонимное судейство, автоматическая баттл-сетка, лидерборды, лайки и открытый призовой фонд.',
     ],
     sections: [
       {
         heading: 'Ключевые фичи',
         paragraphs: [
-          'Пять ролей (артист, судья, модератор, админ, зритель) — у каждого свой интерфейс. Судьи оценивают треки вслепую: без имён и аватаров, только звук. Баттл-сетка формируется автоматически по результатам отбора.',
+          'Пять ролей (артист, судья, модератор, админ, зритель): у каждого свой интерфейс. Судьи оценивают треки вслепую: без имён и аватаров, только звук. Баттл-сетка формируется автоматически по результатам отбора.',
         ],
         list: [
           'Многоролевая система: артист / судья / модератор / админ / зритель',
           'Типы раундов: сольный отбор и прямые баттлы',
-          'Анонимное судейство — судьи не видят личность участника',
+          'Анонимное судейство: судьи не видят личность участника',
           'Автоматическое формирование баттл-сетки по итогам отбора',
           'Кастомный аудиоплеер: очередь треков, prev/next, прогрессивный HTTP range стриминг',
           'Античит-система лайков: верифицированный email + rate-limit + reCAPTCHA v3',
@@ -585,14 +585,14 @@ const ru: Record<string, ProjectDetail> = {
       {
         heading: 'Инфраструктура',
         paragraphs: [
-          'Docker + Docker Compose (backend, frontend, PostgreSQL, Caddy). Caddy как reverse-proxy с автоматическим HTTPS через Let\'s Encrypt. GitHub Actions CI/CD: сборка Docker-образов на раннерах, пуш в GHCR, деплой на VPS через SSH только как pull — сборки на сервере нет. S3 + CDN (Timeweb) для раздачи аудио с edge-кэшированием. Ubuntu VPS с ротацией логов, лимитами памяти контейнеров и healthchecks.',
+          'Docker + Docker Compose (backend, frontend, PostgreSQL, Caddy). Caddy как reverse-proxy с автоматическим HTTPS через Let\'s Encrypt. GitHub Actions CI/CD: сборка Docker-образов на раннерах, пуш в GHCR, деплой на VPS через SSH только как pull (сборки на сервере нет). S3 + CDN (Timeweb) для раздачи аудио с edge-кэшированием. Ubuntu VPS с ротацией логов, лимитами памяти контейнеров и healthchecks.',
         ],
       },
     ],
     faq: [
       {
         q: 'Что такое 19 Независимый Баттл?',
-        a: 'Ежегодный рэп-баттл на Hip-Hop.ru — одном из старейших русскоязычных хип-хоп сообществ. Участники сдают оригинальные треки, судьи оценивают анонимно, победитель забирает открытый призовой фонд.',
+        a: 'Ежегодный рэп-баттл на Hip-Hop.ru, одном из старейших русскоязычных хип-хоп сообществ. Участники сдают оригинальные треки, судьи оценивают анонимно, победитель забирает открытый призовой фонд.',
       },
       {
         q: 'Зачем анонимное судейство?',
@@ -604,7 +604,7 @@ const ru: Record<string, ProjectDetail> = {
       },
       {
         q: 'Можно ли сделать похожую платформу для конкурса?',
-        a: 'Да — архитектура подходит для спортивных, музыкальных, творческих и учебных соревнований. Анонимное судейство, автосетка и ролевой доступ — переиспользуемые паттерны. Оценка от 200 000 рублей в зависимости от объёма.',
+        a: 'Да, архитектура подходит для спортивных, музыкальных, творческих и учебных соревнований. Анонимное судейство, автосетка и ролевой доступ: переиспользуемые паттерны. Оценка от 200 000 рублей в зависимости от объёма.',
       },
     ],
   },
