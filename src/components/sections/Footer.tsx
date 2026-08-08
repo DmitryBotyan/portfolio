@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { MapPin } from 'lucide-react'
-import { UnemploymentLogo } from '@/components/icons/UnemploymentLogo'
 import { useApp } from '@/contexts/AppContext'
 import { useLegal } from '@/components/Legal'
 import type { LegalKind } from '@/legal'
@@ -43,17 +42,6 @@ export function Footer() {
           </address>
         </div>
 
-        <a
-          href={t.team.siteUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 border-2 border-border px-3 py-2 shadow-[3px_3px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all group self-start md:self-end"
-        >
-          <UnemploymentLogo size={16} className="text-foreground shrink-0" />
-          <span className="font-head text-[10px] font-black uppercase tracking-widest">
-            unemployment.team
-          </span>
-        </a>
       </div>
 
       {/* Divider */}

@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { Nav } from '@/components/Nav'
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
-import { Team } from '@/components/sections/Team'
 import { Services } from '@/components/sections/Services'
 import { Calculator } from '@/components/sections/Calculator'
 import { Experience } from '@/components/sections/Experience'
@@ -35,7 +34,6 @@ function App() {
         <Services />
         <Calculator />
         <About />
-        <Team />
         <Experience />
         <Testimonials />
         <Blog />
