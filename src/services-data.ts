@@ -37,7 +37,9 @@ export interface ServiceDetail {
   faq: ServiceFaq[]
 }
 
-export const services: Record<string, ServiceDetail> = {
+// ─── Russian ────────────────────────────────────────────────────────────────
+
+const ru: Record<string, ServiceDetail> = {
 
   // ──────────────────────────────────────────────
   'telegram-bots': {
@@ -431,7 +433,7 @@ export const services: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['aurum-legal', 'medequip', 'ramki-magazine', 'ccc-holistic-medicine'],
+    relatedProjects: ['aurum-legal', 'medequip', 'ramki-magazine'],
     faq: [
       {
         q: 'Чем корпоративный сайт отличается от лендинга?',
@@ -573,7 +575,7 @@ export const services: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['ccc-holistic-medicine', 'medequip'],
+    relatedProjects: ['medequip'],
     faq: [
       {
         q: 'Сколько времени делается интернет-магазин?',
@@ -883,14 +885,866 @@ export const services: Record<string, ServiceDetail> = {
 
 }
 
-export function getService(slug: string): ServiceDetail | undefined {
-  return services[slug]
+// ─── English ─────────────────────────────────────────────────────────────────
+
+const en: Record<string, ServiceDetail> = {
+
+  // ──────────────────────────────────────────────
+  'telegram-bots': {
+    slug: 'telegram-bots',
+    metaTitle: 'Telegram Bot Development from ₽15,000 in 2026',
+    metaDescription:
+      'Custom Telegram bots of any complexity: lead capture, shop with payments, bots with admin panel and integrations. From ₽15,000, contract, warranty. Launch in 1-4 weeks.',
+    keywords:
+      'telegram bot development, hire telegram bot developer, custom telegram bot, telegram bot for business, telegram bot with admin panel, telegram bot with payments, ai chatbot for business',
+    h1: 'Telegram Bot Development',
+    tagline:
+      'From simple lead-capture bots to full systems with admin panels, payments, and CRM integrations. Launch in 1-4 weeks, contract, warranty.',
+    priceFrom: 15,
+    intro: [
+      'Telegram is no longer just a messenger. It is the channel where your audience lives, and the natural place to book services, pay for orders, and get delivery updates. A bot handles the routine that would otherwise require a human being.',
+      'I have been building Telegram bots since 2023: simple flows in Python with aiogram, complex systems with databases and web admin panels in Node.js. Payment integration via Telegram Payments or YooKassa, CRM connections with amoCRM, Bitrix24, 1C, Google Sheets. Non-standard task? I will figure it out.',
+    ],
+    includes: {
+      heading: 'What I can automate for your business',
+      items: [
+        'Lead capture and client qualification without a manager',
+        'Appointment booking and reservations with reminders',
+        'Product catalogue with cart and in-Telegram payments',
+        'Segmented broadcasts with open-rate analytics',
+        'Order status, delivery, and payment notifications',
+        'Integration with CRM, warehouse, 1C, or marketplaces',
+        'Web admin panel for editors with no coding skills',
+        'GPT and Claude for smart replies and request handling',
+      ],
+    },
+    tiers: [
+      {
+        name: 'Simple bot',
+        priceFrom: 15,
+        priceTo: 45,
+        description:
+          'Bot with predefined scenarios: menus, buttons, lead capture, FAQ. Great for small businesses or an MVP.',
+        includes: [
+          'Up to 10 dialogue scenarios and branches',
+          'Menu and interactive buttons',
+          'Lead capture to Google Sheets or email',
+          'Deployment on a server with domain',
+          '14-day support after launch',
+        ],
+      },
+      {
+        name: 'Bot with admin panel',
+        priceFrom: 45,
+        priceTo: 90,
+        popular: true,
+        description:
+          'Bot with a database and web management panel. Edit content, view stats, send broadcasts. Best choice if you plan to grow the product.',
+        includes: [
+          'Custom web admin panel with access roles',
+          'PostgreSQL for users and history',
+          'Payments via Telegram Payments or YooKassa',
+          'Segmented broadcasts with analytics',
+          'New lead notifications to manager chat',
+          '30-day support after launch',
+        ],
+      },
+      {
+        name: 'Complex system',
+        priceFrom: 90,
+        priceTo: 250,
+        description:
+          'Bot for serious tasks: catalogue with shop, personal accounts, AI logic, CRM and marketplace integrations. Built for high load.',
+        includes: [
+          'Catalogue with filters and cart',
+          'Integration with amoCRM, Bitrix24, 1C, or MoySklad',
+          'Wildberries or Ozon API sync',
+          'GPT and Claude for smart conversations',
+          'Multi-role model: client, manager, admin',
+          '3 months support and team training',
+        ],
+      },
+    ],
+    stack: {
+      heading: 'Technologies',
+      items: [
+        { name: 'Python + aiogram', description: 'Primary stack for high-performance bots' },
+        { name: 'Node.js + Telegraf', description: 'When JS infrastructure integration is needed' },
+        { name: 'PostgreSQL', description: 'Reliable storage for users and data' },
+        { name: 'Redis', description: 'Session cache and task queues' },
+        { name: 'Docker', description: 'Isolated deployment on the server' },
+        { name: 'Telegram Payments + YooKassa', description: 'In-chat payment processing' },
+      ],
+    },
+    process: {
+      heading: 'How we work',
+      steps: [
+        {
+          title: 'Discuss the task',
+          description:
+            'Free call or Telegram chat. We figure out what the bot should do and which scenarios matter. If the task is broader than a bot can handle, I will say so.',
+        },
+        {
+          title: 'Agree on scope and timeline',
+          description:
+            'I prepare a brief spec describing the scenarios and estimate in hours and cost. We sign a contract, you pay 50% upfront.',
+        },
+        {
+          title: 'Build and show progress',
+          description:
+            'Every few days I send updates so you can see the bot growing. Complex scenarios are tested with your real data.',
+        },
+        {
+          title: 'Launch and support',
+          description:
+            'I deploy the bot to the server, hand over access and instructions. Then comes the support period: fixes, small improvements, Q&A.',
+        },
+      ],
+    },
+    relatedProjects: ['botyan-tg-bot', 'opengrok-bot'],
+    faq: [
+      {
+        q: 'How long does it take to build a Telegram bot?',
+        a: 'A simple bot is ready in 1-2 weeks. A bot with an admin panel takes 2-4 weeks. A complex system with integrations takes a month or more. I will give you exact timelines after a quick chat about your scenarios.',
+      },
+      {
+        q: 'Can I accept payments directly in the bot?',
+        a: 'Yes, Telegram supports in-chat payments via YooKassa, CloudPayments, and Stripe. The client pays without leaving the chat, which keeps the experience smooth and improves conversion.',
+      },
+      {
+        q: 'What is included in the price and what costs extra?',
+        a: 'Included: development of agreed scenarios, server deployment, testing, and post-launch support (14-90 days by tier). Extra: server hosting (around ₽300-700/month), third-party API fees, new scenarios added after sign-off.',
+      },
+      {
+        q: 'Does the bot need a server?',
+        a: 'Yes, a bot is a program that must run 24/7. I will help you pick and set up a server. A standard VPS costs ₽300-700 a month. I handle the full deployment so you do not need to.',
+      },
+      {
+        q: 'Who owns the code after delivery?',
+        a: 'You do. I hand over the source code, server and database access, and documentation. You can continue developing the bot yourself or with any other developer.',
+      },
+      {
+        q: 'Do you build AI bots with ChatGPT or Claude?',
+        a: 'Yes, that is one of my areas. I connect OpenAI or Anthropic APIs, train the bot on your company knowledge base, and set safe boundaries for what AI can and cannot answer. I wrote about AI integrations in the blog.',
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────────
+  'sajt-pod-klyuch': {
+    slug: 'sajt-pod-klyuch',
+    metaTitle: 'Turnkey Website Development from ₽35,000 in 2026',
+    metaDescription:
+      'Full-cycle website development: landing page, corporate site, online store. From ₽35,000, contract, 6-month warranty. SEO and mobile-ready included.',
+    keywords:
+      'turnkey website development, custom website development, hire web developer, full stack web development, website development price, order website development, web development cost',
+    h1: 'Turnkey Website Development',
+    tagline:
+      'Full cycle from first commit to launch: design, markup, backend, SEO, deploy. Contract, 6-month warranty, post-launch support.',
+    priceFrom: 35,
+    intro: [
+      'When people say "turnkey website", they can mean very different things. For some it is a freelance marketplace template; for others it is a real product with its own architecture. I do the second. I take on the whole task: understand what the business needs, design it, build it, launch it, and support it.',
+      '"Turnkey" means you do not need to find a designer separately, a markup person separately, a backend developer separately. I do it all myself or with my unemployment.team crew. You get a finished website that works and delivers results, not a bundle of files that still needs to be integrated.',
+    ],
+    includes: {
+      heading: 'What is included by default',
+      items: [
+        'Unique design for your brand, not a template',
+        'Responsive layout for all devices and browsers',
+        'Basic SEO: meta tags, structure, speed',
+        'Domain, SSL certificate, and hosting setup',
+        'Form integration with email, CRM, or Telegram',
+        'Analytics: Yandex Metrica or Google Analytics',
+        '6-month warranty on discovered bugs',
+        '14-90 days support depending on the tier',
+      ],
+    },
+    tiers: [
+      {
+        name: 'Start',
+        priceFrom: 35,
+        priceTo: 80,
+        description:
+          'Landing page, business card site, or simple Tilda site. Great for getting online fast with a clear offer.',
+        includes: [
+          'Up to 5 screens or sections',
+          'Responsive layout',
+          'Basic SEO setup',
+          'Domain and analytics connection',
+          'Launch in 1-2 weeks',
+        ],
+      },
+      {
+        name: 'Business',
+        priceFrom: 80,
+        priceTo: 160,
+        popular: true,
+        description:
+          'Full corporate website or WordPress online store. The best choice for most tasks.',
+        includes: [
+          '5-15 pages with custom design',
+          'CMS for self-managed content',
+          'Extended SEO structure',
+          'CRM or payment integration',
+          'Launch in 3-6 weeks',
+        ],
+      },
+      {
+        name: 'Premium',
+        priceFrom: 150,
+        priceTo: 350,
+        description:
+          'Online store on Next.js, marketplace, or platform with integrations. Built for high load and serious SEO.',
+        includes: [
+          'Next.js store with its own backend',
+          'Integrations: Wildberries, Ozon, 1C, CRM',
+          'Extended SEO + schema markup',
+          'Speed 90+ on PageSpeed',
+          '3 months support + training',
+        ],
+      },
+    ],
+    stack: {
+      heading: 'Stack by task',
+      items: [
+        { name: 'Next.js + React', description: 'When speed, SEO, and custom logic matter' },
+        { name: 'WordPress + WooCommerce', description: 'When editors need to manage content without a developer' },
+        { name: 'Tilda + custom code', description: 'Fast launch with unique blocks' },
+        { name: 'TypeScript', description: 'Protection from errors in large projects' },
+        { name: 'PostgreSQL', description: 'Reliable database for catalogues and user accounts' },
+        { name: 'Vercel or VPS', description: 'Hosting chosen to match the task' },
+      ],
+    },
+    process: {
+      heading: 'How we work',
+      steps: [
+        {
+          title: 'Brief and task discussion',
+          description:
+            'Free call or chat. We figure out what the business needs, who the audience is, and what the site should accomplish. If the task is bigger than a site can solve, I will tell you.',
+        },
+        {
+          title: 'Design and sign-off',
+          description:
+            'I show prototypes and key screen designs in Figma. You give feedback, we agree on the visuals. Once approved, the design is locked and does not change without extra cost.',
+        },
+        {
+          title: 'Development with interim reviews',
+          description:
+            'Every week I send updates on the staging domain. You can see the progress and give feedback before any part is 100% done.',
+        },
+        {
+          title: 'Launch and support',
+          description:
+            'I deploy the site to the live domain, hand over access and instructions. Then comes the support period: fixes, small improvements, Q&A. 6-month bug warranty.',
+        },
+      ],
+    },
+    relatedProjects: ['aurum-legal', 'unemployment-team', 'medequip', 'zotova-portfolio'],
+    faq: [
+      {
+        q: 'How long does turnkey website development take?',
+        a: 'A landing page is ready in 1-2 weeks. A corporate site takes 3-6 weeks. A Next.js online store takes 6-12 weeks depending on catalogue complexity and integrations. I will give exact timelines after a quick task discussion.',
+      },
+      {
+        q: 'How is the price formed and why do developers quote very different amounts?',
+        a: 'The price covers planning, design, markup, programming, testing, and support. Cheap offers often hide what is not included: SEO, mobile support for older phones, warranty. I list everything in the estimate upfront so there are no surprises.',
+      },
+      {
+        q: 'Can changes be made during development?',
+        a: 'Small changes and clarifications are included. Significant changes (restructuring the layout, redoing the entire design) are discussed separately. To avoid these situations, we cover everything important during the design sign-off stage.',
+      },
+      {
+        q: 'Who owns the code after delivery?',
+        a: 'You do. I hand over the source code, server access, repository, and admin panel credentials. You can grow the site yourself, with my team, or with any other developer.',
+      },
+      {
+        q: 'What if something breaks after launch?',
+        a: 'All discovered bugs are covered by a 6-month warranty: fixed for free. For new tasks and improvements, there is a retainer or hourly billing. See the blog post about website maintenance for details.',
+      },
+      {
+        q: 'Which framework or CMS should I choose?',
+        a: 'It depends on the task. If speed, SEO, and custom logic matter, I go with Next.js. If content changes often and editors are not developers, I choose WordPress. For fast landing pages, Tilda with custom inserts works well. I will advise on a free call based on your specific situation.',
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────────
+  'korporativnyj-sajt': {
+    slug: 'korporativnyj-sajt',
+    metaTitle: 'Corporate Website Development from ₽80,000 in 2026',
+    metaDescription:
+      'Corporate website development: product catalogue, service pages, CRM integration, SEO structure. From ₽80,000, contract, warranty. Ready templates for B2B.',
+    keywords:
+      'corporate website development, company website development, b2b website development, corporate site design, order corporate website, business website development',
+    h1: 'Corporate Website Development for Business',
+    tagline:
+      'A company site with catalogue, services, case studies, and request forms tailored to your B2B workflow. From ₽80,000, contract, 6-month warranty. Ready templates available.',
+    priceFrom: 80,
+    intro: [
+      'A corporate website is not a three-page card site with a stock photo. It is a working B2B sales tool where a client understands within a minute what you do and decides whether to write to you or close the tab. A company site has a different purpose than a shop or a landing page, and the approach to it is different.',
+      'I build corporate sites for various sectors: medical equipment, B2B supply, services, manufacturing. I know what matters to procurement managers and buyers: finding the right segment solution quickly, seeing certifications, submitting a request without filling in 20 fields. I build on Next.js or WordPress depending on the task. If the business resembles one of my existing projects, I can adapt a ready template, which is 1.5-2x cheaper.',
+    ],
+    includes: {
+      heading: 'What a corporate website includes',
+      items: [
+        'Homepage with a clear first screen and key advantages',
+        'Product or service catalogue with filters and search',
+        'Solution pages by client segment or industry',
+        'About us, team, certifications, trust blocks',
+        'Case studies and portfolio with real numbers',
+        'Contacts with a request form, map, and company details',
+        'Blog or news for content marketing and SEO',
+        'CMS for self-managed content editing',
+      ],
+    },
+    tiers: [
+      {
+        name: 'Business card',
+        priceFrom: 35,
+        priceTo: 80,
+        description:
+          'A 3-5 page card site for a small company. Right for simple products where online presence is the main goal.',
+        includes: [
+          '3-5 pages with custom design',
+          'Responsive layout',
+          'Contact form',
+          'Basic SEO setup',
+          'Launch in 1-2 weeks',
+        ],
+      },
+      {
+        name: 'Mid-size (5-15 pages)',
+        priceFrom: 80,
+        priceTo: 160,
+        popular: true,
+        description:
+          'Full corporate website with a catalogue, services, solution pages, and a blog. The most common B2B request.',
+        includes: [
+          '5-15 pages with custom design',
+          'Product or service catalogue',
+          'Pages by client segment',
+          'CMS for self-managed editing',
+          'CRM or email integration',
+          'Launch in 3-6 weeks',
+        ],
+      },
+      {
+        name: 'Large / multilingual',
+        priceFrom: 160,
+        priceTo: 350,
+        description:
+          'Company site with 20+ pages, multilingual support, dealer or client personal account. For large B2B.',
+        includes: [
+          '20+ pages with complex structure',
+          'Multilingual support (RU, EN, and others)',
+          'Dealer or client personal account',
+          'Integrations with 1C, CRM, marketplaces',
+          'Extended SEO + schema markup',
+          '3 months support + training',
+        ],
+      },
+    ],
+    stack: {
+      heading: 'Stack by task',
+      items: [
+        { name: 'Next.js + React', description: 'When speed, SEO, and custom features matter' },
+        { name: 'WordPress + ACF', description: 'When editors must manage everything themselves' },
+        { name: '1C Bitrix', description: 'For 1C integration and enterprise ecosystem' },
+        { name: 'TypeScript', description: 'Error protection and scalability' },
+        { name: 'PostgreSQL', description: 'Database for catalogues and personal accounts' },
+        { name: 'amoCRM / Bitrix24', description: 'Connecting request forms to the sales funnel' },
+      ],
+    },
+    process: {
+      heading: 'How we work',
+      steps: [
+        {
+          title: 'Business and audience analysis',
+          description:
+            'We figure out who your clients are, what questions they have, and how they make purchase decisions. This shapes the site structure.',
+        },
+        {
+          title: 'Prototyping and design',
+          description:
+            'I create prototypes of key pages, then design in Figma. We agree on the visuals. If you have a brand guide, I use it; if not, we develop a visual style.',
+        },
+        {
+          title: 'Development with staged reviews',
+          description:
+            'Once a week I send progress to the staging domain. You see the site growing and can give feedback along the way.',
+        },
+        {
+          title: 'Launch, training, support',
+          description:
+            'I deploy to the live domain, train your team to use the CMS, and hand over instructions. Then comes the support period and a 6-month warranty.',
+        },
+      ],
+    },
+    relatedProjects: ['aurum-legal', 'medequip', 'ramki-magazine'],
+    faq: [
+      {
+        q: 'How is a corporate site different from a landing page?',
+        a: 'A landing page is a single page with one offer aimed at ad traffic and converting visitors into leads. A corporate site is a system of pages built for different client segments, organic search traffic, and long-term work. They have different architecture and a different budget.',
+      },
+      {
+        q: 'How long does corporate website development take?',
+        a: 'A 3-5 page card site takes 1-2 weeks. A mid-size corporate site with 5-15 pages takes 3-6 weeks. A large multilingual site with integrations can take 2-3 months. I will give exact timelines after discussing the task.',
+      },
+      {
+        q: 'Can I use a ready template to save money?',
+        a: 'Yes, I have ready templates for several B2B niches: equipment suppliers, services, manufacturing. Adapting a template takes 2-3 weeks instead of 6-8 and starts at ₽70,000 instead of ₽120,000-220,000. If your business resembles an existing project, this is a sensible choice.',
+      },
+      {
+        q: 'Which CMS is better for a corporate website?',
+        a: 'If content changes often and editors are not developers, usually WordPress with a custom theme. If speed, SEO in a competitive niche, and custom features matter, we go with Next.js. I will advise on a free call based on your specific situation.',
+      },
+      {
+        q: 'Is CRM or 1C integration included in the price?',
+        a: 'Basic form-to-email or amoCRM integration is included. Complex integrations with 1C, warehouse, or marketplaces are discussed separately. Usually ₽25,000-70,000 on top depending on scope.',
+      },
+      {
+        q: 'What about SEO for a corporate website?',
+        a: 'Basic technical SEO is always included: proper URL structure, meta tags, speed, responsiveness, and schema markup. Promotion and content work is a separate service. I can set up the technical side or take it on as a retainer.',
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────────
+  'internet-magazin': {
+    slug: 'internet-magazin',
+    metaTitle: 'Online Store Development from ₽70,000 in 2026',
+    metaDescription:
+      'Online store development on Next.js or WordPress with WooCommerce. Catalogue, cart, payments, shipping, 1C and marketplace integration. From ₽70,000.',
+    keywords:
+      'online store development, e-commerce development, woocommerce development, next.js store, order online store, online shop development cost',
+    h1: 'Turnkey Online Store Development',
+    tagline:
+      'Store with catalogue, cart, payments, and shipping. Integration with 1C, Wildberries, Ozon, YooKassa. From ₽70,000, contract, 6-month warranty.',
+    priceFrom: 70,
+    intro: [
+      'An online store is not a landing page with a "buy" button, or a 10-item catalogue on a website builder. It is a complex system where products, inventory, payments, shipping, analytics, and marketing all intersect. A poorly built store loses customers at checkout; a well-built one moves product on its own.',
+      'I build stores on two stacks: WordPress + WooCommerce when speed and a ready-made editor are the priority, and Next.js with its own backend when performance, SEO, and custom logic matter. The choice depends on catalogue size, expected load, and growth plans. We will figure out what fits you on a free call.',
+    ],
+    includes: {
+      heading: 'What the store includes',
+      items: [
+        'Product catalogue with filters, sorting, and search',
+        'Product card with gallery, specs, and reviews',
+        'Cart, checkout, and buyer personal account',
+        'Payments via YooKassa, CloudPayments, Tinkoff, Stripe',
+        'Shipping integration: CDEK, Boxberry, Russian Post',
+        'Integration with 1C, MoySklad, or another accounting system',
+        'Export to Wildberries, Ozon, Yandex Market',
+        'Sales analytics, cart metrics, product reports',
+      ],
+    },
+    tiers: [
+      {
+        name: 'WordPress + WooCommerce',
+        priceFrom: 70,
+        priceTo: 150,
+        description:
+          'Ready platform with a familiar admin panel. Suits most stores with up to 5,000 products. Reasonable launch time.',
+        includes: [
+          'Custom theme for your brand',
+          'Catalogue with filters and search',
+          'Payments and shipping setup',
+          'Product import from spreadsheets or 1C',
+          'CMS for editors',
+          'Launch in 3-6 weeks',
+        ],
+      },
+      {
+        name: 'Next.js with own backend',
+        priceFrom: 120,
+        priceTo: 250,
+        popular: true,
+        description:
+          'Fast store with its own architecture. Best when SEO in a competitive niche and custom sales logic are key.',
+        includes: [
+          'Page load in 2-3 seconds',
+          'Server-side rendering for SEO',
+          'Custom cart and checkout',
+          'CRM and warehouse integration',
+          'Own API for a mobile app',
+          'Launch in 6-12 weeks',
+        ],
+      },
+      {
+        name: 'Marketplace / large catalogue',
+        priceFrom: 250,
+        priceTo: 500,
+        description:
+          'Complex systems: multi-vendor marketplace, 10,000+ product catalogue, multilingual support, dealer accounts.',
+        includes: [
+          'Multi-vendor architecture',
+          'Catalogue with 10,000+ products and fast search',
+          'Seller payouts and reconciliation',
+          'Multilingual and multi-currency',
+          'Wildberries, Ozon, Yandex Market integration',
+          '3 months support + training',
+        ],
+      },
+    ],
+    stack: {
+      heading: 'Technologies',
+      items: [
+        { name: 'WordPress + WooCommerce', description: 'Ready platform for mid-size stores' },
+        { name: 'Next.js + Headless CMS', description: 'When speed and SEO matter' },
+        { name: 'PostgreSQL', description: 'Database for catalogue and orders' },
+        { name: 'YooKassa / CloudPayments', description: 'Payment processing for Russian audiences' },
+        { name: 'CDEK and Boxberry API', description: 'Automatic shipping cost calculation' },
+        { name: 'Wildberries and Ozon API', description: 'Stock and order synchronisation' },
+      ],
+    },
+    process: {
+      heading: 'How we work',
+      steps: [
+        {
+          title: 'Product and process analysis',
+          description:
+            'We review your product count, how payment and shipping work, and which systems are already in place (1C, CRM, warehouse). This determines the stack and architecture.',
+        },
+        {
+          title: 'Store design and planning',
+          description:
+            'Prototypes of key screens: catalogue, product card, cart, checkout. Design in Figma focused on conversion. We agree on visuals and UX before development starts.',
+        },
+        {
+          title: 'Development and integrations',
+          description:
+            'I build frontend and backend in parallel while connecting payments, shipping, and 1C or CRM integrations. Weekly progress demo on the staging domain.',
+        },
+        {
+          title: 'Launch, testing, training',
+          description:
+            'We test payments with real money at a minimal amount, verify shipping and orders. I hand over access and train the team on the admin panel. 6-month warranty.',
+        },
+      ],
+    },
+    relatedProjects: ['medequip'],
+    faq: [
+      {
+        q: 'How long does it take to build an online store?',
+        a: 'A WordPress + WooCommerce store typically takes 3-6 weeks. A Next.js store with its own backend takes 6-12 weeks. A complex marketplace with a large catalogue and integrations can take 3-6 months. I will give exact timelines after reviewing your product range.',
+      },
+      {
+        q: 'Which platform is better: WordPress or Next.js?',
+        a: 'WordPress is a good fit when you need fast, budget-friendly, with a ready admin panel. Next.js is the choice when load speed, SEO in a competitive niche, or custom logic matters. I wrote a detailed comparison in the blog.',
+      },
+      {
+        q: 'Can you integrate with Wildberries and Ozon?',
+        a: 'Yes, I have ready-made marketplace API integrations: stock syncs automatically, orders go into your system. Integration cost is ₽25,000-70,000 depending on scope.',
+      },
+      {
+        q: 'What about 1C integration?',
+        a: 'I connect to 1C via API or file-based exchange. Stock and orders sync automatically. This is one of my most frequent tasks. Specifics depend on the 1C version and your directory structure.',
+      },
+      {
+        q: 'What happens to an existing store during migration?',
+        a: 'I move content, products, and order history via scripts. I preserve the URL structure or set up redirects to protect your search rankings. See the blog post about migrating to Next.js for details.',
+      },
+      {
+        q: 'Which payment methods do you support?',
+        a: 'Full set: YooKassa, CloudPayments, Tinkoff Checkout, Sberbank. For international sales: Stripe or PayPal. One provider connection is included; additional ones are discussed separately.',
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────────
+  'landing': {
+    slug: 'landing',
+    metaTitle: 'Landing Page Development from ₽45,000 in 2026',
+    metaDescription:
+      'High-converting landing page development with unique design, animations, and forms. Built for ad traffic and SEO. From ₽45,000, launch in 1-2 weeks, warranty.',
+    keywords:
+      'landing page development, landing page design, hire landing page developer, custom landing page, landing page for ads, converting landing page, landing page cost',
+    h1: 'Turnkey Landing Page Development',
+    tagline:
+      'A converting single-page site with unique design, animations, and forms for advertising or SEO. From ₽45,000, launch in 1-2 weeks.',
+    priceFrom: 45,
+    intro: [
+      'A landing page is not an "about us" page. It is a sales tool with one job: turn a visitor into a lead. A good landing page has everything working toward that: the first screen hooks, trust blocks remove doubts, and the form does not scare people off. A bad one loses visitors before they finish scrolling.',
+      'I build landing pages that sell. First we figure out who the audience is and how they make decisions. Then I plan the structure around that path, design with conversion in mind, and code it for fast loading. I connect analytics so you can see what is working.',
+    ],
+    includes: {
+      heading: 'What a converting landing page includes',
+      items: [
+        'A compelling first screen with a clear offer',
+        'Trust blocks: case studies, reviews, numbers, certificates',
+        'Service or product description without filler',
+        'FAQ section to address objections',
+        'Multiple lead forms at strategic points',
+        'Responsive layout for all devices',
+        'Load speed 1-3 seconds',
+        'Conversion analytics: Yandex Metrica, GA, goals',
+      ],
+    },
+    tiers: [
+      {
+        name: 'Tilda + custom blocks',
+        priceFrom: 35,
+        priceTo: 60,
+        description:
+          'Fast launch on the builder with unique inserts. Good for testing a hypothesis or MVP when proving demand is the goal.',
+        includes: [
+          'Zero-block design in Tilda',
+          'Unique sections in code',
+          'CRM form integration',
+          'SEO and Open Graph',
+          'Launch in 5-10 days',
+        ],
+      },
+      {
+        name: 'Custom coded',
+        priceFrom: 45,
+        priceTo: 95,
+        popular: true,
+        description:
+          'Landing page on React or Next.js with a unique design, free from builder limitations. Fast, built for SEO, built for ads. The most popular choice.',
+        includes: [
+          'Unique design without templates',
+          'Animations and interactivity',
+          'Speed 90+ on PageSpeed',
+          'CRM and payment connections',
+          'Advanced analytics',
+          'Launch in 1-2 weeks',
+        ],
+      },
+      {
+        name: 'Premium with animations',
+        priceFrom: 90,
+        priceTo: 200,
+        description:
+          'Complex interactive landing pages: advanced animations, video backgrounds, non-standard layout, A/B tests. For major launches and brands.',
+        includes: [
+          'Advanced scroll animations',
+          'Marketing tool integrations',
+          'Calculators and interactive blocks',
+          'A/B tests and experiments',
+          '1-3 months campaign support',
+        ],
+      },
+    ],
+    stack: {
+      heading: 'Technologies',
+      items: [
+        { name: 'Next.js + React', description: 'Fast custom landing page with server-side rendering' },
+        { name: 'Tilda + JavaScript', description: 'When fast build quality does not need to be sacrificed' },
+        { name: 'GSAP and Framer Motion', description: 'Professional animations without losing speed' },
+        { name: 'TypeScript', description: 'Error protection in complex interactives' },
+        { name: 'Tailwind CSS', description: 'Fast responsive layout for the brand' },
+        { name: 'Yandex Metrica + Google Analytics', description: 'End-to-end conversion analytics' },
+      ],
+    },
+    process: {
+      heading: 'How we work',
+      steps: [
+        {
+          title: 'Audience and product analysis',
+          description:
+            'We figure out who the buyer is, what they fear, and what objections they have. The landing page structure and the offer are built around that.',
+        },
+        {
+          title: 'Prototype and design',
+          description:
+            'First a Figma prototype: which blocks, in what order, with what messages. After sign-off, we create the visuals with focus on the first screen and CTA.',
+        },
+        {
+          title: 'Development with speed testing',
+          description:
+            'I code with a focus on Core Web Vitals so the page loads fast. At the same time we connect forms, analytics, and goals.',
+        },
+        {
+          title: 'Launch and optimisation',
+          description:
+            'We go live on the production domain and verify all forms and goals. After the ad campaign starts, we monitor metrics and improve weak spots.',
+        },
+      ],
+    },
+    relatedProjects: ['zotova-portfolio', 'unemployment-team'],
+    faq: [
+      {
+        q: 'How long does a landing page take?',
+        a: 'A Tilda landing page with custom blocks is ready in 5-10 days. A custom coded landing takes 1-2 weeks. A premium page with advanced animations takes 2-4 weeks. I will give exact timelines after agreeing on the concept.',
+      },
+      {
+        q: 'Can a landing page rank in search?',
+        a: 'Yes, but with caveats. A landing page ranks poorly for broad queries because it has one page against dozens from competitors. It works well for specific low-frequency searches. For paid ads, a landing page is 100% the right choice.',
+      },
+      {
+        q: 'How many forms should a landing page have?',
+        a: 'Usually 3-5: one on the first screen, a few more after key blocks, and one in the footer. All forms send to one CRM or email. The longer someone scrolls, the warmer the lead, so we keep the bottom form.',
+      },
+      {
+        q: 'Can I get a Tilda landing page for less?',
+        a: 'Yes. A simple Tilda landing on ready-made blocks costs ₽35,000-60,000. If unique interactive blocks or complex animations are needed, custom code is unavoidable. I will advise on what fits your task and budget on a free call.',
+      },
+      {
+        q: 'What is included in the analytics setup?',
+        a: 'Yandex Metrica and Google Analytics connection, goal configuration for form submissions, scroll and CTA click tracking, basic UTM tagging. This is enough to understand which ads bring buyers and where people drop off.',
+      },
+      {
+        q: 'Do you run A/B tests?',
+        a: 'Yes, in the premium tier. I set up two landing page versions, split traffic equally, and compare conversion rates. This lets you pick the winning headline, first screen, or CTA based on real data, not guesswork.',
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────────
+  'sajt-na-tilde': {
+    slug: 'sajt-na-tilde',
+    metaTitle: 'Website on Tilda with Custom Code from ₽35,000 in 2026',
+    metaDescription:
+      'Tilda website development with unique design and custom code blocks. Not like everyone else. CRM, payment, and advanced SEO integration. From ₽35,000.',
+    keywords:
+      'tilda website development, custom tilda site, tilda with custom code, tilda zero blocks, tilda website cost, order tilda site, tilda customization',
+    h1: 'Website on Tilda with Custom Code',
+    tagline:
+      'Tilda without the template look. Unique code blocks, CRM integrations, and advanced SEO. From ₽35,000, launch in 1-2 weeks.',
+    priceFrom: 35,
+    intro: [
+      'Tilda is a good builder, but 90% of sites on it look the same: the same blocks, the same fonts, the same scroll pattern. That is fine for testing an idea, but for a business that wants to stand out, a templated look works against you.',
+      'I build Tilda sites that do not look like Tilda. I use zero-blocks, custom JS inserts, non-standard animations, and my own integrations. The admin panel stays easy to use so you can edit text yourself later, but the site looks visually unique. You get builder launch speed with custom development quality.',
+    ],
+    includes: {
+      heading: 'What I do on Tilda',
+      items: [
+        'Unique design through zero-blocks',
+        'Custom JavaScript inserts for non-standard effects',
+        'Form integration with amoCRM, Bitrix24, email, Telegram',
+        'Online payment connection: YooKassa or Stripe',
+        'Advanced SEO: meta tags, Open Graph, schema markup',
+        'Yandex Metrica and Google Analytics with goals',
+        'Responsive layout adjusted for older devices',
+        'Migration from Tilda to Next.js when you outgrow the builder',
+      ],
+    },
+    tiers: [
+      {
+        name: 'Basic Tilda',
+        priceFrom: 35,
+        priceTo: 60,
+        description:
+          'Site on ready Tilda blocks with unique settings. For a quick MVP or card site on a smaller budget.',
+        includes: [
+          'Up to 5 pages on ready-made blocks',
+          'Brand adaptation',
+          'Form and analytics connection',
+          'Basic SEO setup',
+          'Launch in 5-7 days',
+        ],
+      },
+      {
+        name: 'Tilda + zero-blocks + JS',
+        priceFrom: 60,
+        priceTo: 100,
+        popular: true,
+        description:
+          'Tilda with unique sections on zero-blocks and custom scripts. Looks like bespoke development, managed like Tilda.',
+        includes: [
+          'Custom zero-blocks for the brand',
+          'JavaScript inserts for interactivity',
+          'CRM or Telegram integration',
+          'Extended SEO structure',
+          'Launch in 1-2 weeks',
+        ],
+      },
+      {
+        name: 'Tilda + custom backend',
+        priceFrom: 100,
+        priceTo: 180,
+        description:
+          'Tilda with its own API, personal account, or complex lead-handling logic. For when the builder is no longer enough.',
+        includes: [
+          'Custom Node.js backend',
+          'Personal account or catalogue',
+          '1C or CRM integrations',
+          'Complex form handling with logic',
+          '30 days support',
+        ],
+      },
+    ],
+    stack: {
+      heading: 'Technologies',
+      items: [
+        { name: 'Tilda Publishing', description: 'Site foundation with a flexible admin panel' },
+        { name: 'Tilda Zero-blocks', description: 'Unique sections without template limitations' },
+        { name: 'JavaScript / TypeScript', description: 'Custom interactives and animations' },
+        { name: 'Node.js (optional)', description: 'Own backend for complex logic' },
+        { name: 'amoCRM / Bitrix24', description: 'Lead form integration with the sales funnel' },
+        { name: 'YooKassa / CloudPayments', description: 'In-site payment processing' },
+      ],
+    },
+    process: {
+      heading: 'How we work',
+      steps: [
+        {
+          title: 'Concept and structure',
+          description:
+            'We discuss what the site needs, who the audience is, and what tasks it handles. We decide which blocks will be from the library, which zero, and which need code.',
+        },
+        {
+          title: 'Design and assembly',
+          description:
+            'I build the site in Tilda with a focus on a unique look. We move away from typical Tilda templates through zero-blocks and custom settings. I show progress every 2-3 days.',
+        },
+        {
+          title: 'Custom integrations',
+          description:
+            'I connect everything Tilda does not do out of the box: CRM, specific payment systems, analytics, custom forms with logic.',
+        },
+        {
+          title: 'Launch and training',
+          description:
+            'The site goes live on your domain, I hand over Tilda access and train the team on the admin panel. There is a support period after launch.',
+        },
+      ],
+    },
+    relatedProjects: ['zotova-portfolio', 'unemployment-team'],
+    faq: [
+      {
+        q: 'How is Tilda with custom code different from regular Tilda?',
+        a: 'Regular Tilda is a collection of ready-made blocks that thousands of people have seen. Tilda with custom code uses zero-blocks and JS inserts so the site looks and works uniquely, not like your competitors. The admin panel convenience is preserved.',
+      },
+      {
+        q: 'Does Tilda have a ceiling and when should you switch to custom code?',
+        a: 'Yes, there is a ceiling. Tilda is a poor fit for large catalogues, complex logic, personal accounts, or high traffic. When you outgrow the builder, I do a Tilda to Next.js migration preserving SEO. See the blog for details.',
+      },
+      {
+        q: 'How much does a Tilda maintenance plan cost?',
+        a: 'Usually less than WordPress, because there are fewer points of failure. A basic plan covering content changes and tech support starts at ₽15,000/month. See the blog post on website maintenance.',
+      },
+      {
+        q: 'What about SEO on Tilda?',
+        a: 'Tilda has basic SEO functionality: meta tags, Open Graph, h1. I extend this with Schema.org markup, sitemap, robots.txt, and speed optimisation. Tilda matches other builders on SEO but loses to custom development in competitive niches.',
+      },
+      {
+        q: 'Can I accept payments directly on a Tilda site?',
+        a: 'Yes, Tilda supports YooKassa, CloudPayments, Stripe, and other payment systems. I set up payment processing with various scenarios: one-time purchase, subscription, instalments. Included in premium tiers.',
+      },
+      {
+        q: 'Who owns the site after development?',
+        a: 'Your Tilda account belongs to you; I either work under your login or transfer the finished site. The Tilda subscription is paid by you (from ₽750/month). After delivery, you can develop the site yourself or with any other Tilda specialist.',
+      },
+    ],
+  },
+
 }
 
-export function getAllServices(): ServiceDetail[] {
-  return Object.values(services)
+// ─── Exports ──────────────────────────────────────────────────────────────────
+
+export const servicesData = { ru, en }
+
+export function getService(lang: 'ru' | 'en', slug: string): ServiceDetail | undefined {
+  return servicesData[lang][slug]
+}
+
+export function getAllServices(lang: 'ru' | 'en' = 'ru'): ServiceDetail[] {
+  return Object.values(servicesData[lang])
 }
 
 export function getServiceSlugs(): string[] {
-  return Object.keys(services)
+  return Object.keys(servicesData.ru)
 }

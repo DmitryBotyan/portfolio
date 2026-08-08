@@ -12,7 +12,7 @@ function scrollTo(id: string) {
 }
 
 export function Services() {
-  const { t } = useApp()
+  const { t, lang } = useApp()
   const { services } = t
   const { ref: sectionRef } = useReveal()
   const { ref: tiersRef }   = useReveal()
@@ -137,7 +137,7 @@ export function Services() {
             </div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {getAllServices().map((svc) => (
+            {getAllServices(lang).map((svc) => (
               <Link
                 key={svc.slug}
                 to={`/services/${svc.slug}`}

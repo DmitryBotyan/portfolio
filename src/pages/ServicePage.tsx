@@ -15,7 +15,8 @@ import { NotFound } from './NotFound'
 
 export function ServicePage() {
   const { slug } = useParams<{ slug: string }>()
-  const service = slug ? getService(slug) : undefined
+  const { lang } = useApp()
+  const service = slug ? getService(lang, slug) : undefined
 
   useEffect(() => { window.scrollTo({ top: 0 }) }, [slug])
 
@@ -74,7 +75,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
         otherServices: 'Other services',
         more: 'Learn more',
       }
-  const allServices = getAllServices().filter((s) => s.slug !== service.slug)
+  const allServices = getAllServices(lang).filter((s) => s.slug !== service.slug)
   const relatedProjects = service.relatedProjects
     .map((slug) => ({
       slug,
