@@ -25,8 +25,55 @@ export function ServicePage() {
 
 function ServiceView({ service }: { service: ServiceDetail }) {
   const { t, lang } = useApp()
+  const ru = lang === 'ru'
   const canonical = `${SITE_URL}/services/${service.slug}`
-  const authorName = lang === 'ru' ? 'Дмитрий Ботян' : 'Dmitry Botyan'
+  const authorName = ru ? 'Дмитрий Ботян' : 'Dmitry Botyan'
+
+  const L = ru
+    ? {
+        home: 'Главная',
+        services: 'Услуги',
+        badge: 'Услуга',
+        cta1: 'Рассчитать стоимость',
+        cta2: 'Написать в Telegram',
+        pricingTitle: 'Цены и тарифы',
+        pricingNote: 'Цены на 2026 год. Точную стоимость скажу после короткого обсуждения вашей задачи.',
+        popular: 'Популярный',
+        from: 'от',
+        unit: 'тыс. ₽',
+        discuss: 'Обсудить',
+        cases: 'Реальные кейсы',
+        faq: 'Частые вопросы',
+        ctaTitle: 'Готовы обсудить проект?',
+        ctaText: 'Расскажу о сроках, ценах и помогу выбрать оптимальный стек под вашу задачу. Отвечу в течение часа.',
+        ctaCalc: 'Рассчитать стоимость',
+        ctaContact: 'Связаться',
+        back: 'На главную',
+        otherServices: 'Другие услуги',
+        more: 'Подробнее',
+      }
+    : {
+        home: 'Home',
+        services: 'Services',
+        badge: 'Service',
+        cta1: 'Estimate cost',
+        cta2: 'Message on Telegram',
+        pricingTitle: 'Pricing',
+        pricingNote: 'Prices for 2026. Exact cost discussed after a brief.',
+        popular: 'Popular',
+        from: 'from',
+        unit: 'k ₽',
+        discuss: 'Discuss',
+        cases: 'Real cases',
+        faq: 'FAQ',
+        ctaTitle: 'Ready to discuss a project?',
+        ctaText: "I'll walk you through timelines, pricing and help pick the right stack for your task. I reply within an hour.",
+        ctaCalc: 'Estimate cost',
+        ctaContact: 'Get in touch',
+        back: 'Back to home',
+        otherServices: 'Other services',
+        more: 'Learn more',
+      }
   const allServices = getAllServices().filter((s) => s.slug !== service.slug)
   const relatedProjects = service.relatedProjects
     .map((slug) => ({
@@ -55,7 +102,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
         description: service.metaDescription,
         url: canonical,
         provider: { '@type': 'Person', name: authorName, url: SITE_URL },
-        areaServed: { '@type': 'Country', name: 'Россия' },
+        areaServed: { '@type': 'Country', name: ru ? 'Россия' : 'Russia' },
         serviceType: service.h1,
         offers: {
           '@type': 'AggregateOffer',
@@ -82,8 +129,8 @@ function ServiceView({ service }: { service: ServiceDetail }) {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Услуги', item: SITE_URL + '/#services' },
+          { '@type': 'ListItem', position: 1, name: L.home, item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: L.services, item: SITE_URL + '/#services' },
           { '@type': 'ListItem', position: 3, name: service.h1, item: canonical },
         ],
       },
@@ -107,9 +154,9 @@ function ServiceView({ service }: { service: ServiceDetail }) {
 
           {/* Breadcrumb */}
           <nav aria-label="breadcrumb" className="mb-8 flex items-center gap-2 font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex-wrap">
-            <Link to="/" className="hover:text-foreground transition-colors">Главная</Link>
+            <Link to="/" className="hover:text-foreground transition-colors">{L.home}</Link>
             <span>/</span>
-            <Link to="/#services" className="hover:text-foreground transition-colors">Услуги</Link>
+            <Link to="/#services" className="hover:text-foreground transition-colors">{L.services}</Link>
             <span>/</span>
             <span className="text-foreground">{service.h1}</span>
           </nav>
@@ -120,7 +167,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
             <header className="mb-12 pb-10 border-b-2 border-border">
               <div className="flex items-center gap-3 mb-5 flex-wrap">
                 <span className="font-head text-[10px] font-bold uppercase tracking-widest px-2 py-1 border-2 border-border bg-foreground text-background">
-                  Услуга
+                  {L.badge}
                 </span>
                 <span className="inline-flex items-center gap-1.5 font-head text-[10px] font-bold uppercase tracking-widest px-2 py-1 border-2 border-accent bg-accent text-accent-foreground">
                   от {service.priceFrom} 000 ₽
@@ -144,7 +191,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                   }}
                 >
                   <Calculator size={16} />
-                  Рассчитать стоимость
+                  {L.cta1}
                 </Button>
                 <a
                   href={t.hero.socials.telegram}
@@ -154,7 +201,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                   className="inline-flex items-center justify-center gap-2 font-head font-medium whitespace-nowrap text-base bg-background text-foreground border-2 border-border px-6 py-3 shadow-[3px_3px_0px_0px_var(--border)] hover:shadow-[1px_1px_0px_0px_var(--border)] hover:translate-x-px hover:translate-y-px transition-all"
                 >
                   <Send size={16} />
-                  Написать в Telegram
+                  {L.cta2}
                 </a>
               </div>
             </header>
@@ -190,10 +237,10 @@ function ServiceView({ service }: { service: ServiceDetail }) {
             {/* Tiers / Pricing */}
             <section className="mb-14">
               <h2 className="font-head text-xl md:text-2xl font-black tracking-tight mb-3">
-                Цены и тарифы
+                {L.pricingTitle}
               </h2>
               <p className="font-sans text-sm text-muted-foreground mb-8 max-w-2xl">
-                Цены на 2026 год. Точную стоимость скажу после короткого обсуждения вашей задачи.
+                {L.pricingNote}
               </p>
               <div className="grid md:grid-cols-3 gap-5 items-stretch">
                 {service.tiers.map((tier) => (
@@ -209,7 +256,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                     {tier.popular && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 bg-accent text-accent-foreground font-head text-[9px] font-black tracking-widest uppercase px-2.5 py-1 border-2 border-border shadow-[2px_2px_0px_0px_var(--border)]">
                         <Star size={10} strokeWidth={3} />
-                        Популярный
+                        {L.popular}
                       </div>
                     )}
                     <div className="p-5 border-b-2 border-border">
@@ -219,12 +266,12 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                       </p>
                       <div className="flex items-baseline gap-1.5 flex-wrap">
                         <span className="font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                          от
+                          {L.from}
                         </span>
                         <span className="font-head text-3xl font-black tracking-tight tabular-nums">{tier.priceFrom}</span>
                         <span className="font-head text-xl font-black text-muted-foreground">–</span>
                         <span className="font-head text-xl font-black text-muted-foreground tabular-nums">{tier.priceTo}</span>
-                        <span className="font-head text-[10px] font-bold uppercase tracking-wider text-muted-foreground">тыс. ₽</span>
+                        <span className="font-head text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{L.unit}</span>
                       </div>
                     </div>
                     <ul className="p-5 space-y-2.5 flex-1">
@@ -255,7 +302,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                           window.location.href = '/#contact'
                         }}
                       >
-                        Обсудить
+                        {L.discuss}
                         <ArrowRight size={14} />
                       </Button>
                     </div>
@@ -303,7 +350,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
             {relatedProjects.length > 0 && (
               <section className="mb-14">
                 <h2 className="font-head text-xl md:text-2xl font-black tracking-tight mb-6">
-                  Реальные кейсы
+                  {L.cases}
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {relatedProjects.map(({ slug, detail, project }) => (
@@ -341,7 +388,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
             {/* FAQ */}
             <section className="mb-14 pt-10 border-t-2 border-border" aria-labelledby="service-faq">
               <h2 id="service-faq" className="font-head text-xl md:text-2xl font-black tracking-tight mb-6">
-                Частые вопросы
+                {L.faq}
               </h2>
               <div className="space-y-3 max-w-3xl">
                 {service.faq.map((f, i) => (
@@ -364,10 +411,10 @@ function ServiceView({ service }: { service: ServiceDetail }) {
             {/* Final CTA */}
             <section className="mt-14 border-2 border-border bg-foreground text-background shadow-[6px_6px_0px_0px_var(--accent)] p-6 md:p-8">
               <h2 className="font-head text-xl md:text-2xl font-black tracking-tight mb-2">
-                Готовы обсудить проект?
+                {L.ctaTitle}
               </h2>
               <p className="font-sans text-sm leading-relaxed mb-6 opacity-80 max-w-md">
-                Расскажу о сроках, ценах и помогу выбрать оптимальный стек под вашу задачу. Отвечу в течение часа.
+                {L.ctaText}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
@@ -379,7 +426,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                   }}
                 >
                   <Calculator size={15} />
-                  Рассчитать стоимость
+                  {L.ctaCalc}
                 </Button>
                 <a
                   href={t.hero.socials.telegram}
@@ -389,7 +436,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                   className="inline-flex items-center justify-center gap-2 font-head font-medium whitespace-nowrap bg-background text-foreground border-2 border-border px-4 py-2 shadow-[3px_3px_0px_0px_#FFFFFF] hover:shadow-[1px_1px_0px_0px_#FFFFFF] hover:translate-x-px hover:translate-y-px transition-all"
                 >
                   <Send size={15} />
-                  Связаться
+                  {L.ctaContact}
                 </a>
               </div>
             </section>
@@ -401,7 +448,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                 className="inline-flex items-center gap-2 font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ArrowLeft size={12} />
-                На главную
+                {L.back}
               </Link>
             </div>
           </div>
@@ -410,7 +457,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
           {allServices.length > 0 && (
             <section className="mt-16 pt-12 border-t-2 border-border max-w-5xl" aria-labelledby="other-services">
               <h2 id="other-services" className="font-head text-xl md:text-2xl font-black tracking-tight mb-6">
-                Другие услуги
+                {L.otherServices}
               </h2>
               <div className="grid sm:grid-cols-2 gap-5">
                 {allServices.map((s) => (
@@ -420,7 +467,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                     className="group flex flex-col border-2 border-border bg-card shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150 p-5"
                   >
                     <span className="font-head text-[10px] font-bold uppercase tracking-widest text-accent mb-2">
-                      от {s.priceFrom} 000 ₽
+                      {L.from} {s.priceFrom} 000 ₽
                     </span>
                     <h3 className="font-head text-lg font-black leading-tight mb-2 group-hover:text-accent transition-colors">
                       {s.h1}
@@ -429,7 +476,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                       {s.tagline}
                     </p>
                     <span className="mt-4 inline-flex items-center gap-1 font-head text-[10px] font-black uppercase tracking-widest group-hover:text-accent transition-colors">
-                      Подробнее
+                      {L.more}
                       <ArrowUpRight size={13} />
                     </span>
                   </Link>

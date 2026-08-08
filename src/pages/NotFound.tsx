@@ -1,13 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import { Terminal } from 'lucide-react'
 import { useSeo } from '@/hooks/useSeo'
+import { useApp } from '@/contexts/AppContext'
 
 export function NotFound() {
   const navigate = useNavigate()
+  const { lang } = useApp()
+  const ru = lang === 'ru'
 
   useSeo({
-    title: 'Страница не найдена - Дмитрий Ботян',
-    description: 'Запрашиваемая страница не найдена.',
+    title: ru ? 'Страница не найдена - Дмитрий Ботян' : 'Page not found - Dmitry Botyan',
+    description: ru ? 'Запрашиваемая страница не найдена.' : 'The requested page was not found.',
     robots: 'noindex, follow',
   })
 
@@ -28,17 +31,19 @@ export function NotFound() {
       </div>
 
       <h1 className="font-head text-2xl md:text-4xl font-black tracking-tight mb-4">
-        Страница не найдена
+        {ru ? 'Страница не найдена' : 'Page not found'}
       </h1>
       <p className="font-sans text-sm text-muted-foreground mb-10 max-w-sm leading-relaxed">
-        Такой страницы не существует. Возможно, ссылка устарела или адрес введён неверно.
+        {ru
+          ? 'Такой страницы не существует. Возможно, ссылка устарела или адрес введён неверно.'
+          : 'This page does not exist. The link may be outdated or the address entered incorrectly.'}
       </p>
 
       <button
         onClick={() => navigate('/')}
         className="font-head text-xs font-bold tracking-widest uppercase border-2 border-border px-6 py-3 shadow-[4px_4px_0px_0px_var(--border)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
       >
-        ← На главную
+        ← {ru ? 'На главную' : 'Back to home'}
       </button>
     </div>
   )
