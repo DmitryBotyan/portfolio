@@ -63,7 +63,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
         pricingNote: 'Prices for 2026. Exact cost discussed after a brief.',
         popular: 'Popular',
         from: 'from',
-        unit: 'k ₽',
+        unit: 'k $',
         discuss: 'Discuss',
         cases: 'Real cases',
         faq: 'FAQ',

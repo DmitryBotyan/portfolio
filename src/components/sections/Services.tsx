@@ -129,10 +129,12 @@ export function Services() {
           <div className="mb-6 flex items-end justify-between gap-4 flex-wrap">
             <div>
               <h3 className="font-head text-xl md:text-2xl font-black tracking-tight mb-1">
-                Подробнее по направлениям
+                {lang === 'ru' ? 'Подробнее по направлениям' : 'Service pages'}
               </h3>
               <p className="font-sans text-sm text-muted-foreground">
-                Отдельная страница для каждой основной услуги: цены, этапы, кейсы.
+                {lang === 'ru'
+                  ? 'Отдельная страница для каждой основной услуги: цены, этапы, кейсы.'
+                  : 'A dedicated page for each service: pricing, process, real cases.'}
               </p>
             </div>
           </div>
@@ -145,7 +147,7 @@ export function Services() {
                 className="group flex flex-col border-2 border-border bg-card shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150 p-5"
               >
                 <span className="font-head text-[10px] font-bold uppercase tracking-widest text-accent mb-2">
-                  от {svc.priceFrom} 000 ₽
+                  {lang === 'ru' ? `от ${svc.priceFrom} 000 ₽` : `from ${svc.priceFrom},000 $`}
                 </span>
                 <h4 className="font-head text-base md:text-lg font-black leading-tight mb-2 group-hover:text-accent transition-colors">
                   {svc.h1}
@@ -154,7 +156,7 @@ export function Services() {
                   {svc.tagline}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 font-head text-[10px] font-black uppercase tracking-widest group-hover:text-accent transition-colors">
-                  Подробнее
+                  {lang === 'ru' ? 'Подробнее' : 'Learn more'}
                   <ArrowUpRight size={13} />
                 </span>
               </Link>
