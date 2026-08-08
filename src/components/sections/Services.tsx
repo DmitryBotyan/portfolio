@@ -147,7 +147,7 @@ export function Services() {
                 className="group flex flex-col border-2 border-border bg-card shadow-[4px_4px_0px_0px_var(--border)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] transition-all duration-150 p-5"
               >
                 <span className="font-head text-[10px] font-bold uppercase tracking-widest text-accent mb-2">
-                  {lang === 'ru' ? `от ${svc.priceFrom} 000 ₽` : `from ${svc.priceFrom},000 $`}
+                  {lang === 'ru' ? `от ${svc.priceFrom} 000 ₽` : `from $${Math.round(svc.priceFrom * 1000 / 90 / 10) * 10}`}
                 </span>
                 <h4 className="font-head text-base md:text-lg font-black leading-tight mb-2 group-hover:text-accent transition-colors">
                   {svc.h1}

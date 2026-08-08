@@ -13,6 +13,11 @@ function formatRub(n: number, lang: 'ru' | 'en') {
   }).format(Math.round(n))
 }
 
+function toDisplay(rub: number, lang: 'ru' | 'en') {
+  if (lang === 'ru') return rub
+  return Math.round(rub / 90 / 10) * 10
+}
+
 export function Calculator() {
   const { t, lang } = useApp()
   const { calculator } = t
@@ -206,7 +211,7 @@ export function Calculator() {
                       <span className="flex-1 min-w-0">
                         <span className="block font-sans text-[13px] font-semibold leading-tight">{extra.label}</span>
                         <span className="block font-head text-[9px] font-bold uppercase tracking-wider text-muted-foreground mt-0.5">
-                          +{formatRub(extra.price, lang)} {calculator.currency}
+                          +{formatRub(toDisplay(extra.price, lang), lang)} {calculator.currency}
                         </span>
                       </span>
                     </button>
@@ -225,11 +230,11 @@ export function Calculator() {
               <div className="font-head font-black tracking-tight leading-none">
                 <div className="flex items-baseline gap-2 flex-wrap">
                   <span className="text-[11px] uppercase tracking-widest opacity-70">{calculator.resultPrefix}</span>
-                  <span className="text-2xl md:text-3xl tabular-nums">{formatRub(result[0], lang)}</span>
+                  <span className="text-2xl md:text-3xl tabular-nums">{formatRub(toDisplay(result[0], lang), lang)}</span>
                 </div>
                 <div className="flex items-baseline gap-2 flex-wrap mt-1.5">
                   <span className="text-[11px] uppercase tracking-widest opacity-70">{calculator.resultDivider}</span>
-                  <span className="text-2xl md:text-3xl text-accent tabular-nums">{formatRub(result[1], lang)}</span>
+                  <span className="text-2xl md:text-3xl text-accent tabular-nums">{formatRub(toDisplay(result[1], lang), lang)}</span>
                   <span className="text-[11px] uppercase tracking-widest opacity-70">{calculator.currency}</span>
                 </div>
               </div>

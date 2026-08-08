@@ -29,6 +29,9 @@ function ServiceView({ service }: { service: ServiceDetail }) {
   const ru = lang === 'ru'
   const canonical = `${SITE_URL}/services/${service.slug}`
   const authorName = ru ? 'Дмитрий Ботян' : 'Dmitry Botyan'
+  const toUSD = (kRub: number) => Math.round(kRub * 1000 / 90 / 10) * 10
+  const jPrice = (kRub: number) => ru ? kRub * 1000 : toUSD(kRub)
+  const priceCurr = ru ? 'RUB' : 'USD'
 
   const L = ru
     ? {
@@ -63,7 +66,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
         pricingNote: 'Prices for 2026. Exact cost discussed after a brief.',
         popular: 'Popular',
         from: 'from',
-        unit: 'k $',
+        unit: '$',
         discuss: 'Discuss',
         cases: 'Real cases',
         faq: 'FAQ',
@@ -107,21 +110,21 @@ function ServiceView({ service }: { service: ServiceDetail }) {
         serviceType: service.h1,
         offers: {
           '@type': 'AggregateOffer',
-          priceCurrency: 'RUB',
-          lowPrice: service.tiers[0].priceFrom * 1000,
-          highPrice: service.tiers[service.tiers.length - 1].priceTo * 1000,
+          priceCurrency: priceCurr,
+          lowPrice: jPrice(service.tiers[0].priceFrom),
+          highPrice: jPrice(service.tiers[service.tiers.length - 1].priceTo),
           offerCount: service.tiers.length,
           offers: service.tiers.map((tier) => ({
             '@type': 'Offer',
             name: tier.name,
             description: tier.description,
-            priceCurrency: 'RUB',
-            price: tier.priceFrom * 1000,
+            priceCurrency: priceCurr,
+            price: jPrice(tier.priceFrom),
             priceSpecification: {
               '@type': 'PriceSpecification',
-              minPrice: tier.priceFrom * 1000,
-              maxPrice: tier.priceTo * 1000,
-              priceCurrency: 'RUB',
+              minPrice: jPrice(tier.priceFrom),
+              maxPrice: jPrice(tier.priceTo),
+              priceCurrency: priceCurr,
             },
           })),
         },
@@ -171,7 +174,7 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                   {L.badge}
                 </span>
                 <span className="inline-flex items-center gap-1.5 font-head text-[10px] font-bold uppercase tracking-widest px-2 py-1 border-2 border-accent bg-accent text-accent-foreground">
-                  от {service.priceFrom} 000 ₽
+                  {ru ? `от ${service.priceFrom} 000 ₽` : `from $${toUSD(service.priceFrom)}`}
                 </span>
               </div>
 
@@ -269,9 +272,9 @@ function ServiceView({ service }: { service: ServiceDetail }) {
                         <span className="font-head text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                           {L.from}
                         </span>
-                        <span className="font-head text-3xl font-black tracking-tight tabular-nums">{tier.priceFrom}</span>
+                        <span className="font-head text-3xl font-black tracking-tight tabular-nums">{ru ? tier.priceFrom : toUSD(tier.priceFrom)}</span>
                         <span className="font-head text-xl font-black text-muted-foreground">–</span>
-                        <span className="font-head text-xl font-black text-muted-foreground tabular-nums">{tier.priceTo}</span>
+                        <span className="font-head text-xl font-black text-muted-foreground tabular-nums">{ru ? tier.priceTo : toUSD(tier.priceTo)}</span>
                         <span className="font-head text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{L.unit}</span>
                       </div>
                     </div>

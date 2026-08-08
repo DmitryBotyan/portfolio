@@ -828,15 +828,15 @@ export const content = {
       subheading: 'Transparent rates for websites, bots and integrations. 2026 market prices.',
       popularBadge: 'Popular',
       currency: '$',
-      thousand: 'k',
+      thousand: '',
       fromLabel: 'from',
       ctaPackage: 'Discuss package',
       tiers: [
         {
           id: 'start',
           name: 'Start',
-          priceFrom: 35,
-          priceTo: 80,
+          priceFrom: 400,
+          priceTo: 900,
           tagline: 'Get online fast',
           description: 'When you need to launch a presence quickly - landing page, business card site or simple bot.',
           includes: [
@@ -853,8 +853,8 @@ export const content = {
         {
           id: 'business',
           name: 'Business',
-          priceFrom: 80,
-          priceTo: 160,
+          priceFrom: 900,
+          priceTo: 1800,
           tagline: 'Optimal choice for growth',
           description: 'Full-fledged corporate site, WordPress shop, or Telegram bot with a web admin panel.',
           includes: [
@@ -871,8 +871,8 @@ export const content = {
         {
           id: 'premium',
           name: 'Premium',
-          priceFrom: 150,
-          priceTo: 350,
+          priceFrom: 1700,
+          priceTo: 3900,
           tagline: 'Complex projects, end-to-end',
           description: 'Next.js shop, marketplace or platform with integrations and ongoing support.',
           includes: [
@@ -893,7 +893,7 @@ export const content = {
       subheading: 'Ballpark range for your project. Exact figure - after a short brief.',
       typeLabel: 'What do you need',
       pagesLabel: 'Pages / sections count',
-      pagesHint: 'Each extra page - +5k $',
+      pagesHint: 'Each extra page - +$60',
       designLabel: 'Design',
       extrasLabel: 'Extras',
       resultLabel: 'Estimated cost',
