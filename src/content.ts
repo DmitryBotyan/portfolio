@@ -7,9 +7,9 @@ import medequip3 from './assets/projects/medequip-3.jpg'
 import uteam1 from './assets/projects/uteam-1.jpg'
 import uteam2 from './assets/projects/uteam-2.jpg'
 import uteam3 from './assets/projects/uteam-3.jpg'
-import ccc1 from './assets/projects/ccc-1.jpg'
-import ccc2 from './assets/projects/ccc-2.jpg'
-import ccc3 from './assets/projects/ccc-3.jpg'
+import ramkiBot1 from './assets/projects/ramki-bot-1.png'
+import ramkiBot2 from './assets/projects/ramki-bot-2.png'
+import ramkiBot3 from './assets/projects/ramki-bot-3.png'
 import ramki1 from './assets/projects/ramki-1.png'
 import ramki2 from './assets/projects/ramki-2.png'
 import ramki3 from './assets/projects/ramki-3.png'
@@ -81,6 +81,14 @@ const shared = {
     },
     {
       number: '004',
+      slug: 'ramki-bot',
+      title: 'Бот журнала РАМКИ',
+      stack: ['Python', 'aiogram', 'PostgreSQL', 'Redis'],
+      live: 'https://t.me/ramki_magazine_bot',
+      images: [ramkiBot1, ramkiBot2, ramkiBot3],
+    },
+    {
+      number: '005',
       slug: 'dreamyvoice',
       title: 'DreamyVoice',
       stack: ['Next.js', 'TypeScript', 'Prisma', 'pnpm'],
@@ -88,7 +96,7 @@ const shared = {
       images: [dreamy1, dreamy2, dreamy3],
     },
     {
-      number: '005',
+      number: '006',
       slug: 'opengrok-bot',
       title: 'OpenGrok',
       stack: ['Python', 'aiogram', 'Grok API', 'Whisper'],
@@ -96,7 +104,7 @@ const shared = {
       images: [opengrok1, opengrok2, opengrok3],
     },
     {
-      number: '006',
+      number: '007',
       slug: 'aurum-legal',
       title: 'Аурум · шаблон для юридической компании',
       stack: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'Tailwind v4', 'Vercel'],
@@ -105,7 +113,7 @@ const shared = {
       template: true,
     },
     {
-      number: '007',
+      number: '008',
       slug: 'zotova-portfolio',
       title: 'Anastasiia Zotova - Portfolio',
       stack: ['React', 'TypeScript', 'Vite', 'CSS'],
@@ -113,7 +121,7 @@ const shared = {
       images: [zotova1, zotova2, zotova3],
     },
     {
-      number: '008',
+      number: '009',
       slug: 'unemployment-team',
       title: 'unemployment.team',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
@@ -121,7 +129,7 @@ const shared = {
       images: [uteam1, uteam2, uteam3],
     },
     {
-      number: '009',
+      number: '010',
       slug: 'medequip',
       title: 'МедЭквип',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
@@ -130,20 +138,12 @@ const shared = {
       template: true,
     },
     {
-      number: '010',
+      number: '011',
       slug: 'travelmap',
       title: 'TravelMap',
       stack: ['React', 'TypeScript', 'Vite', 'Supabase', 'MapLibre GL'],
       live: 'https://travel-map-ochre-one.vercel.app',
       images: [travelmap1, travelmap2, travelmap3],
-    },
-    {
-      number: '011',
-      slug: 'ccc-holistic-medicine',
-      title: 'Центр Целостности Человека',
-      stack: ['WordPress', 'ACF', 'WooCommerce', 'PHP'],
-      live: '#',
-      images: [ccc1, ccc2, ccc3],
     },
   ],
 }
@@ -234,14 +234,14 @@ export const content = {
         { ...shared.projects[0], description: 'Мой собственный Telegram-бот для услуг. Помогает посетителям выбрать услугу, рассчитать стоимость в формате диалога и оставить заявку. Python + aiogram, SQLite, развёрнут на VPS как systemd-сервис.' },
         { ...shared.projects[1], description: 'Платформа для проведения рэп-турнира: подача треков, анонимное судейство по раундам, баттл-сетка, рейтинги, лайки, блог, кастомный аудиоплеер с CDN-стримингом. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.' },
         { ...shared.projects[2], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
-        { ...shared.projects[3], description: 'Платформа для команды аниме-озвучки. Каталог тайтлов, страницы релизов с плеером, избранное, рандом, админка для редакторов. Next.js, Prisma, PostgreSQL.' },
-        { ...shared.projects[4], description: 'AI-ассистент в Telegram с интеграцией Grok API от xAI. Автоматический поиск в интернете, анализ фото, распознавание голосовых сообщений, автогенерация названий тем разговоров.' },
-        { ...shared.projects[5], description: 'Готовый шаблон сайта для юридической компании на Next.js 16 и shadcn/ui. Тёмная чёрно-золотая тема, 8 страниц, анимированные счётчики. Адаптирую под бренд клиента за 2-3 недели.' },
-        { ...shared.projects[6], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
-        { ...shared.projects[7], description: 'Сайт нашей команды. Услуги, портфолио, блог, многошаговая форма заявки.' },
-        { ...shared.projects[8], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
-        { ...shared.projects[9], description: 'Интерактивная карта путешествий с социальной механикой. Пользователи отмечают места, пишут отзывы, собирают коллекции и следят за поездками других. React, Supabase, MapLibre GL, real-time обновления.' },
-        { ...shared.projects[10], description: 'Сайт центра холистической медицины. Кастомные типы записей и поля на ACF, WooCommerce-магазин товаров, многошаговая форма записи на приём, блог.' },
+        { ...shared.projects[3], description: 'Telegram-бот бизнес-журнала «РАМКИ». Заявки на участие в проекте «РАМКИ 500», медиаресурсы журнала, полезные материалы и секретный подарок для подписчиков. Python, aiogram, PostgreSQL.' },
+        { ...shared.projects[4], description: 'Платформа для команды аниме-озвучки. Каталог тайтлов, страницы релизов с плеером, избранное, рандом, админка для редакторов. Next.js, Prisma, PostgreSQL.' },
+        { ...shared.projects[5], description: 'AI-ассистент в Telegram с интеграцией Grok API от xAI. Автоматический поиск в интернете, анализ фото, распознавание голосовых сообщений, автогенерация названий тем разговоров.' },
+        { ...shared.projects[6], description: 'Готовый шаблон сайта для юридической компании на Next.js 16 и shadcn/ui. Тёмная чёрно-золотая тема, 8 страниц, анимированные счётчики. Адаптирую под бренд клиента за 2-3 недели.' },
+        { ...shared.projects[7], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
+        { ...shared.projects[8], description: 'Сайт нашей команды. Услуги, портфолио, блог, многошаговая форма заявки.' },
+        { ...shared.projects[9], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
+        { ...shared.projects[10], description: 'Интерактивная карта путешествий с социальной механикой. Пользователи отмечают места, пишут отзывы, собирают коллекции и следят за поездками других. React, Supabase, MapLibre GL, real-time обновления.' },
       ],
     },
     team: {
@@ -653,14 +653,14 @@ export const content = {
         { ...shared.projects[0], description: 'My own Telegram bot that sells my services. Helps visitors pick a service, estimate cost through a chat dialog and leave a request. Python + aiogram, SQLite, deployed on a VPS as a systemd service.' },
         { ...shared.projects[1], description: 'Full-stack rap battle tournament platform: track submission, anonymous judging, bracket generation, ratings, likes, blog, custom audio player with CDN streaming. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions CI/CD.' },
         { ...shared.projects[2], description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
-        { ...shared.projects[3], description: 'Platform for an anime dubbing team. Title catalog, release pages with player, favorites, random pick, editor admin panel. Next.js, Prisma, PostgreSQL.' },
-        { ...shared.projects[4], description: 'AI assistant in Telegram with xAI Grok API integration. Automatic web search, image analysis, voice message recognition, auto-naming of conversation threads.' },
-        { ...shared.projects[5], description: 'Ready-made website template for a law firm on Next.js 16 and shadcn/ui. Dark black-and-gold theme, 8 pages, animated counters. I adapt it to the client brand in 2-3 weeks.' },
-        { ...shared.projects[6], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
-        { ...shared.projects[7], description: "Our team's website. Services, portfolio, blog, multi-step project request form." },
-        { ...shared.projects[8], description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
-        { ...shared.projects[9], description: 'Interactive travel map with social mechanics. Users drop pins, leave reviews, build collections and follow others. React, Supabase, MapLibre GL, real-time updates.' },
-        { ...shared.projects[10], description: 'Holistic medicine center website. Custom post types and fields via ACF, WooCommerce shop, multi-step booking form, blog.' },
+        { ...shared.projects[3], description: 'Telegram bot for the RAMKI business magazine. Application flow for the RAMKI 500 project, magazine media resources, useful materials and a secret gift for subscribers. Python, aiogram, PostgreSQL.' },
+        { ...shared.projects[4], description: 'Platform for an anime dubbing team. Title catalog, release pages with player, favorites, random pick, editor admin panel. Next.js, Prisma, PostgreSQL.' },
+        { ...shared.projects[5], description: 'AI assistant in Telegram with xAI Grok API integration. Automatic web search, image analysis, voice message recognition, auto-naming of conversation threads.' },
+        { ...shared.projects[6], description: 'Ready-made website template for a law firm on Next.js 16 and shadcn/ui. Dark black-and-gold theme, 8 pages, animated counters. I adapt it to the client brand in 2-3 weeks.' },
+        { ...shared.projects[7], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
+        { ...shared.projects[8], description: "Our team's website. Services, portfolio, blog, multi-step project request form." },
+        { ...shared.projects[9], description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
+        { ...shared.projects[10], description: 'Interactive travel map with social mechanics. Users drop pins, leave reviews, build collections and follow others. React, Supabase, MapLibre GL, real-time updates.' },
       ],
     },
     team: {
