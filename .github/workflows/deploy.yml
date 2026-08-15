@@ -9,6 +9,11 @@ concurrency:
   group: deploy-vps
   cancel-in-progress: true
 
+env:
+  DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+  DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+  DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,6 +30,8 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build
+        env:
+          VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
         run: bun run build
 
       - name: Setup SSH
@@ -32,12 +39,14 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p 22 37.1.211.14 >> ~/.ssh/known_hosts 2>/dev/null
+          ssh-keyscan -p "$DEPLOY_PORT" "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
 
       - name: Deploy static + API
         run: |
-          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key -p 22" dist/ deploy@37.1.211.14:/var/www/botyan/dist/
-          rsync -az -e "ssh -i ~/.ssh/deploy_key -p 22" server/contact-server.mjs deploy@37.1.211.14:/opt/botyan-api/
+          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key -p $DEPLOY_PORT" \
+            dist/ "$DEPLOY_USER@$DEPLOY_HOST:/var/www/botyan/dist/"
+          rsync -az -e "ssh -i ~/.ssh/deploy_key -p $DEPLOY_PORT" \
+            server/contact-server.mjs "$DEPLOY_USER@$DEPLOY_HOST:/opt/botyan-api/"
 
       - name: Sync runtime secrets to server
         env:
@@ -47,8 +56,15 @@ jobs:
         run: |
           printf 'PORT=3101\nRECAPTCHA_SECRET=%s\nTELEGRAM_BOT_TOKEN=%s\nTELEGRAM_CHAT_ID=%s\nRECAPTCHA_MIN_SCORE=0.5\n' \
             "$RECAPTCHA_SECRET" "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" \
-            | ssh -i ~/.ssh/deploy_key -p 22 deploy@37.1.211.14 \
-              'sudo tee /etc/botyan/contact.env >/dev/null && sudo chown deploy:deploy /etc/botyan/contact.env && sudo chmod 600 /etc/botyan/contact.env'
+            | ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" \
+              'cat > /etc/botyan/contact.env && chmod 600 /etc/botyan/contact.env'
 
       - name: Restart API
-        run: ssh -i ~/.ssh/deploy_key -p 22 deploy@37.1.211.14 'sudo systemctl restart botyan-api'
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" \
+            'sudo systemctl restart botyan-api'
+
+      - name: Health check
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" "$DEPLOY_USER@$DEPLOY_HOST" \
+            'sleep 2 && curl -fsS http://127.0.0.1:3101/api/contact'
