@@ -321,48 +321,6 @@ const en: Record<string, ProjectDetail> = {
       { q: 'How is the admin protected?', a: 'Role-based authentication: only invited editors can sign in, with separate permission scopes for editors and admins.' },
     ],
   },
-  'unemployment-team': {
-    slug: 'unemployment-team',
-    metaTitle: 'unemployment.team: bilingual studio website on Next.js',
-    metaDescription:
-      'Studio website for our team: services, portfolio, blog, multi-step request form. Bilingual on Next.js with custom CMS and analytics. RU and EN versions.',
-    keywords: 'studio website nextjs, agency website, bilingual nextjs site, multi-step form nextjs, portfolio website nextjs',
-    h1: 'Bilingual studio website with multi-step request form',
-    tagline: 'Our own team site: services, portfolio, blog, smart contact flow',
-    category: 'Studio website',
-    year: '2025',
-    client: 'unemployment.team (own studio)',
-    industry: 'Web development',
-    role: ['Architecture', 'Frontend', 'Backend', 'Content', 'SEO'],
-    intro: [
-      'unemployment.team is the studio I co-founded. The site is our own showcase: we wanted to demonstrate the quality we deliver to clients on our own surface.',
-    ],
-    sections: [
-      {
-        heading: 'The goal',
-        paragraphs: [
-          'A studio website that wins trust quickly and gathers structured leads. Bilingual content for international clients. Fast loading and clear positioning.',
-        ],
-      },
-      {
-        heading: 'What was built',
-        paragraphs: [
-          'A Next.js app with bilingual routing, server-rendered pages for SEO, a custom multi-step request form that gathers project details progressively without scaring people away.',
-        ],
-        list: [
-          'Bilingual structure (RU and EN)',
-          'Server-rendered pages for fast indexing',
-          'Multi-step request form with progress',
-          'Portfolio with case studies',
-          'Blog with technical and business posts',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'Why bilingual?', a: 'To work with both Russian and international clients without splitting brand presence across two domains.' },
-      { q: 'Why multi-step form and not a simple one?', a: 'A multi-step form has higher completion rates for B2B services because it feels less intimidating than a long single form.' },
-    ],
-  },
   'medequip': {
     slug: 'medequip',
     metaTitle: 'MedEquip: corporate site for a medical equipment supplier',
@@ -890,51 +848,6 @@ const ru: Record<string, ProjectDetail> = {
       { q: 'Почему Next.js, а не WordPress?', a: 'WordPress не справился бы с кастомными типами данных и встроенным плеером без боли и тяжёлых плагинов. Next.js дал полный контроль над данными и более быстрый, app-подобный опыт.' },
       { q: 'Как защищена админка?', a: 'Ролевая аутентификация: войти могут только приглашённые редакторы, с разделением прав на редакторов и админов.' },
       { q: 'Сколько стоит подобная платформа?', a: 'Похожая платформа на Next.js со своей админкой в 2026 году обходится от 200 до 400 тысяч рублей в зависимости от объёма функций.' },
-    ],
-  },
-  'unemployment-team': {
-    slug: 'unemployment-team',
-    metaTitle: 'unemployment.team: двуязычный сайт студии на Next.js | Кейс',
-    metaDescription:
-      'Сайт нашей команды: услуги, портфолио, блог, многошаговая форма заявки. Двуязычный сайт на Next.js со своей CMS и аналитикой. Версии RU и EN.',
-    keywords: 'сайт студии next.js, сайт агентства разработка, двуязычный сайт next.js, многошаговая форма next.js, портфолио сайт next.js',
-    h1: 'Двуязычный сайт студии с многошаговой формой',
-    tagline: 'Наш собственный сайт команды: услуги, портфолио, блог, умная заявка',
-    category: 'Сайт студии',
-    year: '2025',
-    client: 'unemployment.team',
-    industry: 'Веб-разработка',
-    role: ['Архитектура', 'Frontend', 'Backend', 'Контент', 'SEO'],
-    intro: [
-      'unemployment.team это студия, которую я сооснователь. Сайт это наша собственная витрина: мы хотели на своём примере показать клиентам качество, которое доставляем им.',
-      'Логика простая: если ты делаешь сайты бизнесу, твой собственный сайт должен быть эталоном. По нему нас оценивают раньше, чем мы успеем что-то сказать.',
-    ],
-    sections: [
-      {
-        heading: 'Что нужно было сделать',
-        paragraphs: [
-          'Сайт студии, который быстро завоёвывает доверие и собирает структурированные заявки. Двуязычный контент для работы с международными клиентами. Быстрая загрузка и чёткое позиционирование без воды.',
-          'Дополнительно: форма заявки, которая не отпугивает многословностью, и блог с реальными техническими и бизнес-постами от команды.',
-        ],
-      },
-      {
-        heading: 'Что было реализовано',
-        paragraphs: [
-          'Next.js приложение с двуязычным роутингом, серверно-рендеримыми страницами для SEO и кастомной многошаговой формой заявки. Форма собирает детали проекта постепенно, без перегрузки человека длинной анкетой.',
-        ],
-        list: [
-          'Двуязычная структура (RU и EN)',
-          'Серверный рендеринг для быстрой индексации',
-          'Многошаговая форма заявки с прогресс-баром',
-          'Портфолио с кейсами проектов',
-          'Блог с техническими и бизнес-постами',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'Зачем делать двуязычный сайт?', a: 'Чтобы работать и с русскими, и с международными клиентами без разделения бренда между двумя доменами.' },
-      { q: 'Почему многошаговая форма, а не одна большая?', a: 'У многошаговой формы выше конверсия в B2B, потому что она ощущается менее пугающей, чем длинная одношаговая анкета.' },
-      { q: 'Сколько стоит сайт студии такого уровня?', a: 'Аналогичный сайт студии в 2026 году обходится от 150 до 300 тысяч рублей в зависимости от объёма контента и интеграций.' },
     ],
   },
   'medequip': {

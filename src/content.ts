@@ -4,9 +4,6 @@ import zotova3 from './assets/projects/zotova-3.jpg'
 import medequip1 from './assets/projects/medequip-1.jpg'
 import medequip2 from './assets/projects/medequip-2.jpg'
 import medequip3 from './assets/projects/medequip-3.jpg'
-import uteam1 from './assets/projects/uteam-1.jpg'
-import uteam2 from './assets/projects/uteam-2.jpg'
-import uteam3 from './assets/projects/uteam-3.jpg'
 import ramkiBot1 from './assets/projects/ramki-bot-1.png'
 import ramkiBot2 from './assets/projects/ramki-bot-2.png'
 import ramkiBot3 from './assets/projects/ramki-bot-3.png'
@@ -119,14 +116,6 @@ const shared = {
     },
     {
       number: '009',
-      slug: 'unemployment-team',
-      title: 'unemployment.team',
-      stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
-      live: 'https://unemployment.team',
-      images: [uteam1, uteam2, uteam3],
-    },
-    {
-      number: '010',
       slug: 'medequip',
       title: 'МедЭквип',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
@@ -228,8 +217,7 @@ export const content = {
         { ...shared.projects[5], description: 'AI-ассистент в Telegram с интеграцией Grok API от xAI. Автоматический поиск в интернете, анализ фото, распознавание голосовых сообщений, автогенерация названий тем разговоров.' },
         { ...shared.projects[6], description: 'Готовый шаблон сайта для юридической компании на Next.js 16 и shadcn/ui. Тёмная чёрно-золотая тема, 8 страниц, анимированные счётчики. Адаптирую под бренд клиента за 2-3 недели.' },
         { ...shared.projects[7], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
-        { ...shared.projects[8], description: 'Сайт нашей команды. Услуги, портфолио, блог, многошаговая форма заявки.' },
-        { ...shared.projects[9], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
+        { ...shared.projects[8], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
       ],
     },
     team: {
@@ -646,8 +634,7 @@ export const content = {
         { ...shared.projects[5], description: 'AI assistant in Telegram with xAI Grok API integration. Automatic web search, image analysis, voice message recognition, auto-naming of conversation threads.' },
         { ...shared.projects[6], title: 'Aurum · law firm template', description: 'Ready-made website template for a law firm on Next.js 16 and shadcn/ui. Dark black-and-gold theme, 8 pages, animated counters. I adapt it to the client brand in 2-3 weeks.' },
         { ...shared.projects[7], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
-        { ...shared.projects[8], description: "Our team's website. Services, portfolio, blog, multi-step project request form." },
-        { ...shared.projects[9], title: 'MedEquip', description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
+        { ...shared.projects[8], title: 'MedEquip', description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
       ],
     },
     team: {

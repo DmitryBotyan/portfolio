@@ -292,7 +292,7 @@ const ru: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['aurum-legal', 'unemployment-team', 'medequip', 'zotova-portfolio'],
+    relatedProjects: ['aurum-legal', 'medequip', 'zotova-portfolio'],
     faq: [
       {
         q: 'Сколько времени занимает разработка сайта под ключ?',
@@ -715,7 +715,7 @@ const ru: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['zotova-portfolio', 'unemployment-team'],
+    relatedProjects: ['zotova-portfolio'],
     faq: [
       {
         q: 'Сколько времени делается лендинг?',
@@ -854,7 +854,7 @@ const ru: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['zotova-portfolio', 'unemployment-team'],
+    relatedProjects: ['zotova-portfolio'],
     faq: [
       {
         q: 'Чем Tilda с кастомным кодом отличается от обычной Tilda?',
@@ -1140,7 +1140,7 @@ const en: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['aurum-legal', 'unemployment-team', 'medequip', 'zotova-portfolio'],
+    relatedProjects: ['aurum-legal', 'medequip', 'zotova-portfolio'],
     faq: [
       {
         q: 'How long does turnkey website development take?',
@@ -1563,7 +1563,7 @@ const en: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['zotova-portfolio', 'unemployment-team'],
+    relatedProjects: ['zotova-portfolio'],
     faq: [
       {
         q: 'How long does a landing page take?',
@@ -1702,7 +1702,7 @@ const en: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['zotova-portfolio', 'unemployment-team'],
+    relatedProjects: ['zotova-portfolio'],
     faq: [
       {
         q: 'How is Tilda with custom code different from regular Tilda?',
