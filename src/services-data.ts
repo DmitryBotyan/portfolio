@@ -196,7 +196,7 @@ const ru: Record<string, ServiceDetail> = {
     priceFrom: 35,
     intro: [
       'Когда говорят «сайт под ключ», за этой фразой могут стоять очень разные вещи. У одних это шаблон с биржи фриланса за 5 тысяч, у других это полноценный продукт с собственной архитектурой. Я делаю второе. Беру задачу целиком: понимаю, что нужно бизнесу, проектирую, программирую, запускаю и поддерживаю.',
-      'Под ключ значит, что вам не нужно искать дизайнера отдельно, верстальщика отдельно, бэкендера отдельно. Всё это я делаю сам или с командой unemployment.team. Вы получаете готовый сайт, который работает и приносит результат, а не набор файлов, который ещё нужно интегрировать.',
+      'Под ключ значит, что вам не нужно искать дизайнера отдельно, верстальщика отдельно, бэкендера отдельно. Всё это я делаю сам или с проверенными подрядчиками. Вы получаете готовый сайт, который работает и приносит результат, а не набор файлов, который ещё нужно интегрировать.',
     ],
     includes: {
       heading: 'Что входит по умолчанию',
@@ -1044,7 +1044,7 @@ const en: Record<string, ServiceDetail> = {
     priceFrom: 35,
     intro: [
       'When people say "turnkey website", they can mean very different things. For some it is a freelance marketplace template; for others it is a real product with its own architecture. I do the second. I take on the whole task: understand what the business needs, design it, build it, launch it, and support it.',
-      '"Turnkey" means you do not need to find a designer separately, a markup person separately, a backend developer separately. I do it all myself or with my unemployment.team crew. You get a finished website that works and delivers results, not a bundle of files that still needs to be integrated.',
+      '"Turnkey" means you do not need to find a designer separately, a markup person separately, a backend developer separately. I do it all myself or with contractors I trust. You get a finished website that works and delivers results, not a bundle of files that still needs to be integrated.',
     ],
     includes: {
       heading: 'What is included by default',

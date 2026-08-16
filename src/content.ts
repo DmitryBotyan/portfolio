@@ -182,11 +182,6 @@ export const content = {
       heading: 'Опыт',
       items: [
         {
-          period: '2025 - н.в.', role: 'Co-founder / Fullstack Developer', company: 'unemployment.team',
-          description: 'Со-основали unemployment.team вместе с Артёмом. Занимаюсь архитектурой, разработкой и общением с клиентами. Пишем на React, Next.js, TypeScript, иногда Node.js на бэке.',
-          tags: ['React', 'Next.js', 'TypeScript', 'Node.js', 'UI/UX'],
-        },
-        {
           period: '2023 - н.в.', role: 'Full-stack Developer', company: 'Freelance',
           description: 'Брал проекты напрямую: лендинги, интернет-магазины, корпоративные сайты, небольшие веб-приложения. WordPress, React или Next.js в зависимости от задачи.',
           tags: ['React', 'Next.js', 'WordPress', 'Node.js'],
@@ -219,29 +214,6 @@ export const content = {
         { ...shared.projects[7], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
         { ...shared.projects[8], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
       ],
-    },
-    team: {
-      heading: 'Наша команда',
-      name: 'unemployment.team',
-      description: 'unemployment.team - это я и Артём. Назвали так потому что оба бросили обычную работу ради своих проектов. Закрываем всё: дизайн, разработку, деплой, поддержку.',
-      siteLabel: 'Перейти на сайт команды',
-      siteUrl: 'https://unemployment.team/en',
-      availableLabel: 'Открыты для новых проектов',
-      members: [
-        {
-          name: 'Дмитрий Ботян',
-          role: 'Fullstack Developer',
-          tag: 'Со-основатель',
-          description: 'Разбираюсь в том, как это должно работать, и пишу код. Отвечаю за архитектуру и клиентскую часть проектов.',
-        },
-        {
-          name: 'Артём Тодор',
-          role: 'Fullstack Developer',
-          tag: 'Со-основатель',
-          description: 'Занимается серверами, деплоем, настройкой окружений. Если что-то падает в 3 ночи, это к нему.',
-        },
-      ],
-      services: ['Web Development', 'UI/UX Design', 'Tech Support'],
     },
     testimonials: {
       heading: 'Отзывы',
@@ -599,11 +571,6 @@ export const content = {
       heading: 'Experience',
       items: [
         {
-          period: '2025 - present', role: 'Co-founder / Fullstack Developer', company: 'unemployment.team',
-          description: "Co-founded unemployment.team with Artem. I handle architecture, development, and client communication. We build with React, Next.js, TypeScript, and Node.js on the backend.",
-          tags: ['React', 'Next.js', 'TypeScript', 'Node.js', 'UI/UX'],
-        },
-        {
           period: '2023 - present', role: 'Full-stack Developer', company: 'Freelance',
           description: 'Took direct client projects: landing pages, e-commerce sites, corporate websites, small web apps. WordPress, React, or Next.js depending on what made sense.',
           tags: ['React', 'Next.js', 'WordPress', 'Node.js'],
@@ -636,29 +603,6 @@ export const content = {
         { ...shared.projects[7], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
         { ...shared.projects[8], title: 'MedEquip', description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
       ],
-    },
-    team: {
-      heading: 'Our team',
-      name: 'unemployment.team',
-      description: "unemployment.team is me and Artem. We named it that because we both quit regular jobs to do our own thing. We cover everything: design, development, deployment, support.",
-      siteLabel: 'Visit team website',
-      siteUrl: 'https://unemployment.team/en',
-      availableLabel: 'Available for new projects',
-      members: [
-        {
-          name: 'Dmitry Botyan',
-          role: 'Fullstack Developer',
-          tag: 'Co-founder',
-          description: 'I figure out how things should work and write the code. Architecture and client-facing parts are on me.',
-        },
-        {
-          name: 'Artem Todor',
-          role: 'Fullstack Developer',
-          tag: 'Co-founder',
-          description: "He handles servers, deployments, and environments. If something breaks at 3am, that's him.",
-        },
-      ],
-      services: ['Web Development', 'UI/UX Design', 'Tech Support'],
     },
     testimonials: {
       heading: 'Reviews',
