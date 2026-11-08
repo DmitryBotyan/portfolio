@@ -38,6 +38,59 @@ export interface ProjectDetail {
 }
 
 const en: Record<string, ProjectDetail> = {
+  'lomtik-wallet': {
+    slug: 'lomtik-wallet',
+    metaTitle: 'Lomtik Wallet: a payment wallet in a Telegram Mini App | Case study',
+    metaDescription:
+      'A wallet inside Telegram: top-ups with Telegram Stars and USDT, SBP QR code payments, virtual Visa and Mastercard cards with Apple Pay. A React Mini App, two aiogram bots, a FastAPI and PostgreSQL backend.',
+    keywords: 'telegram mini app wallet, telegram payment bot, telegram mini app development, sbp payments in telegram, virtual cards in telegram, telegram stars payments, fastapi aiogram',
+    h1: 'A payment wallet in Telegram',
+    tagline: 'Top-ups with Stars and crypto, SBP payments and virtual cards in one mini app',
+    category: 'Telegram Mini App + 2 bots',
+    year: '2026',
+    client: 'Lomtik Wallet',
+    industry: 'Fintech, payments',
+    role: ['Architecture', 'Python / FastAPI backend', 'React Mini App', 'aiogram bots', 'Payment provider integration', 'VPS deployment'],
+    intro: [
+      'Lomtik Wallet opens right inside Telegram as a mini app. A user tops up a ruble balance with Telegram Stars or a USDT transfer and pays from it by SBP QR code in shops and on websites. The same balance funds virtual cards for paying foreign services and buying through Apple Pay and Google Pay.',
+      'The project has three parts: the Mini App where the whole wallet lives, the @lomtikwallet_bot bot that opens the app and sends notifications, and a service bot the owner uses to run the service without a separate admin panel.',
+    ],
+    sections: [
+      {
+        heading: 'What the wallet does',
+        paragraphs: [
+          'From the first /start the user taps "Open wallet" and sees the balance right away: no sign-up or password, login goes through the Telegram account.',
+        ],
+        list: [
+          'Top-ups with Telegram Stars and USDT (TRC-20), with the rate and markup calculated before payment',
+          'SBP QR code payments: camera scanner, link or screenshot from the gallery',
+          'Virtual Visa and Mastercard cards: issue, top up, withdraw, freeze, card details on request',
+          'Apple Pay and Google Pay codes arrive as a bot message',
+          'Fee-free transfers between users by @username',
+          'History with categories and a monthly spending chart',
+          'Star refunds under Telegram rules and a /paysupport command',
+        ],
+      },
+      {
+        heading: 'Service bot',
+        paragraphs: [
+          'Instead of a web admin panel, the owner runs the service from Telegram. The bot menu has income reports for today, yesterday, 7 and 30 days, reconciliation of user balances against the provider balance, markup and limit settings, user search by @username with operation history and manual decisions on disputed payments. A card can also be gifted to a user from here.',
+          'The bot alerts admins on its own if the provider stops responding, the card account runs low or the USDT rate disappears, and writes again once everything is back.',
+        ],
+      },
+      {
+        heading: 'Reliability',
+        paragraphs: [
+          'Payment operations are protected from double charges with idempotency keys. Statuses arrive through provider webhooks, and a background worker re-checks them by polling if a webhook gets lost. If the external rate is unavailable, the app blocks only the operations that need it and tells the user why. The backend is covered by 305 tests, the frontend by 89.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'What stack does the project use?', a: 'The backend is Python and FastAPI, the bots run on aiogram 3, the database is PostgreSQL with SQLAlchemy and Alembic migrations. The Mini App is React 19 and TypeScript built with Vite. Everything runs in Docker on a VPS behind Caddy with automatic HTTPS.' },
+      { q: 'How do payments work?', a: 'SBP payments, USDT intake and card issuing go through the payment provider API. The user balance is kept in rubles in our own database, and every operation first reserves the amount and charges it only after the provider confirms.' },
+      { q: 'Does the user need to sign up?', a: 'No. The Mini App receives signed Telegram data, the server verifies the signature and identifies the user by Telegram ID.' },
+    ],
+  },
   '19ib': {
     slug: '19ib',
     metaTitle: '19 Independent Battle: full-stack rap battle tournament platform',
@@ -450,6 +503,59 @@ const en: Record<string, ProjectDetail> = {
 }
 
 const ru: Record<string, ProjectDetail> = {
+  'lomtik-wallet': {
+    slug: 'lomtik-wallet',
+    metaTitle: 'Lomtik Wallet: платёжный кошелёк в Telegram Mini App | Кейс',
+    metaDescription:
+      'Кошелёк внутри Telegram: пополнение звёздами и USDT, оплата по QR-коду СБП, виртуальные карты Visa и Mastercard с Apple Pay. Mini App на React, два бота на aiogram, бэкенд на FastAPI и PostgreSQL.',
+    keywords: 'telegram mini app кошелёк, платёжный бот telegram, разработка telegram mini app, оплата по сбп в telegram, виртуальные карты в telegram, telegram stars оплата, fastapi aiogram',
+    h1: 'Платёжный кошелёк в Telegram',
+    tagline: 'Пополнение звёздами и криптовалютой, оплата по СБП и виртуальные карты в одном мини-приложении',
+    category: 'Telegram Mini App + 2 бота',
+    year: '2026',
+    client: 'Lomtik Wallet',
+    industry: 'Финтех, платежи',
+    role: ['Архитектура', 'Бэкенд на Python / FastAPI', 'Mini App на React', 'Боты на aiogram', 'Интеграция с платёжным провайдером', 'Деплой на VPS'],
+    intro: [
+      'Lomtik Wallet открывается прямо в Telegram как мини-приложение. Пользователь пополняет баланс в рублях звёздами Telegram или переводом USDT и платит с него по QR-коду СБП в магазинах и на сайтах. С того же баланса выпускаются виртуальные карты для оплаты зарубежных сервисов и покупок через Apple Pay и Google Pay.',
+      'Проект состоит из трёх частей: Mini App, где живёт весь кошелёк, бот @lomtikwallet_bot, который открывает приложение и присылает уведомления, и служебный бот, через который владелец ведёт сервис без отдельной админки.',
+    ],
+    sections: [
+      {
+        heading: 'Что умеет кошелёк',
+        paragraphs: [
+          'С первого /start пользователь нажимает «Открыть кошелёк» и сразу видит баланс: регистрация и пароль не нужны, вход через аккаунт Telegram.',
+        ],
+        list: [
+          'Пополнение звёздами Telegram и в USDT (TRC-20) с курсом и наценкой, рассчитанными до оплаты',
+          'Оплата по QR-коду СБП: сканер камеры, ссылка или скриншот из галереи',
+          'Виртуальные карты Visa и Mastercard: выпуск, пополнение, вывод, заморозка, реквизиты по запросу',
+          'Коды для Apple Pay и Google Pay приходят сообщением в бот',
+          'Переводы между пользователями по @username без комиссии',
+          'История с категориями и диаграммой расходов по месяцам',
+          'Возврат звёзд по правилам Telegram и команда /paysupport',
+        ],
+      },
+      {
+        heading: 'Служебный бот',
+        paragraphs: [
+          'Вместо веб-админки владелец управляет сервисом из Telegram. В меню бота отчёт о доходе за сегодня, вчера, 7 и 30 дней, сверка балансов пользователей с остатком у провайдера, настройка наценок и лимитов, поиск пользователя по @username с историей операций и ручными решениями по спорным оплатам. Отсюда же можно подарить пользователю карту.',
+          'Бот сам пишет админам, если провайдер не отвечает, кончаются деньги на счёте карт или пропал курс USDT, и пишет ещё раз, когда всё восстановилось.',
+        ],
+      },
+      {
+        heading: 'Надёжность',
+        paragraphs: [
+          'Платёжные операции защищены от двойного списания ключами идемпотентности. Статусы приходят вебхуками от провайдера, а фоновый воркер перепроверяет их опросом, если вебхук потерялся. Если внешний курс недоступен, приложение блокирует только операции, которым нужен курс, и объясняет это пользователю. Бэкенд покрыт 305 тестами, фронтенд 89.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Какой стек использует проект?', a: 'Бэкенд на Python и FastAPI, боты на aiogram 3, база PostgreSQL с SQLAlchemy и миграциями Alembic. Mini App на React 19 и TypeScript, собран Vite. Всё работает в Docker на VPS за Caddy с автоматическим HTTPS.' },
+      { q: 'Как устроены платежи?', a: 'Оплаты по СБП, приём USDT и выпуск карт идут через API платёжного провайдера. Баланс пользователя ведётся в рублях в своей базе, каждая операция сначала резервирует сумму и списывает её только после подтверждения провайдера.' },
+      { q: 'Нужна ли пользователю регистрация?', a: 'Нет. Mini App получает подписанные данные Telegram, сервер проверяет подпись и узнаёт пользователя по Telegram ID.' },
+    ],
+  },
   '19ib': {
     slug: '19ib',
     metaTitle: '19 Независимый Баттл: полнофункциональная платформа для рэп-турнира | Кейс',

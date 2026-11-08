@@ -25,6 +25,14 @@ import opengrok3 from './assets/projects/opengrok-3.png'
 import aurum1 from './assets/projects/aurum-1.jpg'
 import aurum2 from './assets/projects/aurum-2.jpg'
 import aurum3 from './assets/projects/aurum-3.jpg'
+import lomtik1 from './assets/projects/lomtik-1.png'
+import lomtik1Dark from './assets/projects/lomtik-1-dark.png'
+import lomtik2 from './assets/projects/lomtik-2.png'
+import lomtik2Dark from './assets/projects/lomtik-2-dark.png'
+import lomtik3 from './assets/projects/lomtik-3.png'
+import lomtik3Dark from './assets/projects/lomtik-3-dark.png'
+import lomtik4 from './assets/projects/lomtik-4.png'
+import lomtik4Dark from './assets/projects/lomtik-4-dark.png'
 
 const shared = {
   logo: 'DB',
@@ -51,6 +59,14 @@ const shared = {
   projects: [
     {
       number: '001',
+      slug: 'lomtik-wallet',
+      title: 'Lomtik Wallet',
+      stack: ['Python', 'FastAPI', 'aiogram', 'PostgreSQL', 'React 19', 'TypeScript', 'Docker'],
+      live: 'https://t.me/lomtikwallet_bot',
+      images: [lomtik1, lomtik2, lomtik3, lomtik4, lomtik1Dark, lomtik2Dark, lomtik3Dark, lomtik4Dark],
+    },
+    {
+      number: '002',
       slug: 'botyan-tg-bot',
       title: 'botyan.dev bot',
       stack: ['Python', 'aiogram', 'SQLite', 'systemd'],
@@ -58,7 +74,7 @@ const shared = {
       images: [botyanBot1, botyanBot2, botyanBot3],
     },
     {
-      number: '002',
+      number: '003',
       slug: '19ib',
       title: '19 Независимый Баттл',
       stack: ['React 18', 'TypeScript', 'Vite', 'Tailwind v4', 'Bun', 'Fastify', 'PostgreSQL', 'Drizzle ORM', 'Docker', 'S3 + CDN'],
@@ -66,7 +82,7 @@ const shared = {
       images: [ib1, ib2, ib3],
     },
     {
-      number: '003',
+      number: '004',
       slug: 'ramki-magazine',
       title: 'Журнал РАМКИ',
       stack: ['WordPress', 'Elementor', 'PHP', 'Bun'],
@@ -74,7 +90,7 @@ const shared = {
       images: [ramki1, ramki2, ramki3],
     },
     {
-      number: '004',
+      number: '005',
       slug: 'ramki-bot',
       title: 'Бот журнала РАМКИ',
       stack: ['Python', 'aiogram', 'PostgreSQL', 'Redis'],
@@ -82,7 +98,7 @@ const shared = {
       images: [ramkiBot1, ramkiBot2, ramkiBot3],
     },
     {
-      number: '005',
+      number: '006',
       slug: 'dreamyvoice',
       title: 'DreamyVoice',
       stack: ['Next.js', 'TypeScript', 'Prisma', 'pnpm'],
@@ -90,7 +106,7 @@ const shared = {
       images: [dreamy1, dreamy2, dreamy3],
     },
     {
-      number: '006',
+      number: '007',
       slug: 'opengrok-bot',
       title: 'OpenGrok',
       stack: ['Python', 'aiogram', 'Grok API', 'Whisper'],
@@ -98,7 +114,7 @@ const shared = {
       images: [opengrok1, opengrok2, opengrok3],
     },
     {
-      number: '007',
+      number: '008',
       slug: 'aurum-legal',
       title: 'Аурум · шаблон для юридической компании',
       stack: ['Next.js 16', 'TypeScript', 'shadcn/ui', 'Tailwind v4', 'Vercel'],
@@ -107,7 +123,7 @@ const shared = {
       template: true,
     },
     {
-      number: '008',
+      number: '009',
       slug: 'zotova-portfolio',
       title: 'Anastasiia Zotova - Portfolio',
       stack: ['React', 'TypeScript', 'Vite', 'CSS'],
@@ -115,7 +131,7 @@ const shared = {
       images: [zotova1, zotova2, zotova3],
     },
     {
-      number: '009',
+      number: '010',
       slug: 'medequip',
       title: 'МедЭквип',
       stack: ['Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
@@ -204,15 +220,16 @@ export const content = {
       templateBadge: 'Шаблон',
       templateNote: 'Готовый шаблон, могу адаптировать под вашу компанию: контент, бренд, доменные страницы. Сроки и стоимость ниже, чем у проекта с нуля.',
       items: [
-        { ...shared.projects[0], description: 'Мой собственный Telegram-бот для услуг. Помогает посетителям выбрать услугу, рассчитать стоимость в формате диалога и оставить заявку. Python + aiogram, SQLite, развёрнут на VPS как systemd-сервис.' },
-        { ...shared.projects[1], description: 'Платформа для проведения рэп-турнира: подача треков, анонимное судейство по раундам, баттл-сетка, рейтинги, лайки, блог, кастомный аудиоплеер с CDN-стримингом. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.' },
-        { ...shared.projects[2], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
-        { ...shared.projects[3], description: 'Telegram-бот бизнес-журнала «РАМКИ». Заявки на участие в проекте «РАМКИ 500», медиаресурсы журнала, полезные материалы и секретный подарок для подписчиков. Python, aiogram, PostgreSQL.' },
-        { ...shared.projects[4], description: 'Платформа для команды аниме-озвучки. Каталог тайтлов, страницы релизов с плеером, избранное, рандом, админка для редакторов. Next.js, Prisma, PostgreSQL.' },
-        { ...shared.projects[5], description: 'AI-ассистент в Telegram с интеграцией Grok API от xAI. Автоматический поиск в интернете, анализ фото, распознавание голосовых сообщений, автогенерация названий тем разговоров.' },
-        { ...shared.projects[6], description: 'Готовый шаблон сайта для юридической компании на Next.js 16 и shadcn/ui. Тёмная чёрно-золотая тема, 8 страниц, анимированные счётчики. Адаптирую под бренд клиента за 2-3 недели.' },
-        { ...shared.projects[7], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
-        { ...shared.projects[8], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
+        { ...shared.projects[0], description: 'Кошелёк внутри Telegram: пополнение звёздами и USDT, оплата по QR-коду СБП, виртуальные карты Visa и Mastercard с Apple Pay. Mini App на React, бот для пользователей и служебный бот для владельца. Python + FastAPI, aiogram, PostgreSQL, Docker.' },
+        { ...shared.projects[1], description: 'Мой собственный Telegram-бот для услуг. Помогает посетителям выбрать услугу, рассчитать стоимость в формате диалога и оставить заявку. Python + aiogram, SQLite, развёрнут на VPS как systemd-сервис.' },
+        { ...shared.projects[2], description: 'Платформа для проведения рэп-турнира: подача треков, анонимное судейство по раундам, баттл-сетка, рейтинги, лайки, блог, кастомный аудиоплеер с CDN-стримингом. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions.' },
+        { ...shared.projects[3], description: 'Деловой онлайн-журнал. Кастомная тема на WordPress, конструктор страниц Elementor, архив выпусков, экосистема разделов и подписка на рассылку.' },
+        { ...shared.projects[4], description: 'Telegram-бот бизнес-журнала «РАМКИ». Заявки на участие в проекте «РАМКИ 500», медиаресурсы журнала, полезные материалы и секретный подарок для подписчиков. Python, aiogram, PostgreSQL.' },
+        { ...shared.projects[5], description: 'Платформа для команды аниме-озвучки. Каталог тайтлов, страницы релизов с плеером, избранное, рандом, админка для редакторов. Next.js, Prisma, PostgreSQL.' },
+        { ...shared.projects[6], description: 'AI-ассистент в Telegram с интеграцией Grok API от xAI. Автоматический поиск в интернете, анализ фото, распознавание голосовых сообщений, автогенерация названий тем разговоров.' },
+        { ...shared.projects[7], description: 'Готовый шаблон сайта для юридической компании на Next.js 16 и shadcn/ui. Тёмная чёрно-золотая тема, 8 страниц, анимированные счётчики. Адаптирую под бренд клиента за 2-3 недели.' },
+        { ...shared.projects[8], description: 'Персональное портфолио для бренд-менеджера. Яркий дизайн, скрапбукинг-эстетика, анимации.' },
+        { ...shared.projects[9], description: 'Корпоративный сайт поставщика медоборудования. Каталог продукции, страницы решений по сегментам, форма запроса цены.' },
       ],
     },
     testimonials: {
@@ -593,15 +610,16 @@ export const content = {
       templateBadge: 'Template',
       templateNote: 'Ready-made template. I can adapt it to your company: content, branding, domain-specific pages. Cheaper and faster than building from scratch.',
       items: [
-        { ...shared.projects[0], description: 'My own Telegram bot that sells my services. Helps visitors pick a service, estimate cost through a chat dialog and leave a request. Python + aiogram, SQLite, deployed on a VPS as a systemd service.' },
-        { ...shared.projects[1], title: '19 Independent Battle', description: 'Full-stack rap battle tournament platform: track submission, anonymous judging, bracket generation, ratings, likes, blog, custom audio player with CDN streaming. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions CI/CD.' },
-        { ...shared.projects[2], title: 'RAMKI Magazine', description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
-        { ...shared.projects[3], title: 'RAMKI Magazine Bot', description: 'Telegram bot for the RAMKI business magazine. Application flow for the RAMKI 500 project, magazine media resources, useful materials and a secret gift for subscribers. Python, aiogram, PostgreSQL.' },
-        { ...shared.projects[4], description: 'Platform for an anime dubbing team. Title catalog, release pages with player, favorites, random pick, editor admin panel. Next.js, Prisma, PostgreSQL.' },
-        { ...shared.projects[5], description: 'AI assistant in Telegram with xAI Grok API integration. Automatic web search, image analysis, voice message recognition, auto-naming of conversation threads.' },
-        { ...shared.projects[6], title: 'Aurum · law firm template', description: 'Ready-made website template for a law firm on Next.js 16 and shadcn/ui. Dark black-and-gold theme, 8 pages, animated counters. I adapt it to the client brand in 2-3 weeks.' },
-        { ...shared.projects[7], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
-        { ...shared.projects[8], title: 'MedEquip', description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
+        { ...shared.projects[0], description: 'A wallet inside Telegram: top-ups with Telegram Stars and USDT, payments by SBP QR code, virtual Visa and Mastercard cards with Apple Pay. A React Mini App, a bot for users and a service bot for the owner. Python + FastAPI, aiogram, PostgreSQL, Docker.' },
+        { ...shared.projects[1], description: 'My own Telegram bot that sells my services. Helps visitors pick a service, estimate cost through a chat dialog and leave a request. Python + aiogram, SQLite, deployed on a VPS as a systemd service.' },
+        { ...shared.projects[2], title: '19 Independent Battle', description: 'Full-stack rap battle tournament platform: track submission, anonymous judging, bracket generation, ratings, likes, blog, custom audio player with CDN streaming. React 18, Bun + Fastify, PostgreSQL, Docker, GitHub Actions CI/CD.' },
+        { ...shared.projects[3], title: 'RAMKI Magazine', description: 'Business online magazine. Custom WordPress theme, Elementor page builder, issue archive, multi-section ecosystem, newsletter signup.' },
+        { ...shared.projects[4], title: 'RAMKI Magazine Bot', description: 'Telegram bot for the RAMKI business magazine. Application flow for the RAMKI 500 project, magazine media resources, useful materials and a secret gift for subscribers. Python, aiogram, PostgreSQL.' },
+        { ...shared.projects[5], description: 'Platform for an anime dubbing team. Title catalog, release pages with player, favorites, random pick, editor admin panel. Next.js, Prisma, PostgreSQL.' },
+        { ...shared.projects[6], description: 'AI assistant in Telegram with xAI Grok API integration. Automatic web search, image analysis, voice message recognition, auto-naming of conversation threads.' },
+        { ...shared.projects[7], title: 'Aurum · law firm template', description: 'Ready-made website template for a law firm on Next.js 16 and shadcn/ui. Dark black-and-gold theme, 8 pages, animated counters. I adapt it to the client brand in 2-3 weeks.' },
+        { ...shared.projects[8], description: 'Personal portfolio for a brand manager. Vivid scrapbook aesthetic, rich animations.' },
+        { ...shared.projects[9], title: 'MedEquip', description: 'Corporate site for a medical equipment supplier. Product catalog, solution pages by segment, price request form.' },
       ],
     },
     testimonials: {

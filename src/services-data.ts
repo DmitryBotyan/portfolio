@@ -153,7 +153,7 @@ const ru: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['botyan-tg-bot', 'opengrok-bot'],
+    relatedProjects: ['lomtik-wallet', 'botyan-tg-bot', 'opengrok-bot'],
     faq: [
       {
         q: 'Сколько времени делается Telegram-бот?',
@@ -1001,7 +1001,7 @@ const en: Record<string, ServiceDetail> = {
         },
       ],
     },
-    relatedProjects: ['botyan-tg-bot', 'opengrok-bot'],
+    relatedProjects: ['lomtik-wallet', 'botyan-tg-bot', 'opengrok-bot'],
     faq: [
       {
         q: 'How long does it take to build a Telegram bot?',
