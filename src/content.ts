@@ -63,7 +63,7 @@ const shared = {
       title: 'Lomtik Wallet',
       stack: ['Python', 'FastAPI', 'aiogram', 'PostgreSQL', 'React 19', 'TypeScript', 'Docker'],
       live: 'https://t.me/lomtikwallet_bot',
-      images: [lomtik1, lomtik2, lomtik3, lomtik4, lomtik1Dark, lomtik2Dark, lomtik3Dark, lomtik4Dark],
+      images: [lomtik1Dark, lomtik2Dark, lomtik3Dark, lomtik4Dark, lomtik1, lomtik2, lomtik3, lomtik4],
     },
     {
       number: '002',
