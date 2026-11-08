@@ -2,21 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://botyan.dev/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://botyan.dev/blog</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/contacts</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/blog/direkt-ne-prinosit-zayavok</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/blog/bot-dlya-zapisi-klientov</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/blog/kak-vybrat-razrabotchika</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/blog/integraciya-sajta-s-crm</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://botyan.dev/blog/integraciya-sajta-s-1s</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://botyan.dev/blog/kak-popast-v-otvety-alisy-ai</loc>
@@ -146,91 +176,91 @@
   </url>
   <url>
     <loc>https://botyan.dev/services/telegram-bots</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/sajt-pod-klyuch</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/korporativnyj-sajt</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/internet-magazin</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/landing</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/services/sajt-na-tilde</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/botyan-tg-bot</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/19ib</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/ramki-magazine</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/ramki-bot</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/dreamyvoice</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/opengrok-bot</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/aurum-legal</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/zotova-portfolio</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://botyan.dev/projects/medequip</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
