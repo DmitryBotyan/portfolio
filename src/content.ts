@@ -29,10 +29,7 @@ import lomtik1 from './assets/projects/lomtik-1.png'
 import lomtik1Dark from './assets/projects/lomtik-1-dark.png'
 import lomtik2 from './assets/projects/lomtik-2.png'
 import lomtik2Dark from './assets/projects/lomtik-2-dark.png'
-import lomtik3 from './assets/projects/lomtik-3.png'
-import lomtik3Dark from './assets/projects/lomtik-3-dark.png'
-import lomtik4 from './assets/projects/lomtik-4.png'
-import lomtik4Dark from './assets/projects/lomtik-4-dark.png'
+import lomtikThemes from './assets/projects/lomtik-themes.png'
 
 const shared = {
   logo: 'DB',
@@ -63,7 +60,7 @@ const shared = {
       title: 'Lomtik Wallet',
       stack: ['Python', 'FastAPI', 'aiogram', 'PostgreSQL', 'React 19', 'TypeScript', 'Docker'],
       live: 'https://t.me/lomtikwallet_bot',
-      images: [lomtik1Dark, lomtik2Dark, lomtik3Dark, lomtik4Dark, lomtik1, lomtik2, lomtik3, lomtik4],
+      images: [lomtik1Dark, lomtik2Dark, lomtikThemes, lomtik1, lomtik2],
     },
     {
       number: '002',
